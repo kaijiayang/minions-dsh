@@ -80,7 +80,7 @@ Both roles are pluggable. The defaults are:
 
 ### 1. Install
 
-Requires **Python 3.9+** and **Node.js 18+** (for the Harness plugin).
+Requires **Python 3.10+** and **Node.js 18+** (for the Harness plugin).
 
 ```bash
 git clone https://github.com/kaijiayang/minions-dsh.git

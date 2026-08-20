@@ -7,7 +7,7 @@ delegate long-context reasoning to your local/cloud model pair.
 
 ## Requirements
 
-- Python 3.9+ with the project installed (`pip install -e .` at the repo root)
+- Python 3.10+ with the project installed (`pip install -e .` at the repo root)
 - Node.js 18+
 - A running local model server (see [LOCAL_MODEL_SERVERS.md](LOCAL_MODEL_SERVERS.md))
 - A cloud API key (DeepSeek / OpenAI / Anthropic / ...) in your environment

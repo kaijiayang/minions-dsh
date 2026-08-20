@@ -28,7 +28,7 @@ participating you agree to uphold it.
 
 ## Development setup
 
-Requirements: **Python 3.9+**, **Node.js 18+** (for the plugin).
+Requirements: **Python 3.10+**, **Node.js 18+** (for the plugin).
 
 ```bash
 git clone https://github.com/kaijiayang/minions-dsh.git
@@ -43,7 +43,7 @@ cd dsh-plugin && npm install && npm run build && cd ..
 
 ## Project conventions
 
-- **Python** — target Python 3.9+; keep the core `minions/` library free of
+- **Python** — target Python 3.10+; keep the core `minions/` library free of
   hard dependencies on optional provider SDKs (import them lazily inside
   functions, as `minions/clients/__init__.py` already does).
 - **Bridge contract** — `dsh-plugin/python/minions_bridge.py` must keep the

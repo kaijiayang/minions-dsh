@@ -74,7 +74,7 @@
 
 ### 1. 安装
 
-需要 **Python 3.9+**（Harness 插件另需 **Node.js 18+**）。
+需要 **Python 3.10+**（Harness 插件另需 **Node.js 18+**）。
 
 ```bash
 git clone https://github.com/kaijiayang/minions-dsh.git
