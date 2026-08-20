@@ -60,7 +60,7 @@
 协议按轮次运行：
 
 1. **Supervisor（云端）** 把主任务拆分为 N 个子任务（`JobManifest`）。
-2. **Worker（本地）** 阅读上下文分块并执行每个子任务，返回结构化结果 `{explanation, citation, answer}`。
+2. **Worker（本地）** 阅读上下文分块并执行每个子任务，返回结构化结果 `{explanation, citation, answer}`（兼容被 markdown 代码围栏包裹的 JSON）。
 3. **Supervisor（云端）** 评估结果：信息不足则继续下发子任务（进入下一轮，上限 `max_rounds`），否则综合生成**最终答案**。
 
 两个角色均可替换。默认配置：
@@ -68,7 +68,7 @@
 | 角色 | 默认 | 常见选择 |
 |------|------|----------|
 | Supervisor（远程） | `deepseek-chat` | DeepSeek、OpenAI、Anthropic |
-| Worker（本地） | LM Studio 上的 `qwen3-8b` | 任意 GGUF / vLLM 托管的模型 |
+| Worker（本地） | LM Studio 上的 `qwen3.8-27b` | 任意 GGUF / vLLM 托管的模型 |
 
 ## 快速开始
 
@@ -86,7 +86,7 @@ pip install -e .          # 安装 minions 协议库与桥接依赖
 
 任选其一（它们都提供 OpenAI 兼容 API，本项目原生支持）：
 
-- **LM Studio** — 加载模型（如 `qwen3-8b`），打开 *Local Server* 标签页，点击 **Start Server** → `http://127.0.0.1:1234/v1`。
+- **LM Studio** — 加载模型（如 `qwen3.8-27b`），打开 *Local Server* 标签页，点击 **Start Server** → `http://127.0.0.1:1234/v1`。
 - **Ollama** — `ollama serve`（OpenAI 兼容端点 `http://127.0.0.1:11434/v1`）。
 - **vLLM** — `vllm serve Qwen/Qwen3-8B --api-key EMPTY` → `http://127.0.0.1:8000/v1`。
 - **llama.cpp** — `llama-server -m <model>.gguf` → `http://127.0.0.1:8080/v1`。
@@ -116,7 +116,7 @@ from minions.clients.openai_compat import OpenAICompatClient
 from minions.clients.openai import OpenAIClient
 from minions.minions import Minions
 
-local = OpenAICompatClient(model_name="qwen3-8b", platform="lmstudio")
+local = OpenAICompatClient(model_name="qwen3.8-27b", platform="lmstudio")
 remote = OpenAIClient(model_name="deepseek-chat", api_key="sk-...",
                       base_url="https://api.deepseek.com", local=False)
 
@@ -196,7 +196,7 @@ remote:                        # 云端 Supervisor
 
 local:                         # 本地 Worker（OpenAI 兼容）
   platform: lmstudio           # lmstudio | ollama | vllm | llamacpp | generic | auto
-  model: qwen3-8b
+  model: qwen3.8-27b
   base_url: http://127.0.0.1:1234/v1
   api_key: lm-studio           # 大多数本地服务器接受任意占位
 

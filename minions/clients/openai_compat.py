@@ -39,7 +39,7 @@ from __future__ import annotations
 import logging
 import os
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 import requests
 
@@ -273,15 +273,43 @@ class OpenAICompatClient(MinionsClient):
 
     def chat(
         self,
-        messages: List[Dict[str, Any]],
+        messages: Union[List[Dict[str, Any]], List[List[Dict[str, Any]]]],
         **kwargs,
     ) -> Tuple[List[str], Usage, List[str]]:
-        """Run a chat completion against the local server.
+        """Run chat completion(s) against the local server.
+
+        Supports two shapes:
+          * a single conversation: ``[{"role": ..., "content": ...}, ...]``
+            -> one API call, returns a 1-element response list;
+          * a batch of conversations: ``[[{...}], [{...}], ...]`` (list of
+            lists, as produced by the parallel Minions protocol for multiple
+            worker chunks) -> one API call per conversation, returns one
+            response per conversation.
 
         Returns:
             ``(responses, usage, done_reasons)`` — the 3-tuple expected from
             local clients by the Minions / Minion protocols.
         """
+        # Batch mode: each element is its own single-message conversation.
+        if messages and isinstance(messages[0], list):
+            responses: List[str] = []
+            done_reasons: List[str] = []
+            total_usage = Usage(prompt_tokens=0, completion_tokens=0)
+            for batch in messages:
+                resp, usage, reasons = self._chat_once(batch, **kwargs)
+                responses.extend(resp)
+                done_reasons.extend(reasons)
+                total_usage += usage
+            return responses, total_usage, done_reasons
+        # Single conversation mode.
+        return self._chat_once(messages, **kwargs)
+
+    def _chat_once(
+        self,
+        messages: List[Dict[str, Any]],
+        **kwargs,
+    ) -> Tuple[List[str], Usage, List[str]]:
+        """Run one chat completion for a single conversation."""
         assert len(messages) > 0, "Messages cannot be empty."
 
         # Local servers historically expect `max_tokens` rather than

@@ -61,7 +61,7 @@ either half can be replaced or tested independently.
   "local_client": {
     "type": "openai_compat",
     "platform": "lmstudio",
-    "model_name": "qwen3-8b",
+    "model_name": "qwen3.8-27b",
     "kwargs": { "base_url": "http://127.0.0.1:1234/v1", "api_key": "lm-studio" }
   },
   "remote_client": {
@@ -140,6 +140,37 @@ client: platform presets supply default `base_url`/`api_key`, an explicit
 `base_url` always wins, and it probes `GET /v1/models` on construction for fast
 failure. It uses `max_tokens` (not `max_completion_tokens`) because local
 servers (vLLM, Ollama, LM Studio) expect it.
+
+### `chat()` input shapes
+
+Local `chat()` accepts two shapes:
+
+| Shape | Example | Behavior |
+|-------|---------|----------|
+| Single conversation | `[{"role": "user", "content": "..."}]` | one API call, one response |
+| Batch (parallel protocol) | `[[{"role": "user", "content": "..."}], [{"role": "user", "content": "..."}]]` | one API call **per** conversation, one response per conversation |
+
+The parallel `minions` protocol sends each worker chunk as its own
+single-message conversation (a list of lists), so worker responses align 1:1
+with `JobManifest`s — every chunk gets a job output, and outputs never get
+attached to the wrong chunk. `chat()` is also safe to call with a single
+conversation (used by the sequential `minion` protocol).
+
+### Tolerant output parsing
+
+Model outputs are rarely strict JSON. Two layers of leniency are built in:
+
+- **Worker outputs** — `extract_job_output()` in `minions/minions.py` strips
+  markdown code fences (```` ```python ````, ```` ```json ````, ...) before
+  `JobOutput.model_validate_json()`, then falls back to a regex parser for
+  Python-repr style `JobOutput(explanation='...', ...)`.
+- **Supervisor synthesis** — the final-answer JSON is parsed by
+  `_parse_json_lenient()`: strip fences → `json.loads` → `ast.literal_eval`
+  (tolerates single-quoted, Python-style dicts) → extract the outer `{...}`
+  block from surrounding prose.
+
+Together these keep the protocol running even when the local or remote model
+wraps its structured output in a code block or uses non-strict quoting.
 
 ## Why a subprocess bridge and not a native port?
 

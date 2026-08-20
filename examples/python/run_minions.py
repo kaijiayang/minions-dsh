@@ -25,7 +25,7 @@ from minions.minions import Minions  # noqa: E402
 def main() -> None:
     # --- Local worker: any OpenAI-compatible server -----------------------
     # platform: lmstudio | ollama | vllm | llamacpp | generic | auto
-    local = OpenAICompatClient(model_name="qwen3-8b", platform="lmstudio")
+    local = OpenAICompatClient(model_name="qwen3.8-27b", platform="lmstudio")
 
     # --- Cloud supervisor --------------------------------------------------
     remote = OpenAIClient(

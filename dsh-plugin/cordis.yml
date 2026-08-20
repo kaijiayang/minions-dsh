@@ -39,7 +39,7 @@
         # ---- Local worker: any OpenAI-compatible server ----
         # lmstudio | ollama | vllm | llamacpp | generic | auto
         defaultLocalPlatform: 'lmstudio'
-        defaultLocalModel: 'qwen3-8b'           # model id as exposed by your server
+        defaultLocalModel: 'qwen3.8-27b'       # model id as exposed by your server
         localBaseUrl: 'http://127.0.0.1:1234/v1' # LM Studio default
         localApiKey: 'lm-studio'                # placeholder; most local servers ignore it
 

@@ -11,7 +11,7 @@ remote:
 
 local:
   platform: lmstudio                # http://127.0.0.1:1234/v1
-  model: qwen3-8b                   # id exactly as shown in LM Studio "My Models"
+  model: qwen3.8-27b                # id exactly as shown in LM Studio "My Models"
   base_url: http://127.0.0.1:1234/v1
   api_key: lm-studio                # placeholder
   temperature: 0.0

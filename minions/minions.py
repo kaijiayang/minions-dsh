@@ -128,6 +128,60 @@ def _parse_job_output_repr(response: str) -> JobOutput:
     return JobOutput(explanation=explanation, citation=citation, answer=answer)
 
 
+def _parse_json_lenient(text: str) -> Any:
+    """容错解析远端/本地模型返回的 JSON。
+
+    模型输出常常不完全符合 JSON 规范，常见情况包括：
+      * 被 markdown 代码块围栏包裹（```json / ```python ...）；
+      * 单引号键/值（Python 风格 dict）；
+      * JSON 前后夹杂解释性文字。
+
+    解析链：剥离围栏 -> json.loads -> ast.literal_eval -> 提取最外层 {...} 再试。
+    全部失败时抛出 ValueError。
+    """
+    import ast as _ast
+
+    t = (text or "").strip()
+    if not t:
+        raise ValueError("Empty response, cannot parse JSON.")
+
+    fence = re.search(
+        r"```(?:json|python|text|txt)?\s*(.*?)```",
+        t,
+        re.DOTALL | re.IGNORECASE,
+    )
+    if fence:
+        t = fence.group(1).strip()
+
+    def _try_loads(s: str):
+        try:
+            return json.loads(s)
+        except Exception:
+            return None
+
+    def _try_literal(s: str):
+        try:
+            obj = _ast.literal_eval(s)
+            return obj if isinstance(obj, dict) else None
+        except Exception:
+            return None
+
+    obj = _try_loads(t) or _try_literal(t)
+    if obj is not None:
+        return obj
+
+    # 提取最外层 {...} 块（去除围栏外的前言/后记）
+    start = t.find("{")
+    end = t.rfind("}")
+    if start != -1 and end != -1 and end > start:
+        block = t[start : end + 1]
+        obj = _try_loads(block) or _try_literal(block)
+        if obj is not None:
+            return obj
+
+    raise ValueError(f"Could not parse JSON from response: {text[:500]}")
+
+
 def prepare_jobs(
     context: List[str],
     prev_job_manifests: Optional[List[JobManifest]] = None,
@@ -698,7 +752,11 @@ class Minions:
                         advice=job_manifest.advice,
                     ),
                 }
-                worker_chats.append(worker_messages)
+                # Each worker chat is its own single-message conversation. The
+                # local clients' chat() contract treats a *list of lists* as a
+                # batch (one API call per conversation, one response each),
+                # so wrap each message in its own list here.
+                worker_chats.append([worker_messages])
 
             if self.callback:
                 self.callback("worker", None, is_final=False)
@@ -726,8 +784,20 @@ class Minions:
 
             def extract_job_output(response: str) -> JobOutput:
                 # 优先按标准 JSON 解析（兼容被 markdown 代码块包裹的 JSON）
+                cleaned = response.strip()
+                # 剥离 ```python / ```json / ``` 等 markdown 代码块围栏，
+                # 否则 json.loads 会因围栏字符解析失败。
+                import re as _re
+
+                fence = _re.search(
+                    r"```(?:python|json|text|txt)?\s*(.*?)```",
+                    cleaned,
+                    _re.DOTALL | _re.IGNORECASE,
+                )
+                if fence:
+                    cleaned = fence.group(1).strip()
                 try:
-                    return JobOutput.model_validate_json(response)
+                    return JobOutput.model_validate_json(cleaned)
                 except Exception:
                     pass
                 # 容错：部分本地模型会输出 Python repr 风格的 JobOutput(...)
@@ -965,7 +1035,7 @@ class Minions:
                         f"Attempt {attempt_idx + 1}/{max_attempts} response: {response_text}"
                     )
 
-                    obj = json.loads(response_text)
+                    obj = _parse_json_lenient(response_text)
                     if not isinstance(obj, dict) or "decision" not in obj:
                         raise ValueError("Response missing required 'decision' field")
 

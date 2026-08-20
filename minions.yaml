@@ -45,7 +45,7 @@ local:
   #   generic  -> you must set base_url
   #   auto     -> base_url wins if given, else LM Studio defaults
   platform: lmstudio
-  model: qwen3-8b                # model id exactly as exposed by your server
+  model: qwen3.8-27b             # model id exactly as exposed by your server
   base_url: http://127.0.0.1:1234/v1    # optional; overrides platform default
   api_key: lm-studio             # most local servers accept any placeholder
   # api_key_env: OPENAI_COMPAT_API_KEY   # alternative: read key from env

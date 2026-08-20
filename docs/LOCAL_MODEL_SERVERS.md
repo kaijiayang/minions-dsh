@@ -24,7 +24,7 @@ platforms below are the most common. No vendor SDKs are required.
 ```yaml
 local:
   platform: lmstudio
-  model: qwen3-8b            # must match the id shown in My Models (case-sensitive)
+  model: qwen3.8-27b         # must match the id shown in My Models (case-sensitive)
   base_url: http://127.0.0.1:1234/v1
 ```
 
@@ -123,6 +123,15 @@ reachable. Start your local server first: ...
   protocol already chunks).
 - **Structured output** — the worker must emit `{explanation, citation,
   answer}`. Use a model that follows formatting instructions well; the
-  protocol includes a tolerant parser as a fallback.
+  protocol tolerates markdown code fences (```` ```json ```` / ```` ```python ````)
+  around the JSON and falls back to a Python-repr parser, so slight formatting
+  drift is fine.
+- **Reasoning models** — if the worker is a *reasoning* model (e.g. Qwen3
+  with thinking enabled), it spends tokens on `reasoning_content` before
+  producing `content`. With a small `max_tokens`, the whole budget can be
+  consumed by thinking and the model returns **empty `content`**
+  (`finish_reason: "length"`), which the protocol reports as an empty worker
+  output. Keep `local.max_tokens` generous (2048+), or disable thinking in the
+  server / prompt if your task doesn't need it.
 - **GPU vs CPU** — quantization (Q4_K_M) lets 4-8B models run on 8 GB VRAM;
   CPU-only works but is slower — fine for the worker role.

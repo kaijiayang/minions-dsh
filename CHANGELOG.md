@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-08-20
+
+### Changed
+
+- **Batch-aware `OpenAICompatClient.chat()`** (`minions/clients/openai_compat.py`):
+  the client now accepts both a *single conversation* (list of message dicts →
+  one response) and a *batch of conversations* (list of lists → one API call
+  per conversation, one response per conversation), matching the contract
+  expected by the parallel `minions` protocol.
+- **Canonical `minions.yaml`** now points the local worker at `qwen3.8-27b`
+  (the model id exposed by the reference LM Studio deployment), replacing the
+  previous `qwen3-8b` placeholder.
+
+### Fixed
+
+- **Worker output parsing** (`minions/minions.py`): markdown code fences
+  (```` ```python ````, ```` ```json ````, ...) around the worker's
+  `{explanation, citation, answer}` JSON are now stripped before parsing, so
+  models that wrap their structured output in a code block no longer crash the
+  protocol with a "无法从本地模型输出中解析 JobOutput 字段" error.
+- **Parallel worker/chunk alignment** (`minions/minions.py`): each worker chat
+  is now sent as its own single-message conversation. Previously the whole
+  batch was sent as one conversation and the client returned a single response,
+  so only the first chunk got a job output and the rest were silently dropped.
+- **Supervisor synthesis JSON parsing** (`minions/minions.py`): the final
+  synthesis step now uses a lenient parser (`_parse_json_lenient`) that strips
+  code fences, tolerates single-quoted (Python-style) dicts, and extracts the
+  outer `{...}` block from prose, instead of failing with
+  `Failed to get valid JSON response after N attempts`.
+
 ## [1.1.0] - 2025-07-01
 
 ### Added

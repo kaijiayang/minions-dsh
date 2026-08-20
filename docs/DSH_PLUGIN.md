@@ -66,7 +66,7 @@ adjusted to your machine:
         configFile: 'ABSOLUTE/PATH/TO/minions.yaml'   # ← recommended
 
         defaultLocalPlatform: 'lmstudio'
-        defaultLocalModel: 'qwen3-8b'
+        defaultLocalModel: 'qwen3.8-27b'
         localBaseUrl: 'http://127.0.0.1:1234/v1'
 
         defaultRemoteClientType: 'deepseek'
@@ -92,7 +92,7 @@ change **immediately — no dsh web restart needed**. Put an `insert` (not
         bridgeScript: 'python/minions_bridge.py'
         configFile: 'ABSOLUTE/PATH/TO/minions.yaml'   # ← your absolute path
         defaultLocalPlatform: 'lmstudio'
-        defaultLocalModel: 'qwen3-8b'   # ← model id as exposed by your server
+        defaultLocalModel: 'qwen3.8-27b'   # ← model id as exposed by your server
         localBaseUrl: 'http://127.0.0.1:1234/v1'
         defaultRemoteClientType: 'deepseek'
         defaultRemoteModel: 'deepseek-chat'   # ← cloud model id
@@ -162,6 +162,12 @@ clear `Environment variable '...' is not set` error rather than an empty key.
 | `maxBuffer` | `20971520` | Max stdout buffer (bytes) |
 | `env` | `{}` | Extra env vars for the subprocess |
 | `localClient` / `remoteClient` | — | Fully override a client config |
+
+> `defaultLocalModel` (`qwen3-8b`) is only the built-in fallback used when
+> neither `configFile` nor a per-call `local_model` provides a model. The
+> reference deployment in this repo's `minions.yaml` sets the local worker to
+> `qwen3.8-27b` (via `configFile`), which is what you should match to your own
+> server's exposed model id.
 
 ## Using the tool
 

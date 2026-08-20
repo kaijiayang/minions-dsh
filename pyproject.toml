@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "minions-dsh"
-version = "1.1.0"
+version = "1.2.0"
 description = "DeepSeek Harness plugin: cloud LLMs orchestrate, locally-deployed small models (LM Studio / Ollama / vLLM, OpenAI-compatible APIs) execute — cutting cloud API costs via the Minions hierarchical multi-model collaboration protocol."
 readme = "README.md"
 requires-python = ">=3.10"

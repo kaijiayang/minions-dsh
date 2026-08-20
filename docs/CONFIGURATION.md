@@ -35,7 +35,7 @@ remote:                          # the cloud supervisor (required)
 local:                           # the local worker (required)
   platform: lmstudio             # lmstudio | ollama | vllm | llamacpp |
                                  #   generic | auto
-  model: qwen3-8b                # required; id exactly as exposed by your server
+  model: qwen3.8-27b            # required; id exactly as exposed by your server
   base_url: http://127.0.0.1:1234/v1   # optional; overrides platform default
   api_key: lm-studio             # placeholder is fine for most local servers
   # api_key_env: OPENAI_COMPAT_API_KEY  # alternative to api_key

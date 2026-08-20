@@ -37,7 +37,9 @@ Common errors and how to fix them.
 | Tool returns `success:false` with `error_detail` | Business error from the bridge | Read `error` and the `error_detail` traceback; usually a server or key issue above. |
 | `ERR_UNSUPPORTED_ESM_URL_SCHEME` (Windows) | Plugin `name` in cordis.yml is a bare `D:/...` path | Use the `file:///D:/...` form. |
 | `call_params.context cannot be empty` | Tool called without context | Always pass at least one context chunk. |
-| `validation error for JobOutput` | The local model didn't emit strict JSON | The protocol has a tolerant repr parser; if it still fails, use a model that follows formatting instructions better, or check the worker's raw output in `minion_logs/`. |
+| `validation error for JobOutput` / 无法从本地模型输出中解析 JobOutput 字段 | The local model didn't emit strict JSON (e.g. wrapped in a markdown code fence) | The protocol strips code fences (```` ```json ```` / ```` ```python ````) and also accepts Python-repr style `JobOutput(explanation='...')`. If it still fails, check the worker's raw output in `minion_logs/` and consider a model that follows formatting instructions better. |
+| Worker output is empty / a chunk silently gets no result | The worker is a *reasoning* model that spent its whole `max_tokens` budget on thinking, returning empty `content` (`finish_reason: "length"`) | Raise `local.max_tokens` (2048+) or disable thinking in the server/prompt; verify with a direct `POST {base_url}/v1/chat/completions` call. |
+| `Failed to get valid JSON response after N attempts` | The supervisor's final-answer JSON wasn't strict (fences, single quotes, prose around it) | The protocol now parses it leniently (`_parse_json_lenient`); if it still fails, check the raw synthesis response in `minion_logs/`. |
 
 ## Config
 

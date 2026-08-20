@@ -66,7 +66,7 @@ It solves one problem: **long-context / high-volume reasoning is expensive in th
 The protocol runs in rounds:
 
 1. **Supervisor (cloud)** decomposes the task into `N` sub-tasks (`JobManifest`s).
-2. **Worker (local)** reads the context chunks and executes each sub-task, returning structured `{explanation, citation, answer}` outputs.
+2. **Worker (local)** reads the context chunks and executes each sub-task, returning structured `{explanation, citation, answer}` outputs (markdown-fenced JSON is tolerated).
 3. **Supervisor (cloud)** evaluates the outputs; if the information is insufficient, it emits more sub-tasks (next round) — up to `max_rounds` — otherwise it synthesizes the **final answer**.
 
 Both roles are pluggable. The defaults are:
@@ -74,7 +74,7 @@ Both roles are pluggable. The defaults are:
 | Role | Default | Typical choice |
 |------|---------|----------------|
 | Supervisor (remote) | `deepseek-chat` | DeepSeek, OpenAI, Anthropic |
-| Worker (local) | `qwen3-8b` via LM Studio | any GGUF / vLLM-served model |
+| Worker (local) | `qwen3.8-27b` via LM Studio | any GGUF / vLLM-served model |
 
 ## Quick start
 
@@ -92,7 +92,7 @@ pip install -e .          # installs the minions protocol library + bridge deps
 
 Pick one — all of them expose an OpenAI-compatible API that this project speaks natively:
 
-- **LM Studio** — load a model (e.g. `qwen3-8b`), open the *Local Server* tab, click **Start Server** → `http://127.0.0.1:1234/v1`.
+- **LM Studio** — load a model (e.g. `qwen3.8-27b`), open the *Local Server* tab, click **Start Server** → `http://127.0.0.1:1234/v1`.
 - **Ollama** — `ollama serve` (the OpenAI-compatible endpoint is `http://127.0.0.1:11434/v1`).
 - **vLLM** — `vllm serve Qwen/Qwen3-8B --api-key EMPTY` → `http://127.0.0.1:8000/v1`.
 - **llama.cpp** — `llama-server -m <model>.gguf` → `http://127.0.0.1:8080/v1`.
@@ -132,7 +132,7 @@ from minions.minions import Minions
 from minions.clients.openai_compat import OpenAICompatClient
 from minions.clients.openai import OpenAIClient
 
-local = OpenAICompatClient(model_name="qwen3-8b", platform="lmstudio")
+local = OpenAICompatClient(model_name="qwen3.8-27b", platform="lmstudio")
 remote = OpenAIClient(model_name="deepseek-chat", api_key=..., base_url="https://api.deepseek.com", local=False)
 
 minions = Minions(local_client=local, remote_client=remote, max_rounds=3)
@@ -230,7 +230,7 @@ remote:                        # cloud supervisor
 
 local:                         # local worker (OpenAI-compatible)
   platform: lmstudio           # lmstudio | ollama | vllm | llamacpp | generic | auto
-  model: qwen3-8b
+  model: qwen3.8-27b
   base_url: http://127.0.0.1:1234/v1
   api_key: lm-studio           # placeholder is fine for most local servers
 

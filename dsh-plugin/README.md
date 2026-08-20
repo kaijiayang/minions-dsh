@@ -67,7 +67,7 @@ change immediately — **no dsh web restart needed**. Put an **`insert`** (not
         bridgeScript: 'python/minions_bridge.py'
         configFile: 'ABSOLUTE/PATH/TO/minions.yaml'   # ← your absolute path
         defaultLocalPlatform: 'lmstudio'
-        defaultLocalModel: 'qwen3-8b'   # ← model id as exposed by your server
+        defaultLocalModel: 'qwen3.8-27b'   # ← model id as exposed by your server
         localBaseUrl: 'http://127.0.0.1:1234/v1'
         defaultRemoteClientType: 'deepseek'
         defaultRemoteModel: 'deepseek-chat'   # ← cloud model id
