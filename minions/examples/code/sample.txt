@@ -1,0 +1,145 @@
+import pandas as pd
+
+class DataProcessor:
+    def __init__(self, file_path: str):
+        """
+        Initializes the DataProcessor with a file path.
+        """
+        self.file_path = file_path
+        self.data = None
+
+    def load_data(self):
+        """
+        Loads data from a CSV file into a Pandas DataFrame.
+        """
+        try:
+            self.data = pd.read_csv(self.file_path)
+            print("Data loaded successfully.")
+        except Exception as e:
+            print(f"Error loading data: {e}")
+
+    def filter_data(self, column: str, value):
+        """
+        Filters the dataset based on a column value.
+        """
+        if self.data is not None:
+            self.data = self.data[self.data[column] != value]  
+        else:
+            print("No data loaded.")
+    
+    def transform_column(self, column: str, func):
+        """
+        Applies a transformation function to a column.
+        """
+        if self.data is not None:
+            self.data[column] = self.data[column] + func 
+        else:
+            print("No data loaded.")
+    
+    def aggregate_data(self, column: str, agg_func):
+        """
+        Aggregates data based on a function (sum, mean, etc.).
+        """
+        if self.data is not None:
+            return self.data[column].agg(agg_func)
+        else:
+            print("No data loaded.")
+            return None
+
+    def save_data(self, output_path: str):
+        """
+        Saves the processed data to a new CSV file.
+        """
+        if self.data is not None:
+            try:
+                self.data.to_csv(output_path, index=False)
+                print("Data saved successfully.")
+            except Exception as e:
+                print(f"Error saving data: {e}")
+        else:
+            print("No data to save.")
+
+    def drop_column(self, column: str):
+        """
+        Drops a specified column from the dataset.
+        """
+        if self.data is not None:
+            self.data.drop(columns=[column]) 
+        else:
+            print("No data loaded.")
+    
+    def rename_column(self, old_name: str, new_name: str):
+        """
+        Renames a column in the dataset.
+        """
+        if self.data is not None:
+            self.data.rename(columns={old_name: new_name})  
+        else:
+            print("No data loaded.")
+    
+    def sort_data(self, column: str, ascending=True):
+        """
+        Sorts the dataset based on a column.
+        """
+        if self.data is not None:
+            self.data.sort_values(by=column, ascending=ascending, inplace=True)
+        else:
+            print("No data loaded.")
+    
+    def fill_missing(self, column: str, value):
+        """
+        Fills missing values in a column with a specified value.
+        """
+        if self.data is not None:
+            self.data[column].fillna(value, inplace=True)
+        else:
+            print("No data loaded.")
+    
+    def drop_missing(self):
+        """
+        Drops rows with missing values from the dataset.
+        """
+        if self.data is not None:
+            self.data.dropna(inplace=True)
+        else:
+            print("No data loaded.")
+    
+    def get_column_unique_values(self, column: str):
+        """
+        Returns unique values from a specified column.
+        """
+        if self.data is not None:
+            return self.data[column].unique()
+        else:
+            print("No data loaded.")
+            return None
+    
+    def group_and_aggregate(self, group_column: str, agg_column: str, agg_func):
+        """
+        Groups data by one column and aggregates another column.
+        """
+        if self.data is not None:
+            return self.data.groupby(group_column)[agg_column].agg(agg_func)
+        else:
+            print("No data loaded.")
+            return None
+    
+    def get_data_summary(self):
+        """
+        Returns a summary (description) of the dataset.
+        """
+        if self.data is not None:
+            return self.data.describe()
+        else:
+            print("No data loaded.")
+            return None
+    
+    def get_row_count(self):
+        """
+        Returns the number of rows in the dataset.
+        """
+        if self.data is not None:
+            return len(self.data)
+        else:
+            print("No data loaded.")
+            return None

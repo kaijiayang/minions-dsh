@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/kaijiayang/minions-dsh/blob/main/config.schema.json",
+  "title": "minions-dsh configuration",
+  "description": "Standardized configuration for minions-dsh (minions.yaml). YAML is a superset of JSON, so this schema validates YAML configs too.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "local", "remote", "protocol"],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1,
+      "description": "Schema version. Only version 1 is supported."
+    },
+    "local": {
+      "$ref": "#/definitions/localEndpoint",
+      "description": "The local worker: a small model served by an OpenAI-compatible local server."
+    },
+    "remote": {
+      "$ref": "#/definitions/remoteEndpoint",
+      "description": "The cloud supervisor: the expensive model that decomposes tasks and synthesizes answers."
+    },
+    "protocol": {
+      "$ref": "#/definitions/protocol"
+    },
+    "plugin": {
+      "$ref": "#/definitions/plugin",
+      "description": "DeepSeek Harness plugin options (used by dsh-plugin only)."
+    }
+  },
+  "definitions": {
+    "commonEndpoint": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["model"],
+      "properties": {
+        "model": { "type": "string", "minLength": 1 },
+        "base_url": {
+          "type": "string",
+          "description": "OpenAI-compatible endpoint, e.g. http://127.0.0.1:1234/v1. ${ENV_VAR} references are expanded."
+        },
+        "api_key": {
+          "type": "string",
+          "description": "Static API key. Prefer api_key_env. ${ENV_VAR} references are expanded."
+        },
+        "api_key_env": {
+          "type": "string",
+          "description": "Name of the environment variable holding the API key."
+        },
+        "temperature": { "type": "number", "default": 0.0 },
+        "max_tokens": { "type": "integer", "minimum": 1, "default": 2048 }
+      }
+    },
+    "localEndpoint": {
+      "allOf": [
+        { "$ref": "#/definitions/commonEndpoint" },
+        {
+          "type": "object",
+          "properties": {
+            "platform": {
+              "type": "string",
+              "enum": ["lmstudio", "ollama", "vllm", "llamacpp", "generic", "auto"],
+              "default": "auto",
+              "description": "Local deployment platform. All platforms speak the OpenAI-compatible API."
+            }
+          }
+        }
+      ]
+    },
+    "remoteEndpoint": {
+      "allOf": [
+        { "$ref": "#/definitions/commonEndpoint" },
+        {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string",
+              "enum": ["deepseek", "openai", "anthropic", "openai_compat", "ollama", "openrouter", "groq", "together"],
+              "default": "openai"
+            }
+          }
+        }
+      ]
+    },
+    "protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string", "enum": ["minions", "minion"], "default": "minions" },
+        "max_rounds": { "type": "integer", "minimum": 1, "default": 3 },
+        "log_dir": { "type": "string", "default": "minion_logs" }
+      }
+    },
+    "plugin": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "bridge_python": { "type": "string", "default": "python" },
+        "bridge_script": { "type": "string", "default": "python/minions_bridge.py" },
+        "timeout_ms": { "type": "integer", "minimum": 1000, "default": 300000 },
+        "max_buffer": { "type": "integer", "minimum": 1024, "default": 20971520 }
+      }
+    }
+  }
+}

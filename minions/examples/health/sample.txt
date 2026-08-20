@@ -1,0 +1,1323 @@
+Visit Notes:
+
+**Dear colleague, **
+
+Herewith we report on Mr. John Williams, born 08/08/1956, inpatient from
+10/03/2015 to 10/06/2015.
+
+**Diagnosis:**
+
+Multiple Myeloma IgG kappa.
+
+**Staging and Initial Diagnosis:**
+
+Date: 03/2015
+
+Stage: IIA based on the Salmon and Durie scale, ISS II.
+
+-   CT whole body 03/11/2015: Osteolysis detected in the seventh
+    thoracic vertebra (T7); pathologic fracture observed in the first
+    lumbar vertebra (L1).
+
+-   Bone marrow infiltration: Initial histological evaluation showed
+    22%; cytomorphological assessment revealed 28%.
+
+**Histological Findings:**
+
+Date: 03/2015
+
+**FISH (Fluorescence In Situ Hybridization) Results:** Detected an
+additional signal for both CCND1 and CCND3. Presence of one trisomy or
+tetrasomy 9. Additional signals observed for 5p15- and 5q31- as well as
+19p13- and 19q13-. 46, XY with a detected ASxL1 mutation.
+
+**Treatment Timeline:**
+
+**01-02/15:** Administered 2 cycles of
+Cyclophosphamide-Bortezomib-Dexamethasone (CyBorD). Resulted in stable
+disease but caused prolonged pancytopenia.
+
+**03/15 - 06/15:** Administered 3 cycles of a combination treatment
+including Carfilzomib, Lenalidomide, and Dexamethasone.
+
+**07/15:** Underwent stem cell mobilization using cyclophosphamide.
+
+**07-08/15:** Experienced extended pancytopenia and regeneration. Bone
+marrow puncture showed progressive disease with a significant increase
+in plasma cell infiltration, reaching 92%.
+
+**09/02/15:** Received the first dosage of daratumumab at 16mg/kg.
+Subsequently developed thrombocytopenia. Treatment did not include
+Revlimid.
+
+**Histopathological report: **
+
+Multiple myeloma, IgG kappa. The evaluation is for myelodysplastic
+syndrome in the presence of tricytopenia and an ASXL1 mutation.
+
+**Methods:** Hematoxylin and eosin (HE), periodic acid-Schiff (PAS),
+iron, Giemsa, Gomori, chloroacetate esterase, step sections,
+decalcification, and 1 block.
+
+**Microscopic Examination:**
+
+The sample is a 2 cm long bone marrow biopsy core that contains more
+than ten medullary canals. The cellularity is around 20-30%, which is
+considered normocellular for the patient\'s age. There is evidence of
+bone marrow edema and heightened hemosiderosis. Recent stromal
+hemorrhages are also observed. There is a relative increase in
+erythropoiesis with a ratio of erythropoiesis to granulopoiesis being
+approximately 2:1. Erythropoiesis is present in well-defined zones with
+regular maturation. Only minimal nuclear rounding is observed.
+Granulopoiesis matures into segmented granulocytes. PAS staining reveals
+some morphologically normal megakaryocytes. Occasionally there are bare
+nuclei and possible microforms. Scattered mature plasma cells are
+observed with no signs of atypical proliferation. The argyrophilic
+fibrous network is fine, and no fibrosis is detected.
+
+**Preliminary Findings:**
+
+The bone marrow biopsy is normocellular for the age with a relative
+increase in erythropoiesis that shows only minimal cytological atypia.
+Granulopoiesis is slightly reduced, while megakaryopoiesis is
+normocellular with a few cells that are hypolobulated.There is bone
+marrow edema and enhanced hemosiderosis. Scattered mature plasma cells
+are also noted.
+
+Based solely on histomorphologic observations, it is not enough to
+confirm a diagnosis of myelodysplastic syndrome (MDS), which is the
+suspected clinical diagnosis. For a more thorough evaluation of
+potential atypicalities in the megakaryopoiesis (like
+micromegakaryocytes), further immunohistochemical examination is
+recommended. Assessing the blast content is also advised. There is no
+evidence currently of manifest infiltrates from the previously diagnosed
+multiple myeloma.
+
+**Immunohistochemical Additional Findings (Dated 10/04/2015):**
+
+**Immunohistochemistry Stains Used:** CD3, CD79a, CD34, CD117, MUM-1,
+Kappa, lambda, CyclinD1, CD61.
+
+Blast cells positive for CD34 and CD117 are below 5% of the total. CD3
+stains scattered T lymphocytes, and CD79a identifies sporadic B
+lymphocytes and some plasma cells. Plasma cells are also positive for
+MUM-1 and exhibit polytypic expression of kappa and lambda light chains.
+There is no co-expression with CyclinD1. CD61 highlights the previously
+described megakaryocytes, and no micromegakaryocytes are observed.
+
+**Final Report:**
+
+The bone marrow biopsy is representative and normocellular for the
+patient\'s age. There is a relative increase in erythropoiesis that
+shows only minor cytological atypia. Granulopoiesis appears slightly
+reduced, while megakaryopoiesis presents with a few hypolobulated cell
+forms. Evidence of bone marrow edema and increased hemosiderosis is
+noted, along with scattered mature plasma cells.
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+We hereby report on Mr. Williams, John, born 08/08/1956, inpatient from
+11/30/2015 to 12/28/2015.
+
+**Oncological Diagnosis**:
+
+Multiple myeloma IgG kappa.
+
+Initial diagnosis 03/15: Stage IIA (Salmon and Durie), ISS II.
+
+**Sites**:
+
+Osteolysis in T7 vertebra, fracture in T1 vertebra.
+
+Bone marrow: 22% histological, 28% cytomorphologic infiltration.
+
+**Histology**:
+
+Bone marrow biopsy 11/16: FISH: Additional signals for CCND1, CCND3;
+Trisomy 3, 9; Additional signals on chromosomes 5 and 19. Chromosomal
+analysis: 46, XY with ASxL1 mutation.
+
+**Treatment**:
+
+01-02/15: 2 cycles Cyclophosphamide-Bortezomib-Dexamethasone -\>
+Stable disease, prolonged low blood counts.
+
+03/15 - 06/15: 3 cycles Carfilzomib/Lenolidomide/Dexamethasone.
+
+07/15: Stem cell mobilization with Cyclophosphamide.
+
+07-08/15: Extended low blood count. Bone marrow biopsy: 92% plasma cell
+infiltration.
+
+09/02/15: Darzalex 16mg/kg initial dose, with platelet count drop. No
+Lenalidomide.
+
+09/04/15: 10 cycles of Darzalex, 1 cycle with Lenalidomide due to
+renewed low platelet and white blood cell counts.
+
+11-12/15: Conditioning chemo with Fludarabine/Treosulfan, then
+allogeneic stem cell transplant from HLA-matched unrelated donor.
+Immunosuppression with ATG, cyclosporine, Mycophenolate Mofetil.
+
+**Complications**:
+
+Mucositis, central line infection, gastrointestinal symptoms, urinary
+infections with E. faecium and E.coli, JC virus bladder infection.
+
+**Secondary Diagnoses**:
+
+Dry eye syndrome, Type 2 diabetes managed with oral meds, Hypertension.
+
+**Treatment Plan**:
+
+Gradual reduction of immunosuppression based on graft vs. host disease
+signs.
+
+**Radiology**:
+
+CT Whole Body: 12/01/15: Various areas of bone osteolysis. Degeneration
+of spine.
+
+CT Chest 12/02/15 and 12/03/15: Changes in lungs and some fluid
+accumulation.
+
+**Medication**:
+
+  **Medication**                 **Dosage**    **Frequency**
+  ------------------------------ ------------- ---------------
+  Mycophenolic Acid (Myfortic)   360 mg        Twice Daily
+  Cyclosporine (Sandimmune)      200 mg        Daily
+  Artificial Tears               As directed   3x Daily
+  Candesartan (Atacand)          8 mg          Daily
+  Tamsulosin (Flomax)            0.4 mg        Daily
+  Pantoprazole (Protonix)        40 mg         Daily
+  Amlodipine (Norvasc)           5 mg          Twice Daily
+  Cotrimoxazole (Bactrim)        960 mg        Mon/Wed/Fri
+  Valacyclovir (Valtrex)         500 mg        Twice Daily
+
+**Summary**:
+
+Mr. Williams was admitted on 11/30/2015 for treatment related to his
+Multiple Myeloma. He underwent conditioning chemotherapy,
+immunosuppressive therapy, and stem cell transplantation. He experienced
+complications, including infections and symptoms affecting multiple
+systems. Close monitoring of blood pressure and glucose is recommended.
+He was discharged on 12/28/2015 in good condition and will be followed
+up in the outpatient clinic. If there are worsening symptoms, he should
+visit the emergency department immediately.
+
+**Dear Mr. Williams,**
+
+We report on your outpatient treatment on 02/15/2016.
+
+**Diagnoses:**
+
+1.  **Multiple Myeloma** IgG kappa, diagnosed 03/2015.
+
+    Stage IIA as per Salmon and Durie, stage II as per ISS.
+
+    Osteolysis at T7 vertebra, fracture at T1 vertebra.
+
+    Bone marrow infiltration: 22% histologically, 28% cytologically.
+
+    FISH: Indications of additional CCND1 and CCND3 signals; Trisomy 3,
+    additional signals at various chromosomes.
+
+    Chromosome analysis: 46, XY \[20\].
+
+**Secondary diagnoses:**
+
+Type 2 diabetes mellitus
+
+Hypertension
+
+Cataract (surgery 06/2018)
+
+Nodular goiter
+
+RSV pneumonia (03/2018)
+
+**Summary:**
+
+Mr. Williams presents in good general health to our bone marrow
+transplant (BMT) outpatient clinic. There are no signs of infection or
+chronic graft rejection. He has shown significant improvement in
+resilience and does not have any complaints. Vital signs are stable.
+Blood tests showed ongoing regeneration with normal light chains and
+persistent positive immunofixation. There is no need for
+myeloma-specific therapy at present, but close monitoring of the
+paraprotein is required.
+
+**Medication:**
+
+  **Medication**                **Dosage**             **Frequency**
+  ----------------------------- ---------------------- -------------------------------------------------------
+  Tamsulosin (Flomax)           0.4 mg                 Daily in the morning
+  Candesartan (Atacand)         8 mg                   Twice Daily
+  Metformin (Glucophage)        1000 mg                0.5 tablet in the morning, 1.5 tablets in the evening
+  Pantoprazole (Protonix)       20 mg                  Daily in the morning
+  Vitamin D3 (various brands)   20,000 IU              Once a week
+  Allopurinol (Zyloprim)        100 mg                 Daily in the morning
+  Insulin (various types)       As per sliding scale   As per sliding scale
+
+With kind regards
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+We are providing an update on our shared patient, Mr. John Williams, who
+consulted with us on June 15, 2018.
+
+**Consultation Summary:**
+
+8.  **Multiple Myeloma**
+
+    **Kidney biopsy scheduled for tomorrow.**
+
+    **Prostate cancer**
+
+**Current Status:**
+
+Acute renal failure accompanied by proteinuria due to the recent
+diagnosis of multiple myeloma.
+
+Multiple osteolytic lesions, including at the T4, T7, L1 vertebra and
+the ribs.
+
+**Diagnosis:**
+
+Multiple myeloma.
+
+Prostate cancer
+
+**Clinical Presentation:**
+
+Osteolytic lesion presenting as thoracic pain.
+
+**Imaging Findings:**
+
+Osteolytic lesion at T4 vertebra with involvement of the posterior edge.
+
+**Planned Procedures:**
+
+Restricted bed rest.
+
+Whole spine MRI with STIR sequences, to be presented in the upcoming
+tumor board meeting for deciding further course of action.
+
+**Previous Diagnoses:**
+
+May, 2018, Nephrology: Enlarged kidneys noted bilaterally.
+
+January, 2018, Urology: Prostate cancer
+
+December, 2015, Internal Medicine: Multiple myeloma without evidence of
+complete remission.
+
+**Previous Procedures:**
+
+Transrectal biopsy of the prostate.
+
+**Histology Report, Date: June 13, 2018:**
+
+Suspected plasmacytoma with paraproteinemia.
+
+WBC 6.47; Hb 10.8; Platelets 251,000.
+
+Bone marrow biopsy: Cellularity approximated at 48%, indicating slightly
+increased cellularity. Amidst reduced hematopoiesis, there is
+proliferation of plasmacytoid cells with certain features.
+
+**Preliminary Report:**
+
+The bone marrow sample indicates possible infiltration due to plasma
+cell myeloma. Additional tests will be conducted to confirm and further
+elucidate this finding.
+
+**Supplementary Findings:**
+
+Immunohistochemical staining: CD138, Kappa, Lambda, CD20.
+
+Microscopic findings confirm the presence of nodular infiltrates with
+certain features.
+
+**Final Report:**
+
+Bone marrow sample indicates infiltration by a plasma cell myeloma with
+kappa light chain restriction. Additionally, regular trilinear
+hematopoiesis is significantly reduced.
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+I wish to provide an update on our mutual patient, Mr. John Williams,
+born 08/08/1956, who presented at our clinic at 08/20/2018.
+
+**Diagnosis:**
+
+Present condition: Multiple Myeloma IgG type, coded under ICD-10.
+
+Stage: II B based on Durie and Salmon criteria; determined from Hb 9.1,
+Creatinine 4.5 mg/dL.
+
+**Histology:**
+
+Bone marrow biopsy presents a strong indication of interstitial and
+focal nodular invasion of the marrow space by plasma cell myeloma,
+predominantly of high to intermediate maturity.
+
+**Immunohistochemistry:**
+
+The nodular infiltrates were found positive for CD138 with a kappa-light
+chain restriction (infiltration rate at 62%).
+
+Cytological findings align with high-grade bone marrow infiltration by
+multiple myeloma.
+
+**Tumor Localization:**
+
+MRI of the entire spine conducted on 06/20/2018 reveals disseminated
+bone lesions throughout the spine without any soft tissue involvement.
+There is noted anterior vertebral body involvement at T4.
+
+**Secondary Diagnoses:**
+
+Cysts in the right kidney.
+
+As of 01/2018, a diagnosis of Prostate cancer with a Gleason score of 8
+and a PSA reading of 10.02.
+
+Previous rib fracture, which may be associated with the multiple
+myeloma.
+
+Chronic renal failure, with ongoing dialysis treatment.
+
+Documented mitral valve surgery in 2015.
+
+History of Deep Vein Thrombosis in 1999.
+
+**Prior Treatments:**
+
+Initial diagnosis of multiple myeloma IgG kappa in 2015.
+
+Prostate cancer was diagnosed in 01/2018 following spontaneous rib
+fractures, Gleason score of 8.
+
+A PSMA-PET-CT scan in 05/18 showed multiple bone lesions, notably
+pronounced at Th4.
+
+Tumor board review in 06/2018 concluded treatment strategies for
+urological tumors, encompassing radiation therapy targeting Th4 and
+antiandrogen therapy for the identified prostate cancer, using a GnRH
+analog.
+
+The progression of multiple myeloma required the commencement of
+systemic treatment with Velcade and Dexamethasone.
+
+**Study**: PSMA-PET-CT Scan
+
+**Date of Study**: 05/2018
+
+**Clinical Information**: Prostate cancer diagnosed in 01/2018 following
+spontaneous rib fractures. Gleason score of 8.
+
+**Technique**:
+
+Whole body positron emission tomography/computed tomography (PET/CT) was
+performed following the intravenous administration of PSMA-radiotracer.
+Coronal, sagittal, and axial images were acquired and reviewed.
+
+**Findings**:
+
+Bone: Notably increased PSMA uptake is seen at the level of T4 vertebral
+body consistent with metastatic involvement. The lesion has caused
+cortical erosion and expansion with potential involvement of the
+anterior spinal canal. Multiple rib lesions are identified,
+corresponding with the clinical history of spontaneous rib fractures.
+These lesions exhibit no increased PSMA uptake. No other foci of
+increased PSMA uptake throughout the axial and appendicular skeleton.
+
+**Prostate**:
+
+12. The prostate gland demonstrates diffusely increased uptake, which is
+    consistent with primary prostate malignancy, especially given the
+    known clinical history.
+
+**Thorax/Abdomen: **
+
+13. No abnormal PSMA avid soft tissue masses or lymphadenopathies were
+    noted in the visualized fields. No pulmonary nodules or masses
+    suggestive of metastatic disease were identified. Liver, spleen,
+    kidneys, and adrenal glands appear unremarkable with no evidence of
+    metastatic lesions.
+
+**Impression**:
+
+Osseous metastasis from prostate cancer with involvement of the T4
+vertebral body. No evidence of soft tissue, lymph node, or pulmonary
+metastases in the visualized fields. Prostate gland showing evidence
+consistent with primary malignancy.
+
+**Current Radiation Therapy:**
+
+**Indication:** Radiotherapy became a consideration due to a sizable
+osteolytic lesion at T4, both for pain alleviation and stabilization.
+Concurrent treatment of the aching ribs on the right side (7th-9th) was
+also performed.
+
+**Technique:** 6 MeV photons from a linear accelerator, administering a
+cumulative dose of 30 Gy to thoracic vertebra 4 and 20 Gy to the ribs
+with respective daily doses.
+
+1.  **Treatment Duration:**
+
+    Th4: 08/21/2018 to 08/27/2018
+
+    Rib area: 08/21/2018 to 08/27/2018
+
+**Clinical Update:**
+
+Throughout the therapy period, Mr. Williams remained admitted to our
+Oncology ward for ongoing reduced dosage chemotherapy using Velcade. He
+has reported a decline in pain sensations during this timeframe. The
+overall health status appeared satisfactory, with no skin irritation
+observed at the irradiated sites.
+
+**Subsequent Actions:**
+
+Guidance on skincare and potential adverse effects have been provided to
+Mr. Williams. The intensity of the chemotherapy will soon be escalated.
+A radio-oncological assessment has been scheduled in our outpatient
+facility for 09/05/2018 at 12:00 PM. I kindly request the most recent
+test results by this date.
+
+**Note:** In compliance with the Radiation Protection Act, we shall
+undertake regular evaluations and request updates on the patient\'s
+condition. Mr. Williams has been apprised of the necessity for
+consistent oncological check-ups.
+
+Warm regards,
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+We wish to update you on our mutual patient, Mr. John Williams.
+
+**Diagnosis:**
+
+Current multiple myeloma IgG type
+
+**Tumor Localization:**
+
+Based on a whole spine MRI dated June 20, 2018:
+
+Multiple intraosseous lesions throughout the spine without soft tissue
+involvement.
+
+Known intrusion of the T4 cover plate.
+
+**Secondary Diagnoses:**
+
+Right kidney cysts
+
+Diagnosed prostate carcinoma in January 2018, Gleason score 8, initial
+PSA at 10.02.
+
+History of a spontaneous rib fracture related to the multiple myeloma.
+
+Chronic renal insufficiency; he remains on dialysis.
+
+History of mitral valve reconstruction in 2015.
+
+History of deep vein thrombosis in 1999.
+
+**Treatment Overview:**
+
+Diagnosed with multiple myeloma type kappa in 2015 with initially normal
+renal function.
+
+Diagnosed with prostate carcinoma in January 2018 due to spontaneous rib
+fractures, Gleason score 8.
+
+Treatment decisions in 2018 included radiation for vertebral lesions and
+hormone therapy for prostate cancer using a GnRH analogue.
+
+Systemic therapy with Velcade and Dexamethasone initiated due to
+progressive myeloma.
+
+Radiation therapy in August 2018 for vertebral and rib lesions.
+
+**Summary:**
+
+Mr. Williams had a radio-oncological follow-up on September 29, 2018.
+His general health has improved. He remains on thrice-weekly dialysis.
+Recent CT scans show extensive osteolysis of the spine with several
+vertebral collapses. Currently, we see no urgent fracture risk or need
+for additional radiation therapy. We have planned regular clinical
+check-ups with Mr. Williams. His next follow-up is scheduled in three
+months.
+
+**Oncologic treatment: **
+
+Daratumumab/lenalidomide/dexamethasone regimen:
+
+Daratumumab 16mg/kg: Days 1, 8, 15, 22 for cycles 1 & 2 (every 28 days
+for 8 weeks).
+
+Days 1, 15 for cycles 3-6 (every 28 days for 16 weeks).
+
+Day 1 for subsequent cycles (every 28 days).
+
+Dexamethasone 20mg on Daratumumab days, with an additional 20mg the day
+after (totaling 40mg/week).
+
+Lenalidomide 5mg from day 1-21 (every 28 days).
+
+Bondronate every 4 weeks (last administered on 12/13/2016).
+
+Re-evaluation of hemodialysis and autologous peripheral blood stem cell
+transplant (PBSCT) after 2 cycles of daratumumab.
+
+**CT Spine scan (09/30/2018): **
+
+**Technique**: Contrast-enhanced computed tomography (Omnipaque 240) of
+the thoracic and lumbar spine was performed with axial slices, and
+multiplanar reconstructions in sagittal and coronal orientations.
+
+**Findings**:
+
+**Thoracic Spine**:
+
+Extensive osteolytic lesions are identified in multiple thoracic
+vertebrae. Specifically, vertebral collapses are noted at T4, T7, T9,
+T11. No significant bony destruction of pedicles, lamina and spinous
+processes. No evidence of paravertebral or epidural soft tissue masses.
+
+**Lumbar Spine**:
+
+Prominent osteolytic changes are seen in L1 (with fracture) and L4
+vertebral bodies. However, there is no significant vertebral collapse.
+Preserved pedicles, lamina, and spinous Processes without significant
+osteolysis. No evidence of abnormal masses or lymphadenopathy.
+
+No significant central canal stenosis or neural foraminal narrowing. The
+intervertebral discs are preserved without significant discopathies.
+
+**Impression**:
+
+Extensive osteolysis in multiple vertebral bodies, specifically in the
+thoracic and lumbar spine, with vertebral collapses at levels T4, T7,
+T9, and T11 as well as L1. Also, osteolytic changes in L4 of the lumbar
+spine.
+
+Currently, based on imaging, there does not appear to be an urgent
+fracture risk, and no radiologic signs suggesting a need for imminent
+radiation therapy. No soft tissue abnormalities identified in the
+examined regions.
+
+**Medication: **
+
+  **Medication**               **Dosage**   **Frequency**
+  ---------------------------- ------------ ----------------------------------------
+  Fentanyl Patch (Duragesic)   25 μg        Changed every 72 hours
+  Enoxaparin (Lovenox)         0.2 mL       Nightly (dialysis dose)
+  Dexamethasone (Decadron)     8 mg         In the morning (day after Daratumumab)
+  Pantoprazole (Protonix)      40 mg        Daily in the morning
+  Cotrimoxazole (Bactrim)      480 mg       Thrice weekly (Mon, Wed, Fri)
+  Valacyclovir (Valtrex)       500 mg       Daily in the morning
+  Acetaminophen (Tylenol)      500 mg       Orally, three times daily
+  Ibandronate (Boniva)         2 mg         Every 4 weeks
+  Leuprorelin (Lupron Depot)   3.75 mg      Monthly (4-week depot) subcutaneously
+  Pregabalin (Lyrica)          25 mg        Twice a day
+  Amlodipine (Norvasc)         5 mg         Daily in the morning
+  Bisoprolol (Zebeta)          5 mg         Daily in the morning
+  Lenalidomide (Revlimid)      5 mg         Nightly
+  Ondansetron (Zofran)         8 mg         As needed, up to twice daily
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+We are updating you on Mr. John Williams\' outpatient visit on December
+13, 2018.
+
+**Diagnosis:**
+
+Febrile respiratory infection.
+
+**Underlying Conditions:**
+
+Multiple myeloma, kappa light chain, stage IIIB as classified by Salmon
+and Durie.
+
+Chronic kidney disease requiring hemodialysis.
+
+Prostate cancer.
+
+**Summary:**
+
+Mr. Williams came to the emergency room with fever and dry cough during
+his multiple myeloma treatment with Darzalex, Revlimid, and
+Dexamethasone. His vital signs were recorded, and laboratory tests
+showed signs of infection and confirmed chronic kidney disease. Chest
+X-ray indicated possible inflammation. Given these findings, Mr.
+Williams was admitted for antibiotic therapy. Further observations and
+treatments were documented.
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+This letter pertains to Mr. John Williams, who was hospitalized from
+December 14 to 21st, 2018.
+
+**Oncological Diagnosis:**
+
+Multiple myeloma, kappa light chain, initially diagnosed in June 2018 as
+stage IIIB per Durie and Salmon criteria.
+
+**Treatment Details:**
+
+He underwent various treatment regimens for multiple myeloma over the
+course of the year. His current condition indicates an
+influenza-positive pneumonia, likely with a bacterial superinfection. He
+continues hemodialysis thrice a week.
+
+**Secondary Diagnoses:**
+
+Several renal complications were documented in June 2018.
+
+**Plan of Care:**
+
+Mr. Williams\' therapy plan was discussed in a tumor board meeting. He
+remains on a regimen of Darzalex, Revlimid, and Dexamethasone.
+
+**Summary:**
+
+Mr. Williams came to the emergency room on December 13, 2018, with cough
+and fever. Further details about his history can be found in previous
+communications. On admission, he showed signs of a respiratory
+infection, confirmed by a chest X-ray. He was treated with antibiotics,
+which were later escalated. He also tested positive for influenza A and
+was given Tamiflu. After a short in-patient stay, he has shown
+improvement. He is scheduled to continue his therapy in our clinic on
+December 22, 2018. In case of any complications, he has been advised to
+return to our emergency room immediately.
+
+For future consultations, please provide a referral slip for each new
+quarter.
+
+Warm regards
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+We are writing to inform you about Mr. John Williams, who was an
+inpatient in our clinic from March 1, 2019, to March 3, 2019.
+
+Oncological diagnosis:
+
+Mr. Williams was diagnosed with Multiple Myeloma light chain kappa. He
+received his follow-up diagnosis in June 2018, which was at stage IIIB
+per the Durie and Salmon staging system.
+
+Treatment:
+
+In June 2018, he was given VelDex due to impaired renal function.
+Subsequently, he received Carfilzomib (15mg/m2 on days 1-2, 8-9, 15-16),
+Lenalidomide (5 mg, on days 1-21), and Dexamethasone (40mg, on days 1,
+8, 15-16, 22). In addition, he was treated with Pomalidomide (4mg on
+days 1-21), Doxorubicin (9mg/m2 on days 1, 4), and Dexamethasone (40mg,
+on days 1, 8, 15, 22). He underwent radiation therapy to T4 of the rib
+thorax in August. Between August to October 2018, he had three cycles of
+Pomalidomide, Doxorubicin, and Dexamethasone, after which the disease
+progressed. From November 2018 to February 2019, he had four cycles of
+Daratumumab, Lenalidomide, and Dexamethasone.
+
+**Outcome:**
+
+The response to the treatment was very good partial remission (VGPR).
+
+**Present Treatment:**
+
+He underwent mobilization chemotherapy with cyclophosphamide, with a
+dosage adjusted due to his requirement for dialysis (1500mg/m^2^ on day
+1 and 1000mg/m^2^ on day 2). He received dialysis on March 2 in our
+nephrology department.
+
+**Secondary diagnoses:**
+
+In March 2018, he developed renal insufficiency requiring thrice-weekly
+dialysis. In January 2018, he was diagnosed with prostate carcinoma and
+was treated with an androgen blockade using Enantone.
+
+**Future Therapy Plan:**
+
+The tumor board\'s decision from March 3, 2019 was to continue with
+Daratumumab, Revlimid, and Dexamethasone due to the good response. He
+will undergo stem cell mobilization and high-dose therapy with
+autologous stem cell transplant. Monitoring is scheduled for March 14,
+2019, followed by dialysis at our dialysis center on Mondays,
+Wednesdays, and Fridays.
+
+**Medications:**
+
+His current medications include:
+
+  **Medication**                 **Dosage**         **Frequency**
+  ------------------------------ ------------------ ---------------------------------------------------
+  Fentanyl Patch (Duragesic)     25 μg              Changed every 72 hours
+  Enoxaparin (Lovenox)           0.2 mL             For dialysis
+  Dexamethasone (Decadron)       8 mg               On March 4 and 5
+  Pantoprazole (Protonix)        40 mg              
+  Cotrimoxazole (Bactrim)        480 mg             Thrice weekly on Mondays, Wednesdays, and Fridays
+  Valacyclovir (Valtrex)         500 mg             
+  Ibandronate (Boniva)           2 mg               Every four weeks
+  Leuprorelin (Lupron Depot)     3.75 mg            Every four weeks
+  Pregabalin (Lyrica)            25 mg              
+  Amlodipine (Norvasc)           Currently paused   Currently paused
+  Bisoprolol (Zebeta)            2.5 mg             
+  Filgrastim (Neupogen/Granix)   48 million IU      
+
+**Summary:**
+
+Mr. Williams was admitted on March 1, 2019, for mobilization
+chemotherapy with cyclophosphamide. Please refer to our previous letters
+for a detailed history. His last treatment was with daratumumab,
+Revlimid, and dexamethasone. Fortunately, this treatment showed a very
+good response. He is dialyzed three times a week at our clinic due to
+chronic renal insufficiency. He was discharged on March 3, 2019, and we
+request the administration of filgrastim as per the medication plan
+starting March 6, 2019. CD34+ monitoring is scheduled for March 14,
+2019. Depending on the CD34+ count, stem cell collection may need to be
+scheduled on a dialysis-free day. We have coordinated with our
+colleagues at the dialysis center for the collection via the atrial
+catheter. A follow-up for blood count and Ibandronate administration has
+been scheduled for March 10, 2017. If his condition deteriorates or if
+he shows signs of infection, bleeding, or any other complications, he
+should immediately be brought to our emergency department. Please
+remember to bring a referral form during your initial visit each
+quarter.
+
+Therapy recommendation based on Transthoracic echocardiography findings:
+
+Mr. Williams has a normally sized left ventricle with standard global
+function. There\'s no evidence of any regional wall motion
+abnormalities. The right ventricle is also of normal size with standard
+function. The left atrium is not dilated. There\'s marked concentric
+left ventricular hypertrophy. His aortic valve shows insufficiency of I°
+(PHT 520 ms), while the mitral and tricuspid valves appear normal. There
+is no significant pericardial effusion. Overall, he has a standard left
+ventricular function with no significant valvular diseases or pulmonary
+hypertension.
+
+**Surgery Report:**
+
+Diagnosis: Terminal renal failure.
+
+Procedure: Creation of a right upper arm brachialis-basilica fistula
+with the anterior movement of the right basilic vein.
+
+**Report:**
+
+Mr. Williams required dialysis due to terminal renal insufficiency. For
+this purpose, an arteriovenous (AV) fistula was created as a dialysis
+access. Previously, dialysis was performed using a right atrial
+catheter. After mapping, only the basilic vein on the right arm seemed
+suitable. Hence, a brachialis-basilica fistula was created with anterior
+transposition of the basilica vein. A partial mobilization of the
+basilica vein was performed. Afterward, a brachialis-basilica
+anastomosis was carried out. The operation was uncomplicated.
+
+Your collaboration has been instrumental in managing this patient
+effectively. If you have any further queries or require additional
+details, please do not hesitate to contact our office.
+
+**Medication:**
+
+  **Medication**                  **Dosage**         **Frequency**
+  ------------------------------- ------------------ ------------------------------------
+  Fentanyl Patch (Duragesic)      25 μg              Change every 72 hours
+  Enoxaparin (Lovenox)            0.2 mL             Nightly (dialysis dose)
+  Dexamethasone (Decadron)        8 mg               Morning on 03/05 & 03/06
+  Pantoprazole (Protonix)         40 mg              Morning
+  Cotrimoxazole (Bactrim Forte)   480 mg             Morning 3x weekly on Mon, Wed, Fri
+  Valacyclovir (Valtrex)          500 mg             Half tablet in the morning
+  Ibandronate (Boniva)            2 mg               Every 4 weeks
+  Leuprorelin (Lupron Depot)      3.75 mg            Monthly subcutaneous (Morning)
+  Pregabalin (Lyrica)             25 mg              Morning and Evening
+  Amlodipine (Norvasc)            Currently paused   Currently paused
+  Bisoprolol (Zebeta)             2.5 mg             Morning and Evening
+  Filgrastim (Neupogen/Granix)    48 million IU      Morning and Evening
+
+Best regards,
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+I am writing to provide you with a detailed report on Mr. John Williams,
+who was admitted to our facility from May 8, 2020, to May 28, 2020.
+
+**Diagnoses:**
+
+History of acute mitral valve endocarditis in March 2020.
+
+Subsequent re-operation entailing mitral valve replacement using a
+Bioprosthesis (29 mm) coupled with the resection of all infected tissue
+from the mitral valve\'s supporting apparatus on March 24, 2020.
+
+The origin remains uncertain, but potential associations include Demers
+catheter infection and port catheter infection (confirmed presence of
+Staphylococcus epidermidis).
+
+Surgical removal was conducted on March 21, 2020, with no findings at
+the catheter tips.
+
+14. Antibiotic regimen included:
+
+    Meropenem from April 2, 2020, to April 23, 2020.
+
+    Linezolid 600 mg from April 3, 2020, to April 19, 2020.
+
+    Daptomycin from April 3, 2020, to May 27, 2020.
+
+    Fosfomycin from April 19, 2020, to May 28, 2020.
+
+History of mitral valve reconstruction via minithoracotomy in 2015.
+
+Right-side vision loss due to septic-embolic central retinal artery
+occlusion.
+
+Left hemispheric ischemia in the caput nuclei caudati/lenticular nuclei
+on April 5, 2020, possibly embolic in origin from mitral valve
+endocarditis.
+
+History of brainstem transient ischemic attack (TIA) on March 11, 2020,
+potentially embolic in relation to mitral valve endocarditis.
+
+Jugular vein thrombosis.
+
+20. Hematological/oncological diagnoses comprise:
+
+    Multiple myeloma with lambda light chains, stage IIIB according to
+    the Salmon and Durie criteria, first diagnosed in 2015. This was
+    accompanied by multiple osteolysis occurrences, history of radiation
+    to Th4 and rib thorax, and treatment with Daratumumab. Current
+    treatment has been paused due to remission.
+
+    A prostate carcinoma diagnosis in January 2018
+
+**Other medical conditions include:**
+
+-Chronic kidney failure necessitating dialysis since 2018, history of a
+Demer catheter with explantation on March 2020, and angioplasty on the
+right V. basilica and V. brachialis due to stenosis-related shunt
+dysfunction.
+
+-History of brainstem TIA in April 2019.
+
+-Sensations of tingling paresthesias in both lower legs.
+
+-History of bilateral deep vein thrombosis.
+
+-Frequent calf muscle cramps.
+
+**Medical History Overview:**
+
+Mr. Williams\'s latest admission on May 8, 2020, was to assess remission
+status and determine if continuation of treatment for his known multiple
+myeloma was necessary. Previously, until March 2020 he was under a
+Daratumumab monotherapy (as he could not tolerate Revlimid), which
+showed stable disease progression. Prior to this, he was treated at our
+local hospital for mitral valve endocarditis which had a complex
+trajectory. At the time of admission, Mr. Williams felt generally weak
+but was otherwise in stable condition. Upon discontinuation of the
+fentanyl patch, his back pain increased. He exhibited no fevers and had
+no known allergies. His appetite was low, and he reported no nausea.
+Since his heart surgery, he has experienced numbness in his left heel
+and toes. His residual urine output was about 190 mL per day, and he was
+undergoing regular dialysis.
+
+**Physical Examination:**
+
+The patient was alert, responsive, and fully oriented. The examination
+of the head, neck, and lungs was unremarkable. Cardiac auscultation
+revealed clear and rhythmic heart sounds without any abnormal findings.
+There was a non-irritated sternotomy scar. Examination of his back
+revealed decubitus ulcers. Abdominal examination showed a soft,
+non-tender abdomen with normal bowel sounds. Extremity examination
+revealed minor edema.
+
+**Diagnostic Imaging and Tests:**
+
+A series of diagnostic tests, including sonography, whole body CT scan,
+ophthalmological exams, and histology were conducted. The results are
+detailed within this report. In summary, the findings indicate:
+
+-Limited abnormalities in the heart\'s echocardiography, with potential
+mitral valve issues to monitor.
+
+-Bone scans revealed extensive osteopenia and other abnormalities
+related to his known multiple myeloma, but no evidence of new
+osteolysis.
+
+-Eye examinations confirmed the previously noted vision issues,
+potentially stemming from the mitral valve endocarditis, but provided no
+clear solutions.
+
+-Histological evaluation of bone marrow samples indicates largely
+regular hematopoiesis but confirms infiltration from the known multiple
+myeloma.
+
+**Summary and Recommendations:**
+
+Mr. John Williams is a 63-year-old male with a complex medical history
+involving multiple organ systems. His most recent admission was in
+relation to his multiple myeloma, for which he has been in remission and
+will be monitored closely. His mitral valve endocarditis from earlier
+this year has been resolved and treated appropriately. Due to the
+multiple comorbidities, it is crucial for any treating facility or
+physician to be fully aware of his history to provide optimal care.
+Continual monitoring of his cardiovascular and renal systems is
+essential. The importance of maintaining strict adherence to his
+dialysis regimen and potential antibiotic prophylaxis is emphasized.
+Given his weakened general condition and chronic pain, palliative care
+might also be a suitable approach to consider, focusing on enhancing his
+quality of life and addressing his pain management needs.
+
+Please refer to the attached files for further details and a complete
+breakdown of tests and findings. I trust this report will help guide the
+appropriate medical care for Mr. John Williams.
+
+Sincerely,
+
+**Medication:**
+
+  **Medication**                            **Dosage**           **Frequency**
+  ----------------------------------------- -------------------- -----------------------------------------------------------------
+  Clopidogrel (Plavix)                      75 mg                Morning
+  Enoxaparin (Lovenox)                      0.2 mL s.c.          Evening, only on days when not receiving dialysis
+  Dronabinol (Marinol) Drops                3 drops              Morning and Evening
+  Leuprorelin (Lupron Depot)                Monthly depot        Every 4 weeks via subcutaneous injection
+  Fentanyl Transdermal System               12 μg/hour           Changed every 3 days
+  Pantoprazole (Protonix)                   40 mg                Morning
+  Sevelamer (Renagel)                       800 mg               Morning
+  Multivitamin                              One tablet           Morning
+  Torsemide (Torem)                         200 mg               Morning
+  Vitamin D3                                20,000 IU            Once weekly
+  Sodium bicarbonate (Bicanorm)             One tablet           Morning
+  Calcitriol (Rocaltrol)                    0.25 μg              Morning
+  Valacyclovir (Valtrex)                    500 mg half-tablet   Morning
+  Trimethoprim/Sulfamethoxazole (Bactrim)   480 mg               Morning on Mondays, Wednesdays, and Fridays
+  Dexamethasone (Decadron)                  4 mg                 Morning on day 1 and day 2 following daratumumab administration
+
+
+---begin page---
+Visit Notes:
+
+**Dear colleague, **
+
+I am writing to provide an update on the medical condition and treatment
+of Mr. John Williams, who has been undergoing inpatient treatment in our
+facility since September 30, 2021.
+
+**Diagnoses**:
+
+**Present**: Acute impairment of the visual field.
+
+**Oncological Diagnosis**:
+
+1.  Diagnosis of Multiple Myeloma with kappa light chains, staged at
+    IIIB as per the Salmon and Durie criteria
+
+    Observable multiple osteolyses.
+
+    History of radiation to the T4 and thoracic rib.
+
+    Starting from 2018, he required dialysis due to renal insufficiency,
+    scheduled on Mondays, Wednesdays, and Fridays in our local clinic.
+
+    2018: Treatment involved Bortezomib and Dexamethasone, but he was
+    refractory to this combination. The regimen of Carfilzomib,
+    Lenalidomide, and Dexamethasone was also found to be ineffective.
+
+    Radiation was administered to the T4 (totaling 30 Gy) and the
+    thoracic rib (totaling 20 Gy) in August 2018.
+
+    Between August and October 2018: Mr. Williams underwent three cycles
+    of Pomalidomide, Doxorubicin, and Dexamethasone, but the disease
+    showed progression.
+
+    November 2018 to February 2019: He received four treatments of
+    Daratumumab, Lenalidomide, and Dexamethasone, which led to a very
+    good partial response (VGPR).
+
+    In March 2019, he underwent stem cell mobilization due to RSV
+    pneumonia complications and then started on Daratumumab monotherapy
+    (VGPR was last noted in May 2018).
+
+    He continued with Daratumumab treatment until November 2019, after
+    which there was a pause until March 2020 due to remission (VGPR) and
+    a diagnosis of endocarditis.
+
+    A whole body CT scan conducted in March 2020 did not show any new
+    osteolyses.
+
+    By May 2020, there was an increase in LK values, prompting the
+    resumption of Daratumumab, which led to a decrease in free light
+    chains.
+
+    As of June 2020, there was a noted increase in light chain kappa
+    values to 102 mg/L.
+
+    In July 2020, therapy was escalated to include Daratumumab, Revlimid
+    (5 mg), and Dexamethasone.
+
+    By September 2020, a further increase in light chains was observed,
+    prompting a planned switch to Elotuzumab, Pomalidomide, and
+    Dexamethasone.
+
+**For his heart condition:**
+
+Acute mitral valve endocarditis was diagnosed in March 2020. He
+underwent a re-operation for mitral valve replacement with a
+bioprosthesis (29 mm). This procedure, performed in March, 2020,
+involved the resection of all infected tissue from the mitral valve\'s
+holding apparatus. The cause is presumed to be associated with a Demers
+catheter infection or possibly related to a port catheter infection
+(Staphylococcus epidermidis was found). The catheter was surgically
+removed in March 2020. He was on a series of antibiotics, including
+Meropenem, Linezolid, Daptomycin, and Fosfomycin.
+
+**Other pertinent medical events include:**
+
+A history of radiation treatment using a minithoracotomy technique for
+mitral valve reconstruction in 2015.
+
+Right eye amaurosis due to septic-embolic central retinal artery
+occlusion.
+
+Left hemispheric ischemia diagnosed in April 2020, possibly due to
+emboli from the mitral valve endocarditis.
+
+A transient ischemic attack (TIA) in the brainstem observed on in March
+2020, which could be related to emboli from the mitral valve
+endocarditis.
+
+Jugular vein thrombosis.
+
+Prostate cancer diagnosed in 2018.
+
+Chronic renal failure necessitating dialysis since 2018.
+
+Previous procedures include Demers catheter placement (removed on March
+2020) and angioplasty on the right basilic vein and brachial vein due to
+stenosis causing shunt dysfunction.
+
+History of transient ischemic attacks.
+
+Bilateral tingling paresthesias in the lower legs, history of deep vein
+thrombosis, recurrent calf cramps, and hypothyroidism.
+
+Please let me know if you require any further information on Mr.
+Williams. I am confident that this detailed account will assist you in
+understanding his medical history and ensuring optimal care.
+
+**Therapy: **
+
+Therapy schedule: Daratumumab s.c. 1800mg abs. weekly in week 1-8,
+2-weekly in week 9-24, every 4 weeks from week 25. Continuation of
+Bondronat. Regular monitoring and optimal adjustment of cardiovascular
+risk factors.
+
+Medication:
+
+Plavix (Clopidogrel) 75 mg; once daily in the morning
+
+Lovenox (Enoxaparin) 0.2 ml subcutaneously; once daily in the evening on
+non-dialysis days
+
+Marinol (Dronabinol) drops; four drops in the morning and four drops in
+the evening
+
+Duragesic (Fentanyl transdermal patch) 12 μg/hour; change every 3 days
+
+Protonix (Pantoprazole) 40 mg; dosing: Once daily in the morning and
+once daily in the evening for 2 weeks, then once daily in the morning
+
+Renvela 800 mg; dosing: Once daily in the morning
+
+Torem 200 mg; once daily in the morning
+
+Vitamin D3 20,000 IU; once weekly
+
+Calcijex (Calcitriol) 0.25 mcg; once daily in the morning
+
+Valtrex (Valacyclovir) 500 mg; dosing: Half a tablet (250 mg) once daily
+in the morning
+
+Bactrim (Cotrimoxazole or trimethoprim/sulfamethoxazole) 480 mg, once
+daily
+
+Warm regards,
+
+**Clinical Update, 11/12/2022**
+
+Mr. John Williams, a 66-year-old male with a known history of multiple
+myeloma and associated complications, presented again to our facility
+with worsening symptoms over the past three weeks.
+
+**Symptoms**:
+
+Persistent fatigue
+
+Shortness of breath on minimal exertion
+
+Bilateral pitting edema in the lower extremities up to the mid-calf
+
+**Preliminary Findings**:
+
+**Physical Examination**:
+
+1.  Jugular venous distention
+
+    Decreased breath sounds bilaterally with mild basilar crackles
+
+    S3 gallop on cardiac auscultation
+
+**Chest X-ray**:
+
+4.  Cardiomegaly with an enlarged cardiac silhouette. Mild pulmonary
+    edema evident.
+
+**Echocardiogram**:
+
+5.  Reduced left ventricular ejection fraction (LVEF) of 35% (normal \>
+    55%)
+
+    Mild mitral regurgitation
+
+**Lab Results**:
+
+7.  B-type natriuretic peptide (BNP): 890 pg/mL (Normal: \<100 pg/mL)
+
+    Serum Sodium: 130 mEq/L (Normal: 135-145 mEq/L)
+
+    Serum Potassium: 5.8 mEq/L (Normal: 3.5-5.1 mEq/L)
+
+    Blood Urea Nitrogen (BUN): 38 mg/dL (Normal: 7-20 mg/dL)
+
+    Creatinine: 2.1 mg/dL (Normal: 0.8-1.3 mg/dL)
+
+    GFR: 35 mL/min (Reduced)
+
+**Diagnosis**:
+
+Congestive Heart Failure (CHF) with reduced ejection fraction
+
+Renal insufficiency
+
+Multiple Myeloma (primary diagnosis 2015)
+
+Prostate cancer
+
+**Treatment Administered**:
+
+Intravenous furosemide was administered to relieve fluid overload,
+resulting in a significant reduction in edema and improvement in
+breathlessness over the subsequent 48 hours. Lisinopril was initiated
+cautiously to manage CHF and to potentially provide renal protection.
+Metoprolol was started at a low dose, with close monitoring of blood
+pressure and heart rate. Potassium levels were closely monitored given
+initial hyperkalemia; diet and medications were adjusted accordingly.
+Dietary consult emphasized a low-sodium, moderate protein, and
+potassium-restricted diet. Close monitoring of fluid balance
+(input-output) was maintained throughout the stay.
+
+**Progress**:
+
+Mr. Williams showed consistent improvement over his two-week admission.
+Serial echocardiograms indicated a slight improvement in LVEF to 39%.
+The edema receded notably, and his shortness of breath on exertion
+reduced significantly. Labs before discharge showed:
+
+Serum Sodium: 134 mEq/L
+
+Serum Potassium: 4.9 mEq/L
+
+BUN: 32 mg/dL
+
+Creatinine: 1.9 mg/dL
+
+BNP: 550 pg/mL
+
+**Discharge Recommendations**:
+
+Outpatient cardiology follow-up in two weeks and then monthly to monitor
+LVEF and adjust medications. Nephrology consultation to keep an eye on
+renal function, given his increased susceptibility to kidney damage.
+Continue with dietary restrictions and modifications as advised.
+Commence an outpatient cardiac rehabilitation program for supervised
+exercise and lifestyle modifications. Weekly blood tests for the first
+month to monitor electrolytes and kidney function.
+
+Mr. Williams remains at risk due to multiple comorbidities. It is
+essential to address each condition holistically while ensuring no
+single treatment exacerbates another condition. A collaborative and
+vigilant approach is imperative for his ongoing health management.
+
+Warm regards,
+
+  --------------------------- ---------------- ---------------------
+  **Parameter**               **Value**        **Reference Range**
+  **Blood Count**                              
+  White Blood Cells (WBC)     5.8 x 10^9^/L    4-11 x 10^9^/L
+  Red Blood Cells (RBC)       3.9 x 10^12^/L   4.5-5.5 x 10^12^/L
+  Hemoglobin (Hb)             9.8 g/dL         13-18 g/dL for men
+  Platelets (Plt)             150 x 10^9^/L    150-450 x 10^9^/L
+                                               
+  **Biochemistry**                             
+  Creatinine                  2.8 mg/dL        0.6-1.3 mg/dL
+  Blood Urea Nitrogen (BUN)   40 mg/dL         7-20 mg/dL
+  Glucose                     98 mg/dL         70-100 mg/dL
+                                               
+  **Electrolytes**                             
+  Sodium (Na)                 137 mEq/L        135-145 mEq/L
+  Potassium (K)               5.1 mEq/L        3.5-5.0 mEq/L
+  Calcium                     8.6 mg/dL        8.5-10.5 mg/dL
+  Phosphate                   4.5 mg/dL        2.5-4.5 mg/dL
+                                               
+  **Oncologic Markers**                        
+  Free light chain kappa      692 mg/L         3.3-19.4 mg/L
+  Free light chain lambda     12 mg/L          5.7-26.3 mg/L
+                                               
+  **Other Values**                             
+  LDL cholesterol             80 mg/dL         \<100 mg/dL
+  HbA1c                       6.2%             \<5.7%
+  --------------------------- ---------------- ---------------------
+
+---begin page---
+

@@ -1,0 +1,9 @@
+{
+    "question": "Identify all the errors in the code. Return a list of all methods that contain errors.",
+    "answer": [
+        "filter_data",
+        "transform_column",
+        "drop_column",
+        "rename_column"
+    ]
+}

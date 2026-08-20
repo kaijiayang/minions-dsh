@@ -1,0 +1,55 @@
+# =============================================================================
+# DeepSeek Harness local overlay for the minions plugin (cordis.yml)
+# =============================================================================
+# Usage:
+#   dsh web --patch ./dsh-plugin/cordis.yml        (npm-installed dsh)
+#   pnpm dsh web --patch ./dsh-plugin/cordis.yml   (source checkout)
+#
+# IMPORTANT:
+#   * Replace the placeholder paths below with ABSOLUTE paths on your machine.
+#   * Never hard-code API keys here. Put them in your environment or in the
+#     `env` block via ${VAR} references — this overlay must stay commit-safe.
+#   * Alternatively, drop a `minions.yaml` at the repository root and set
+#     configFile to it — the bridge then loads everything from that file.
+# =============================================================================
+
+- insert:
+    - id: minions
+      # Compiled plugin entry point (run `npm run build` in dsh-plugin first).
+      # NOTE: Cordis' ESM loader requires Windows absolute paths in file:/// form.
+      name: 'file:///ABSOLUTE/PATH/TO/minions-dsh/dsh-plugin/lib/index.js'
+      config:
+        # Python interpreter (absolute path recommended)
+        bridgePython: 'python'
+        # Bridge script (absolute path or relative to the plugin root)
+        bridgeScript: 'dsh-plugin/python/minions_bridge.py'
+        # Optional: point at the standardized config file (minions.yaml).
+        # When set, client/protocol settings below are ignored.
+        # configFile: 'D:/path/to/minions-dsh/minions.yaml'
+
+        # ---- Local worker: any OpenAI-compatible server ----
+        # lmstudio | ollama | vllm | llamacpp | generic | auto
+        defaultLocalPlatform: 'lmstudio'
+        defaultLocalModel: 'qwen3-8b'           # model id as exposed by your server
+        localBaseUrl: 'http://127.0.0.1:1234/v1' # LM Studio default
+        localApiKey: 'lm-studio'                # placeholder; most local servers ignore it
+
+        # ---- Remote supervisor: cloud LLM ----
+        defaultRemoteClientType: 'deepseek'
+        defaultRemoteModel: 'deepseek-chat'
+
+        # ---- Protocol ----
+        defaultMaxRounds: 3
+        defaultProtocol: 'minions'
+
+        # ---- Bridge ----
+        timeoutMs: 300000
+
+        # NOTE on secrets: the Python subprocess inherits this process's
+        # environment, so simply `export DEEPSEEK_API_KEY=...` (or set it in
+        # your shell / .env) before starting `dsh web` is enough.
+        # Only add an `env:` block if you must override specific variables:
+        #   env:
+        #     DEEPSEEK_API_KEY: 'your-key'   # do NOT commit real keys
+        #     DEEPSEEK_BASE_URL: 'https://api.deepseek.com'
+        #     PYTHONUNBUFFERED: '1'

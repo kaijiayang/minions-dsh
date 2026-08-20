@@ -1,0 +1,27 @@
+# minions-dsh example config — Ollama (local) + DeepSeek (cloud)
+# Uses Ollama's OpenAI-compatible endpoint (http://127.0.0.1:11434/v1).
+
+version: 1
+
+remote:
+  provider: deepseek
+  model: deepseek-chat
+  base_url: https://api.deepseek.com/v1
+  api_key_env: DEEPSEEK_API_KEY
+
+local:
+  platform: ollama                  # http://127.0.0.1:11434/v1
+  model: qwen3:8b                   # ollama model tag
+  base_url: http://127.0.0.1:11434/v1
+  api_key: ollama                   # placeholder
+  temperature: 0.0
+  max_tokens: 2048
+
+protocol:
+  type: minions
+  max_rounds: 3
+  log_dir: minion_logs
+
+plugin:
+  bridge_python: python
+  timeout_ms: 300000

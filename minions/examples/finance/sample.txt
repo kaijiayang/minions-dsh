@@ -1,0 +1,979 @@
+December 31,  
+2018  2019 Gross property and equipment (1):
+   Land and buildings
+$ 31,741  $39,223 Equipment
+54,591  71,310 Other assets
+2,577  3,111 Construction in progress
+6,861  6,036 Gross property and equipment
+95,770  119,680 Total accumulated depreciation a
+nd amortization (1)33,973  46,975 Total property and equipmen
+t, net$ 61,797  $72,705 __________________
+(1)
+Includes the original cost and accumulated depreciation of fully-depreciated assets.Depreciation and amort
+ization expense on property and equipment was $8.8 billion , $12.1 billion, and $15.1 billion  which includes amortiza tion of propertyand equipment acquired unde
+r finance leases of $5.4 billion , $7.3 billion, and $10.1 billion  for 2017, 2018, and 2019 . Note 4 — LEASES
+Gross assets acquired under fin
+ance leases, inclusive of those where title transfers at the end of the lease, are recorded in “Property and equipment, net” andwere 
+$36.1 billion  and $57.4 billion  as of December 31, 2018  and 2019 . Accumulated amortiz ation associated with finance leases was $19.8 billion  and $30.0 billion
+ as of December 31, 2018  and 2019 . Lease cost recognized in ou
+r consolidated statements of operations is summarized as follows (in millions): 
+Year EndedDecember 31, 2019
+ 
+ Operating lease cost (1)
+$ 3,669 Finance lease cost:
+ Amortization of lease assets
+10,094 Interest on lease liabilities
+695 Finance lease cost
+10,789 Variable lease cost
+966 Total lease cost
+$ 15,424 __________________
+(1)
+Rental expense under operating lease agreements was $2.2 billion  and $3.4 billion  for 2017 and 2018 . 53
+
+Table of ContentsOther information about l
+ease amounts recognized in our consolidated financial statements is summarized as follows: 
+December 31, 2019  
+ Weighted-average remaining lease term
+ – operating leases11.5 Weighted-average remaining lease term
+ – finance leases5.5 Weighted-average discount rate
+ – operating leases3.1 %Weighted-average discount rate
+ – finance leases2.7 %As of 
+December 31, 2019 , our lease liabilit ies were as follows (in millions): 
+Operating Leases  Finance Leases Total  
+     Gross lease liabilities
+$ 31,963  $28,875  $60,838 Less: imputed interest
+(6,128 )  (1,896 )  (8,024 ) Present value of lease l
+iabilities25,835  26,979  52,814 Less: current portion of l
+ease liabilities(3,139 )  (9,884 )  (13,023 ) Total long-term lease liabilities
+$ 22,696  $17,095  $39,791 Note 5 — ACQUISITIONS, GOODWILL, AND ACQUIRED I
+NTANGIBLE ASSETS2017 Acquisition Activity
+On 
+May 12, 2017, we acquired Souq Group Ltd., an e-comme rce company, for approximately $583 million , net of cash acquired, and on August 28, 2017, we acquired Whole Foods Market, a g
+rocery store chain, for approximately $13.2 billion , net of cash acquired. Both acqu isitions are intended to expand our retailpresence. During 
+2017 , we also acquired certai n other companies for an aggregate purchase price of $204 million . The primary reason for our o ther 2017 acquisitions was to acquire 
+technologies and know-how to enable Amazon to serve customers more effectively.2018 Acquisition Activity
+On 
+April 12, 2018, we acquired Ring Inc. (“Ring”) fo r cash consideration of approximately $839 million , net of cash acquired, and on September 11, 2018 , we acquired PillPack, Inc. (“Pi
+llPack”) for cash consideration of approximately $753 million , net of cash acquired, to exp and our product and service offerings.During 
+2018 , we also acquired certai n other companies for an aggregate purchase price of $57 million . The primary reason for our o ther 2018  acquisitions was to acquire technologies and know-how to 
+enable Amazon to serve customers more effectively.2019 Acquisition Activity
+During 
+2019 , we acquired certain co mpanies for an aggregate purchase price of $315 million . The primary reason for th ese acquisitions, none of which wereindividually materi
+al to our consolidated financial statements, was to acquire technologies and know-how to enable Amazon to serve customers more effectively.Acquisition-related cos
+ts were expensed as incurred and were not significant.Pro forma results of opera
+tions have not been presented because the effects of 2019 acquisitions, individually and in the aggregate, were not material to ourconsolidated results of ope
+rations.54
+
+Table of ContentsPurchase Price Allocation
+The aggregate purchase pr
+ice of these acquisitions was allocated as follows (in millions): 
+December 31,  
+2017  2018  2019  
+     Purchase Price
+     Cash paid, net of cash acquired
+$ 13,859  $1,618  $276 Indemnification holdback
+104  31  39  
+$ 13,963  $1,649  $315 Allocation
+     Goodwill
+$ 9,501  $1,228  $189 Intangible assets (1):
+     Marketing-related
+1,987  186  8 Contract-based
+440  13  — Technology-based
+166  285  139 Customer-related
+54  193  14  
+2,647  677  161 Property and equipment
+3,810  11  3 Deferred tax assets
+117  174  29 Other assets acquired
+1,858  282  41 Long-term debt
+(1,165 )  (176 ) (31 )Deferred tax liabilities
+(961 ) (159 ) (34 )Other liabilities assumed
+(1,844 )  (388 ) (43 ) 
+$ 13,963  $1,649  $315  ___________________
+(1)
+Intangible assets acquired in 2017 , 2018, and 2019  have estimated useful lives of between one  and twenty-five years , two and seven years , and two  and seven years
+, with weighted-average amo rtization periods of twenty-one years , six years, and five years . We determined the estimated fair val
+ue of identifiable intangible assets acquired primarily by using the income approach. These assets are included within“Other assets” on our consolida
+ted balance sheets and are being amortized to operating expenses on a straight-line basis over their estimated useful lives.Goodwill
+The goodwill of the acquired co
+mpanies is primarily related to expected improvements in technology performance and functionality, as well as sales growthfrom future product and se
+rvice offerings and new customers, together with certain intangible assets that do not qualify for separate recognition. The goodwill ofthe acquired companies 
+is generally not deductible for tax purposes. The following summarizes our goodwill activity in 2018  and 2019  by segment (in millions):  
+NorthAmerica
+ International  AWS  Consolidated Goodwill - January 1, 2018
+$ 11,165  $1,108  $1,077  $13,350 New acquisitions (1)
+1,031  177  20  1,228 Other adjustments (2)
+(5 ) (15 ) (10 ) (30 )Goodwill - December 31, 2018
+12,191  1,270  1,087  14,548 New acquisitions
+71  29  89  189 Other adjustments (2)
+2  1  14  17 Goodwill - December 31, 2019
+$ 12,264  $1,300  $1,190  $14,754  ___________________
+(1)
+Primarily includes the acquisitions of Ring and PillPack in the North America segment.(2)
+Primarily includes changes in foreign exchange rates.55
+
+Table of ContentsIntangible Assets
+Acquired intangible assets, 
+included within “Other assets” on our consolidated balance sheets, consist of the following (in millions): 
+ 
+December 31,    
+2018  2019    
+ AcquiredIntangibles,
+Gross (1)
+ AccumulatedAmortization (1)
+ AcquiredIntangibles,
+Net
+ AcquiredIntangibles,
+Gross (1)
+ AccumulatedAmortization (1)
+ AcquiredIntangibles,
+Net
+ WeightedAverage Life
+Remaining
+Marketing-related
+$ 2,542  $(431 ) $2,111  $2,303  $(340 ) $1,963  20.7 Contract-based
+1,430  (224 ) 1,206  1,702  (302 ) 1,400  10.5 Technology- and content-
+based
+941  (377 ) 564  1,011  (477 ) 534  3.6 Customer-related
+437  (208 ) 229  282  (130 ) 152  4.3 Acquired
+intangibles (2)
+$ 5,350  $(1,240 )  $4,110  $5,298  $(1,249 )  $4,049  14.3  ___________________
+(1)
+Excludes the original cost and accumulated amortization of fully-amortized intangibles.(2)
+Intangible assets have estimated useful lives of between one  and twenty-five years . Amortization expense for 
+acquired intangibles was $366 million , $475 million, and $565 million  in 2017, 2018, and 2019 . Expected future amortization expense of acquired intang
+ible assets as of December 31, 2019  is as follows (in millions):  
+Year Ended December 31,
+2020
+$ 486 2021
+424 2022
+391 2023
+334 2024
+270 Thereafter
+2,116  
+$ 4,021 56
+
+Table of ContentsNote 6 — DEBT
+As of 
+December 31, 2019 , we had $23.3 billion  of unsecured senior notes outst anding (the “Notes”). As of December 31, 2018  and 2019 , the net unamortized discount and deb
+t issuance costs on the Notes was $101 million . We also have other long-t erm debt with a carrying amount, including the currentportion and borrowings under our cred
+it facility, of $715 million  and $1.6 billion  as of December 31, 2018  and 2019 . The face value of our tot al long-term debtobligations is as follows (in m
+illions): 
+December 31,  
+2018  2019 2.600% Notes due on December 5, 2019
+1,000  — 1.900% Notes due on August 21, 2020 (3)
+1,000  1,000 3.300% Notes due on December 5, 2021 (2)
+1,000  1,000 2.500% Notes due on November 29, 2022 (1)
+1,250  1,250 2.400% Notes due on February 22, 2023 (3)
+1,000  1,000 2.800% Notes due on August 22, 2024 (3)
+2,000  2,000 3.800% Notes due on December 5, 2024 (2)
+1,250  1,250 5.200% Notes due on December 3, 2025 (4)
+1,000  1,000 3.150% Notes due on August 22, 2027 (3)
+3,500  3,500 4.800% Notes due on December 5, 2034 (2)
+1,250  1,250 3.875% Notes due on August 22, 2037 (3)
+2,750  2,750 4.950% Notes due on December 5, 2044 (2)
+1,500  1,500 4.050% Notes due on August 22, 2047 (3)
+3,500  3,500 4.250% Notes due on August 22, 2057 (3)
+2,250  2,250 Credit Facility
+594  740 Other long-term debt
+121  830 Total debt
+24,965  24,820 Less current portion of long-
+term debt(1,371 )  (1,307 ) Face value of long-term d
+ebt$ 23,594  $23,513 _____________________________
+(1)
+Issued in November 2012, effective interest rate of the 2022 Notes was 2.66% . (2)
+Issued in December 2014, effective interest rates of the 2021, 2024, 2034, and 2044 Notes were 3.43% , 3.90%, 4.92%, and 5.11% . (3)
+Issued in August 2017, effective interest rates of the 2020, 2023, 2024, 2027, 2037, 2047, and 2057 Notes were 2.16% , 2.56%, 2.95%, 3.25%, 3.94%, 4.13%, and 
+4.33%. (4)
+Consists of $872 million  of 2025 Notes issued in December 2017 in ex change for notes assumed in connection with the acquisition of Whole Foods Marketand 
+$128 million of 2025 Notes issued by Whole Foods Market tha t did not participate in our December 2017 exchange offer. The effective interest rate of the2025 Notes was 
+3.02% . Interest on the Notes issued in 2012 
+is payable semi-annually in arr ears in May and November. Interest on the Notes issued in 2014 is payable semi-annually in arrears in June and Dece
+mber. Interest on the Notes issued in 2017 is payable semi-annually in arrears in February and August. Interest on the 2025 Notes ispayable semi-annually in arrear
+s in June and December. We may redeem the Notes at any time in whole, or from time to time, in part at specified redemptionprices. We are not subje
+ct to any financial covenants under the Notes. The proceeds from the November 2012 and the December 2014 Notes were used for generalcorporate purposes. The proce
+eds from the August 2017 Notes were used to fund the consideration for the acquisition of Whole Foods Market, to repay notes duein 2017, and for general corpor
+ate purposes. The estimated fair value of the Notes was approximately $24.3 billion  and $26.2 billion  as of December 31, 2018  and 2019
+, which is based on quoted prices for ou r debt as of those dates.In October 2016, we entered into a 
+$500 million  secured revolving credi t facility with a lender that is secured by certain sel ler receivables, which we subsequently increased to 
+$740 million  and may from time to time i ncrease in the future subject to lender approval (the “Credit Facility”). The Credit Facility isavailable until Octobe
+r 2022, bears interest at the London interbank offered rate (“LIBOR ”) plus 1.40% , and has a commitment f ee of 0.50%  on the undrawn portion. There were 
+$594 million  and $740 million  of borrowings outstanding under the Cred it Facility as of December 31, 2018  and 2019 , which had a weighted- average interest rate of 
+3.2%  and 3.4%  as of December 31, 2018  and 2019 . As of December 31, 2018  and 2019 , we 57
+
+Table of Contentshave pledged 
+$686 million  and $852 million  of our cash and seller receivables as collateral for debt related to our Credit Facility. The estimated fair value of theCredit Facility, which is based on L
+evel 2 inputs, approximated its carrying value as of December 31, 2018  and 2019 . The other debt, including the 
+current portion, had a weighted-average interest rate of 6.0%  and 4.1%  as of December 31, 2018  and 2019 . We used the net proceeds from the issuanc
+e of this debt primarily to fund certain business operations. The estimated fair value of the other long-term debt, which is based on Level2 inputs, approximated its c
+arrying value as of December 31, 2018  and 2019 . As of 
+December 31, 2019 , future principal paym ents for our total debt were as follows (in millions):Year Ended December 31,
+2020
+$ 1,307 2021
+1,141 2022
+1,773 2023
+1,510 2024
+3,339 Thereafter
+15,750  
+$ 24,820 In April 2018, we established a com
+mercial paper program (the “Commercial Paper Program”) under which we may from time to time issue unsecuredcommercial paper up 
+to a total of $7.0 billion  at any time, with individua l maturities that may vary but will not exceed 397 days  from the date of issue. The re wereno
+ borrowings outstanding under the Commercial Paper Program as of December 31, 2018  and 2019 . In April 2018, in connection with our Comm
+ercial Paper Program, we amended and restated our unsecured revolving credit facility (the “Credit Agreement”)with a syndicate of lenders 
+to increase our borrowing capacity thereunder to $7.0 billion . As amended and restated, the Cr edit Agreement has a term of three years , but it may be extended for up 
+to three  additional one -year terms if approved by the lenders. The interest rate applicable to outstanding balances under the amendedand restated Credit Agree
+ment is LIBOR  plus 0.50% , with a commitment fee of 0.04%  on the undrawn portion of the cred it facility. There were no  borrowingsoutstanding under the Credit Agre
+ement as of December 31, 2018  and 2019 . 58
+
+Table of ContentsNote 7 — COMMITMENTS AND CONTINGENCIES
+Commitments
+We have entered into no
+n-cancellable operating and finance leases and financing obligations for equipment and office, fulfillment, sortation, delivery, datacenter, physical store, a
+nd renewable energy facilities.The following summarizes our p
+rincipal contractual commitments, excluding open orders for purchases that support normal operations and are generallycancellable, as of 
+December 31, 2019  (in millions):  
+Year Ended December 31,      
+2020  2021  2022  2023  2024  Thereafter Total Debt principal and inter
+est$ 2,202 $2,009 $2,603 $2,273 $4,084 $26,019 $39,190Operating lease liabilities
+3,757  3,630  3,226  2,900  2,605  15,845  31,963 Finance lease liabil
+ities, including interest9,878  7,655  4,060  1,332  989  4,961  28,875 Financing obligations, including 
+interest142  146  148  150  152  2,452  3,190 Unconditional purchase obliga
+tions (1)4,593  3,641  3,293  3,103  3,000  2,358  19,988 Other commitments (2)(3)
+3,837  2,274  1,770  1,439  1,389  12,186  22,895 Total commitments
+$ 24,409 $19,355 $15,100 $11,197 $12,219 $63,821 $146,101___________________
+(1)
+Includes unconditional purchase obligations related to certain products offered in our Whole Foods Market stores and long-term agreements to acquire andlicense digital media content t
+hat are not reflected on the consolidated balance sheets. For those digital media content agreements with variable terms, we donot estimate the tot
+al obligation beyond any minimum quantities and/or pricing as of the reporting date. Purchase obligations associated with renewalprovisions solely at the option o
+f the content provider are included to the extent such commitments are fixed or a minimum amount is specified.(2)
+Includes the estimated timing and amounts of payments for rent and tenant improvements associated with build-to-suit lease arrangements and leasearrangements prior to the lea
+se commencement date and digital media content liabilities associated with long-term digital media content assets with initialterms greater than one year.
+(3)
+Excludes approximately $3.9 billion  of accrued tax contingen cies for which we cannot make a reasonably reliable estimate of the amount and period ofpayment, if any.
+Pledged Assets
+As of 
+December 31, 2018  and 2019 , we have pledged or otherwise res tricted $575 million  and $994 million  of our cash, cash equivalents, and marketablesecurities, and cert
+ain property and equipment as collateral for real estate leases, amounts due to third-party sellers in certain jurisdictions, debt, and standby andtrade letters of c
+redit. Additionally, we have pledged our cash and seller receivables for debt related to our Credit Facility. See “Note 6 — Debt.”Suppliers
+During 
+2019 , no vendor accounted for 10% or mo re of our purchases. We generally do not have long-term contracts or arrangements with our vendors toguarantee the availability of merc
+handise, particular payment terms, or the extension of credit limits.Other Contingencies
+In 2016, we determined that we pro
+cessed and delivered orders of consumer products for certain individuals and entities located outside Iran covered by theIran Threat Reduction and Syri
+a Human Rights Act or other United States sanctions and export control laws. The consumer products included books, music, othermedia, apparel, home and k
+itchen, health and beauty, jewelry, office, consumer electronics, software, lawn and patio, grocery, and automotive products. Ourreview is ongoing and we have voluntar
+ily reported these orders to the United States Treasury Department’s Office of Foreign Assets Control and the United StatesDepartment of Commerce
+’s Bureau of Industry and Security. We intend to cooperate fully with OFAC and BIS with respect to their review, which may result inthe imposition of penalt
+ies. For additional information, see Item 9B of Part II, “Other Information — Disclosure Pursuant to Section 13(r) of the Exchange Act.”We are subject to cl
+aims related to various indirect taxes (such as sales, value added, consumption, service, and similar taxes), including in jurisdictions inwhich we already collect 
+and remit such taxes. If the relevant taxing authorities were successfully to pursue these claims, we could be subject to significantadditional tax liabi
+lities. For example, in June 2017, the State of South Carolina issued an assessment for uncollected sales and use taxes for the period fromJanuary 2016 to March 2016, including in
+terest and penalties. South Carolina is alleging that we should have collected sales and use taxes on59
+
+Table of Contentstransactions by our third-p
+arty sellers. In September 2019, the South Carolina Administrative Law Court ruled in favor of the Department of Revenue and we haveappealed the decision to 
+the state Court of Appeals. We believe the assessment is without merit and intend to defend ourselves vigorously in this matter. If othertax authorities were suc
+cessfully to seek additional adjustments of a similar nature, we could be subject to significant additional tax liabilities.Legal Proceedings
+The Company is involved from tim
+e to time in claims, proceedings, and litigation, including the following:Beginning in August 2013, a number of compla
+ints were filed alleging, among other things, that Amazon.com, Inc. and several of its subsidiaries failed tocompensate hourly workers for 
+time spent waiting in security lines and otherwise violated federal and state wage and hour statutes and common law. In August2013, Busk v. Integrity Staffing Solutions, In
+c. and Amazon.com, Inc. was filed in the United States District Court for the District of Nevada, and Vance v.Amazon.com, Inc., Zappos.com Inc., ano
+ther affiliate of Amazon.com, Inc., and Kelly Services, Inc. was filed in the United States District Court for the WesternDistrict of Kentucky. In Septemb
+er 2013, Allison v. Amazon.com, Inc. and Integrity Staffing Solutions, Inc. was filed in the United States District Court for theWestern District of W
+ashington, and Johnson v. Amazon.com, Inc. and an affiliate of Amazon.com, Inc. was filed in the United States District Court for theWestern District of Kentu
+cky. In October 2013, Davis v. Amazon.com, Inc., an affiliate of Amazon.com, Inc., and Integrity Staffing Solutions, Inc. was filed in theUnited States District Court fo
+r the Middle District of Tennessee. The plaintiffs variously purport to represent a nationwide class of certain current and formeremployees under the Fair Labo
+r Standards Act and/or state-law-based subclasses for certain current and former employees in states including Arizona, California,Pennsylvania, South Carolina, Kentucky, Wash
+ington, and Nevada, and one  complaint asserts nationwide breach of contract and unjust enrichment claims. Thecomplaints seek an unspeci
+fied amount of damages, interest, injunctive relief, and attorneys’ fees. We have been named in several other similar cases. In December2014, the Supreme Court ruled in Busk that 
+time spent waiting for and undergoing security screening is not compensable working time under the federal wage andhour statute. In February 2015, the 
+courts in those actions alleging only federal law claims entered stipulated orders dismissing those actions without prejudice. InMarch 2016, the United States Distr
+ict Court for the Western District of Kentucky dismissed the Vance case with prejudice. In April 2016, the plaintiffs appealedthe district court’s 
+judgment to the United States Court of Appeals for the Federal Circuit. In March 2017, the court of appeals affirmed the district court’sdecision. In June 2017, the United Stat
+es District Court for the Western District of Kentucky dismissed the Busk and Saldana cases with prejudice. We dispute anyremaining allegat
+ions of wrongdoing and intend to defend ourselves vigorously in these matters.In March 2015, Zitovault, LLC filed 
+a complaint against Amazon.com, Inc., Amazon.com, LLC, Amazon Web Services, Inc., and Amazon Web Services,LLC for patent infringemen
+t in the United States District Court for the Eastern District of Texas. The complaint alleges that Elastic Compute Cloud, Virtual PrivateCloud, Elastic Load Balancing, Auto-Sca
+ling, and Elastic Beanstalk infringe U.S. Patent No. 6,484,257, entitled “System and Method for Maintaining N Numberof Simultaneous Cryptographic Sessions Using 
+a Distributed Computing Environment.” The complaint seeks injunctive relief, an unspecified amount of damages,enhanced damages, attorn
+eys’ fees, costs, and interest. In January 2016, the case was transferred to the United States District Court for the Western District ofWashington. In June 2016, the case was st
+ayed pending resolution of a review petition we filed with the United States Patent and Trademark Office. In January2019, the stay of the case was li
+fted following resolution of the review petition. We dispute the allegations of wrongdoing and intend to defend ourselvesvigorously in this matter.
+In November 2015, Eolas Technologies, In
+c. filed a complaint against Amazon.com, Inc. in the United States District Court for the Eastern District of Texas.The complaint alleges, 
+among other things, that the use of “interactive features” on www.amazon.com, including “search suggestions and search results,” infringesU.S. Patent No. 9,195,507, entitled “Distributed Hype
+rmedia Method and System for Automatically Invoking External Application Providing Interaction andDisplay of Embedded Objects With
+in A Hypermedia Document.” The complaint sought a judgment of infringement together with costs and attorneys’ fees. InFebruary 2016, Eolas filed an am
+ended complaint seeking, among other things, an unspecified amount of damages. In February 2017, Eolas alleged in its damagesreport that in the even
+t of a finding of liability Amazon could be subject to $130 - $250 million in damages. In April 2017, the cas e was transferred to the UnitedStates District Court for th
+e Northern District of California. We dispute the allegations of wrongdoing and intend to defend ourselves vigorously in this matter.In October 2017, SRC Labs, LLC and Saint Regis Mohawk Tribe filed 
+a complaint for patent infringement against Amazon Web Services, Inc.,Amazon.com, Inc., and VADATA, Inc. in the United States Dis
+trict Court for the Eastern District of Virginia. The complaint alleges, among other things, thatcertain AWS EC2 Instances infr
+inge U.S. Patent Nos. 6,434,687, entitled “System and method for accelerating web site access and processing utilizing a computersystem incorporating re
+configurable processors operating under a single operating system image”; 7,149,867, entitled “System and method of enhancing efficiencyand utilization of me
+mory bandwidth in reconfigurable hardware”; 7,225,324 and 7,620,800, both entitled “Multi-adaptive processing systems and techniques forenhancing parallelis
+m and performance of computational functions”;60
+
+Table of Contentsand 9,153,311, entitled “System and m
+ethod for retaining DRAM data when reprogramming reconfigurable devices with DRAM memory controllers.” Thecomplaint seeks an unspeci
+fied amount of damages, enhanced damages, interest, and a compulsory on-going royalty. In February 2018, the Virginia district courttransferred the cas
+e to the United States District Court for the Western District of Washington. In November 2018, the case was stayed pending resolution of eightreview petitions filed wi
+th the United States Patent and Trademark Office relating to the ‘324, ‘867, and ‘311 patents. We dispute the allegations of wrongdoingand intend to defend ourselves v
+igorously in this matter.In May 2018, Rensselaer Polytechnic 
+Institute and CF Dynamic Advances LLC filed a complaint against Amazon.com, Inc. in the United States DistrictCourt for the Northern Distric
+t of New York. The complaint alleges, among other things, that “Alexa Voice Software and Alexa enabled devices” infringe U.S.Patent No. 7,177,798, entitled “Natura
+l Language Interface Using Constrained Intermediate Dictionary of Results.” The complaint seeks an injunction, anunspecified amount of dam
+ages, enhanced damages, an ongoing royalty, pre- and post-judgment interest, attorneys’ fees, and costs. We dispute the allegations ofwrongdoing and intend to defend ourselv
+es vigorously in this matter.In June 2018, VoIP-Pal.com, Inc. filed a 
+complaint against Amazon Technologies, Inc. and Amazon.com, Inc. in the United States District Court for theDistrict of Nevada. The compl
+aint alleges, among other things, that the Alexa calling and messaging system, the Alexa app, and Echo, Tap, and Fire devices withAlexa support infringe U.S. Patent Nos. 9,537,762; 9,813,330; 9,826,002; 
+and 9,948,549, all entitled “Producing Routing Messages For Voice Over IPCommunications.” The compla
+int seeks an unspecified amount of damages, enhanced damages, attorneys’ fees, costs, and interest. In November 2018, the casewas transferred to the Unit
+ed States District Court for the Northern District of California. In November 2019, the District Court entered judgment invalidating allasserted claims of U.S. Patent Nos. 9,537,762; 9,813,330
+; 9,826,002; and 9,948,549. We dispute the allegations of wrongdoing and intend to defend ourselvesvigorously in this matter.
+In December 2018, Kove IO, Inc. filed 
+a complaint against Amazon Web Services, Inc. in the United States District Court for the Northern District of Illinois.The complaint alleges, 
+among other things, that Amazon S3 and DynamoDB infringe U.S. Patent Nos. 7,814,170 and 7,103,640, both entitled “NetworkDistributed Tracking Wir
+e Transfer Protocol,” and 7,233,978, entitled “Method And Apparatus For Managing Location Information In A Network Separate FromThe Data To Which The Location In
+formation Pertains.” The complaint seeks an unspecified amount of damages, enhanced damages, attorneys’ fees, costs,interest, and injunctiv
+e relief. We dispute the allegations of wrongdoing and intend to defend ourselves vigorously in this matter.In January 2019, Saint Lawrence Communi
+cations, LLC filed a complaint against Amazon.com, Inc. and Amazon.com LLC in the United States DistrictCourt for the Eastern Distri
+ct of Texas. The complaint alleges, among other things, that voice encoding functionality in Amazon devices infringes U.S. Patent Nos.6,795,805, entitled “Periodici
+ty Enhancement In Decoding Wideband Signals”; 6,807,524, entitled “Perceptual Weighting Device And Method For EfficientCoding Of Wideband Signals”; 7,151,802, entit
+led “High Frequency Content Recovering Method And Device For Over-Sampled Synthesized Wideband Signal”;7,191,123, entitled “Gain-Smoothing In 
+Wideband Speech And Audio Signal Decoder”; and 7,260,521, entitled “Method And Device For Adaptive BandwidthPitch Search In Coding Wideband Signals.
+” The complaint seeks an unspecified amount of damages, enhanced damages, attorneys’ fees, costs, and interest. Wedispute the allegations o
+f wrongdoing and intend to defend ourselves vigorously in this matter.In April 2019, Vocalife LLC filed a 
+complaint against Amazon.com, Inc. and Amazon.com LLC in the United States District Court for the Eastern District ofTexas. The complaint all
+eges, among other things, that Amazon Echo devices infringe U.S. Patent No. RE47,049, entitled “Microphone Array System.” Thecomplaint seeks injunct
+ive relief, an unspecified amount of damages, attorneys’ fees, costs, and interest. We dispute the allegations of wrongdoing and intend todefend ourselves vigorously in th
+is matter.In May 2019, Neodron Ltd. filed a peti
+tion with the United States International Trade Commission requesting that the International Trade Commissioncommence an investiga
+tion into the sale of Amazon Fire HD 10 tablets and certain Dell, Hewlett Packard, Lenovo, Microsoft, Motorola, and Samsung devices (the“accused devices”). Neodron
+’s petition alleges that the accused devices infringe at least one of U.S. Patent Nos. 8,422,173, entitled “Capacitive Position Sensor”;8,791,910, entitled “Capacitiv
+e Keyboard With Position-Dependent Reduced Keying Ambiguity”; 9,024,790, entitled “Capacitive Keyboard With Non-LockingReduced Keying Ambiguity”; and 9,372,580, enti
+tled “Enhanced Touch Detection Methods.” Neodron is seeking a limited exclusion order preventing theimportation of the ac
+cused devices into the United States. In December 2019, Neodron withdrew its infringement allegations against Amazon with regard to U.S.Patent No. 9,372,580. In May 2019, Neodron also filed a 
+complaint against Amazon.com, Inc. in the United States District Court for the Western District of Texas.The complaint alleges, 
+among other things, that Amazon’s Fire HD 10 tablet infringes U.S. Patent Nos. 8,422,173, entitled “Capacitive Position Sensor,” and9,372,580, entitled “Enhanced Touch Det
+ection Methods.” The May 2019 complaint seeks an unspecified amount of damages and interest, a permanent injunction,and enhanced damages. In June 2019, Neodron 
+filed a second complaint against Amazon.com, Inc. in the United States District Court for the Western District ofTexas. The complaint all
+eges, among other things, that Amazon’s Fire HD 10 tablet infringes U.S. Patent Nos. 9,823,784, entitled “Capacitive Touch Screen WithNoise Suppression”; 9,489,072, entitled “Nois
+e Reduction In Capacitive Touch Sensors”; and61
+
+Table of Contents8,502,547, entitled “Capacitiv
+e Sensor.” The June 2019 complaint seeks an unspecified amount of damages and interest, a permanent injunction, and enhanceddamages. We dispute the a
+llegations of wrongdoing and intend to defend ourselves vigorously in these matters.The outcomes of our legal pro
+ceedings and other contingencies are inherently unpredictable, subject to significant uncertainties, and could be material to ouroperating results and cash 
+flows for a particular period. In addition, for the matters disclosed above that do not include an estimate of the amount of loss or range oflosses, such an estimate is no
+t possible or is immaterial, and we may be unable to estimate the possible loss or range of losses that could potentially result from theapplication of non-monet
+ary remedies.See also “Note 9 — Income Taxes.”
+Note 8 — STOCKHOLDERS’ EQUITY
+Preferred Stock
+We have authorized 
+500 million  shares of $0.01  par value preferred s tock. No  preferred stock was outstanding for any year presented.Common Stock
+Common shares outstanding plus shares und
+erlying outstanding stock awards totaled 504 million , 507 million, and 512 million , as of December 31, 2017 , 2018
+, and 2019 . These totals include al l vested and unvested stock awards outstanding, including those awards we estimate will be forfeited.Stock Repurchase Activity
+In February 2016, the Board of Directo
+rs authorized a program to repurchase up to $5.0 billion  of our common stock, with no fixed exp iration. There wereno
+ repurchases of common stock in 2017 , 2018, or 2019. Stock Award Plans
+Employees vest in restri
+cted stock unit awards and stock options over the corresponding service term, generally between two  and five years . Stock Award Activity
+Stock-based compensation expens
+e is as follows (in millions): 
+Year Ended December 31,  
+2017  2018  2019 Cost of sales
+$ 47  $73  $149 Fulfillment
+911  1,121  1,182 Technology and content
+2,305  2,888  3,725 Marketing
+511  769  1,135 General and administrative
+441  567  673 Total stock-based compensa
+tion expense (1)$ 4,215  $5,418  $6,864 ___________________
+(1)
+The related tax benefits were $860 million , $1.1 billion, and $1.4 billion  for 2017, 2018, and 2019 . 62
+
+Table of ContentsThe following table 
+summarizes our restricted stock unit activity (in millions): 
+Number of Units  Weighted AverageGrant-Date
+Fair Value
+Outstanding as of January 1, 2017
+19.8  $506 Units granted
+8.9  946 Units vested
+(6.8 ) 400 Units forfeited
+(1.8 ) 649 Outstanding as of December 31, 2017
+20.1  725 Units granted
+5.0  1,522 Units vested
+(7.1 ) 578 Units forfeited
+(2.1 ) 862 Outstanding as of December 31, 2018
+15.9  1,024 Units granted
+6.7  1,808 Units vested
+(6.6 ) 827 Units forfeited
+(1.7 ) 1,223 Outstanding as of December 31, 2019
+14.3  1,458 Scheduled vesting for outstanding 
+restricted stock units as of December 31, 2019 , is as follows (in millions):  
+Year Ended       
+2020  2021  2022  2023  2024  Thereafter Total Scheduled vesting — restric
+ted stock units6.0  5.1  2.1  1.0  —  0.1  14.3 As of 
+December 31, 2019 , there was $8.8 billion  of net unrecognized compens ation cost related to unvested stock-based compensation arrangements. Thiscompensation is recogniz
+ed on an accelerated basis with approximately half  of the compensation expected to be expensed in the next twelve months, and has aweighted-average recogn
+ition period of 1.1  years. The estimated forfeiture rate as of December 31, 2017 , 2018, and 2019  was 28% , 27%, and 27% . Changes in ourestimates and assumptions 
+relating to forfeitures may cause us to realize material changes in stock-based compensation expense in the future.During 
+2017 , 2018, and 2019 , the fair value of res tricted stock units that vested was $6.8 billion , $11.4 billion, and $11.7 billion . Common Stock Available for Future Issuance
+As of 
+December 31, 2019 , common stock available for future issuance to employees is 108 million  shares. Note 9 — INCOME TAXES
+In 
+2017, 2018, and 2019 , we recorded net tax provisions o f $769 million , $1.2 billion, and $2.4 billion . Tax benefits relating to excess stock-basedcompensation deductions and a
+ccelerated depreciation deductions are reducing our U.S. taxable income. Cash taxes paid, net of refunds, were $957 million , $1.2billion
+, and $881 million  for 2017, 2018, and 2019 . The U.S. Tax Act was signed into law on December 22, 2017. The U.S. Tax Act s
+ignificantly revised the U.S. corporate income tax by, among other things,lowering the statutory corpo
+rate tax rate from 35% to 21%, eliminating certain deductions, imposing a mandatory one-time tax on accumulated earnings of foreignsubsidiaries, introducing new t
+ax regimes, and changing how foreign earnings are subject to U.S. tax. The U.S. Tax Act also enhanced and extended accelerateddepreciation deductions by 
+allowing full expensing of qualified property, primarily equipment, through 2022. We reasonably estimated the effects of the U.S. TaxAct and recorded provisional 
+amounts in our financial statements as of December 31, 2017. We recorded a provisional tax benefit for the impact of the U.S. TaxAct of approximately 
+$789 million . This amount wa s primarily comprised of the remeasurement of federal net deferred tax liabilities resulting from the permanentreduction in the U.S. statutory co
+rporate tax rate to 21% from 35%, after taking into account the mandatory one-time tax on the accumulated earnings of ourforeign subsidiaries. The a
+mount of this one-time tax was not material. In 2018, we completed our determination of the accounting implications of the U.S. TaxAct.
+63
+
+Table of ContentsThe components of the provision fo
+r income taxes, net are as follows (in millions): 
+Year Ended December 31,  
+2017  2018  2019 U.S. Federal:
+     Current
+$ (137 ) $(129 ) $162 Deferred
+(202 ) 565  914 Total
+(339 ) 436  1,076 U.S. State:
+     Current
+211  322  276 Deferred
+(26 ) 5  8 Total
+185  327  284 International:
+     Current
+724  563  1,140 Deferred
+199  (129 ) (126 )Total
+923  434  1,014 Provision for income taxes, net
+$ 769  $1,197  $2,374 U.S. and international components o
+f income before income taxes are as follows (in millions): 
+Year Ended December 31,  
+2017  2018  2019 U.S.
+$ 5,630  $11,157  $13,285 International
+(1,824 )  104  691 Income before income taxes
+$ 3,806  $11,261  $13,976 The items accounting for
+ differences between income taxes computed at the federal statutory rate and the provision recorded for income taxes are as follows(in millions):
+ 
+Year Ended December 31,  
+2017  2018  2019 Income taxes computed at t
+he federal statutory rate (1)$ 1,332  $2,365  $2,935 Effect of:
+     Tax impact of foreign e
+arnings1,178  119  381 State taxes, net of fede
+ral benefits114  263  221 Tax credits
+(220 ) (419 ) (466 )Stock-based compensation (2)
+(917 ) (1,086 )  (850 )2017 Impact of U.S. Tax Act
+(789 ) (157 ) — Other, net
+71  112  153 Total
+$ 769  $1,197  $2,374 ___________________
+(1)
+The U.S. Tax Act reduced the U.S. federal statutory rate from 35% to 21% beginning in 2018.(2)
+Includes non-deductible stock-based compensation and excess tax benefits from stock-based compensation. Our tax provision includes $1.3 billion , $1.6billion
+, and $1.4 billion  of excess tax benefits f rom stock-based compensation for 2017 , 2018, and 2019 . Our provision for income taxes 
+in 2018 was higher than in 2017 primarily due to an increase in U.S. pre-tax income and the one-time provisional tax benefitof the U.S. Tax Act recognized in 2017. This was pa
+rtially offset by the reduction to the U.S. federal statutory tax rate in 2018, a decline in the proportion offoreign losses for which we may not 
+realize a tax benefit and an increase in excess tax benefits from stock-based compensation.We regularly assess whethe
+r it is more likely than not that we will realize our deferred tax assets in each taxing jurisdiction in which we operate. Inperforming this assessmen
+t with respect to each jurisdiction, we review all available evidence, including recent cumulative loss experience and expectations offuture earnings, capit
+al gains, and investment in such jurisdiction, the carry-forward periods available to us for tax reporting purposes, and other relevant factors. InQ2 2017, we
+64
+
+Table of Contentsrecognized an estima
+ted charge to tax expense of $600 million  to record a valuation a llowance against the net deferred tax assets in Luxembourg.Our provision for income taxes 
+in 2019 was higher than in 2018 primarily due to an increase in U.S. pre-tax income, a decline in excess tax benefits fromstock-based compensation, and 
+the one-time provisional tax benefit of the U.S. Tax Act recognized in 2018.Certain foreign subsidiary 
+earnings are subject to U.S. taxation under the U.S. Tax Act, which also repeals U.S. taxation on the subsequent repatriation ofthose earnings. We intend to 
+invest substantially all of our foreign subsidiary earnings, as well as our capital in our foreign subsidiaries, indefinitely outside of theU.S. in those jurisdictions in which we would incu
+r significant, additional costs upon repatriation of such amounts.Deferred income tax ass
+ets and liabilities are as follows (in millions): 
+December 31,  
+2018  2019 Deferred tax assets (1):
+   Loss carryforwards U.S. - Federal/Sta
+tes222  188 Loss carryforwards - Foreign
+2,551  3,232 Accrued liabilities, 
+reserves, and other expenses1,064  1,373 Stock-based compensation
+1,293  1,585 Depreciation and amortization
+2,386  2,385 Operating lease liabilities
+—  6,648 Other items
+484  728 Tax credits
+734  772 Total gross deferred tax 
+assets8,734  16,911 Less valuation allowances (2)
+(4,950 )  (5,754 ) Deferred tax assets, net o
+f valuation allowances3,784  11,157 Deferred tax liabilities:
+   Depreciation and amortization
+(3,579 )  (5,507 ) Operating lease assets
+—  (6,331 ) Other items
+(749 ) (640 )Net deferred tax assets 
+(liabilities), net of valuation allowances$ (544 ) $(1,321 )  ___________________
+(1)
+Deferred tax assets are presented after tax effects and net of tax contingencies.(2)
+Relates primarily to deferred tax assets that would only be realizable upon the generation of net income in certain foreign taxing jurisdictions.Our valuation allowances pri
+marily relate to foreign deferred tax assets, including substantially all of our foreign net operating loss carryforwards as ofDecember 31, 2019
+. Our foreign net operating loss carryforwards for income tax purposes as of December 31, 2019  were approximately $8.6 billion  before tax effects and certa
+in of these amounts are subject to annual limitations under applicable tax law. If not utilized, a portion of these losses will begin to expire in 2020 . As of 
+December 31, 2019 , our federal tax cred it carryforwards for income tax purposes were approximately $1.7 billion . If not utilized, a port ion of the tax creditcarryforwards will begin to 
+expire in 2027 . Tax Contingencies
+We are subject to inco
+me taxes in the U.S. (federal and state) and numerous foreign jurisdictions. Significant judgment is required in evaluating our taxpositions and determining our p
+rovision for income taxes. During the ordinary course of business, there are many transactions and calculations for which theultimate tax determination is u
+ncertain. We establish reserves for tax-related uncertainties based on estimates of whether, and the extent to which, additional taxeswill be due. These reserves a
+re established when we believe that certain positions might be challenged despite our belief that our tax return positions are fullysupportable. We adjust thes
+e reserves in light of changing facts and circumstances, such as the outcome of tax audits. The provision for income taxes includes theimpact of reserve prov
+isions and changes to reserves that are considered appropriate.65
+
+Table of ContentsThe reconciliation of ou
+r tax contingencies is as follows (in millions): 
+December 31,  
+2017  2018  2019 Gross tax contingencies – January 1
+$ 1,710  $2,309  $3,414 Gross increases to tax positions 
+in prior periods223  164  216 Gross decreases to tax positions 
+in prior periods(139 ) (90 ) (181 )Gross increases to current p
+eriod tax positions518  1,088  707 Settlements with tax autho
+rities—  (36 ) (207 )Lapse of statute of lim
+itations(3 ) (21 ) (26 )Gross tax contingencies – Decemb
+er 31 (1)$ 2,309  $3,414  $3,923  ___________________
+(1)
+As of December 31, 2019 , we had approximately $3.9 billion  of accrued tax contingen cies of which $2.1 billion , if fully recognized, would de crease oureffective tax rate.
+As of 
+December 31, 2018  and 2019 , we had accrued intere st and penalties, net of federal income tax benefit, related to tax contingencies of $127 million  and $131 million
+. Interest and penalti es, net of federal income tax benefit, recognized for the years ended December 31, 2017 , 2018, and 2019  was $40 million , $20million
+, and $4 million . We are under examina
+tion, or may be subject to examination, by the Internal Revenue Service (“IRS”) for the calendar year 2007 and thereafter. These examinations may lead 
+to ordinary course adjustments or proposed adjustments to our taxes or our net operating losses with respect to years under examination aswell as subsequent periods.
+In October 2014, the European Commission op
+ened a formal investigation to examine whether decisions by the tax authorities in Luxembourg with regard tothe corporate income 
+tax paid by certain of our subsidiaries comply with European Union rules on state aid. On October 4, 2017, the European Commission announced its decision that d
+eterminations by the tax authorities in Luxembourg did not comply with European Union rules on state aid. Based on that decision theEuropean Commission announced an est
+imated recovery amount of approximately €250 million , plus interest, for the pe riod May 2006 through June 2014, andordered Luxembourg tax author
+ities to calculate the actual amount of additional taxes subject to recovery. Luxembourg computed an initial recovery amount,consistent with the European Comm
+ission’s decision, that we deposited into escrow in March 2018, subject to adjustment pending conclusion of all appeals. InDecember 2017, Luxembourg appeal
+ed the European Commission’s decision. In May 2018, we appealed. We believe the European Commission’s decision to bewithout merit and will cont
+inue to defend ourselves vigorously in this matter. We are also subject to taxation in various states and other foreign jurisdictionsincluding China, Germany, India, Jap
+an, Luxembourg, and the United Kingdom. We are under, or may be subj ect to, audit or examination and additionalassessments by the rele
+vant authorities in respect of these particular jurisdictions primarily for 2009  and thereafter. Changes in state, federal, 
+and foreign tax laws may increase our tax contingencies. The timing of the resolution of income tax examinations is highlyuncertain, and the amounts u
+ltimately paid, if any, upon resolution of the issues raised by the taxing authorities may differ from the amounts accrued. It isreasonably possible that with
+in the next twelve months we will receive additional assessments by various tax authorities or possibly reach resolution of income taxexaminations in one or mor
+e jurisdictions. These assessments or settlements could result in changes to our contingencies related to positions on tax filings in yearsthrough 
+2019 . The actual amount of any ch ange could vary significantly depending on the ultimate timing and nature of any settlements. We cannot currentlyprovide an estimate of 
+the range of possible outcomes.Note 10 — SEGMENT INFORMATION
+We have organized our oper
+ations into three  segments: North America, In ternational, and AWS. We allocate to segment results the operating expenses“Fulfillment,” “Techno
+logy and content,” “Marketing,” and “General and administrative” based on usage, which is generally reflected in the segment in which thecosts are incurred. The m
+ajority of technology infrastructure costs are allocated to the AWS segment based on usage. The majority of the remaining non-infrastructure te
+chnology costs are incurred in the U.S. and are allocated to our North America segment. There are no internal revenue transactions between ourreportable segments. Thes
+e segments reflect the way our chief operating decision maker evaluates the Company’s business performance and manages itsoperations.
+66
+
+Table of ContentsNorth America
+The North America segment pr
+imarily consists of amounts earned from retail sales of consumer products (including from sellers) and subscriptions throughNorth America-focused onlin
+e and physical stores. This segment includes export sales from these online stores.International
+The International segm
+ent primarily consists of amounts earned from retail sales of consumer products (including from sellers) and subscriptions throughinternationally-fo
+cused online stores. This segment includes export sales from these internationally-focused online stores (including export sales from these onlinestores to customers in the U.S., Mexi
+co, and Canada), but excludes export sales from our North America-focused online stores.AWS
+The AWS segment consists of amounts e
+arned from global sales of compute, storage, database, and other service offerings for start-ups, enterprises,government agencies, and a
+cademic institutions.Information on reportab
+le segments and reconciliation to consolidated net income (loss) is as follows (in millions): 
+ Year Ended December 31,  
+2017  2018  2019 North America
+     Net sales
+$ 106,110  $141,366  $170,773 Operating expenses
+103,273  134,099  163,740 Operating income
+$ 2,837  $7,267  $7,033 International
+     Net sales
+$ 54,297  $65,866  $74,723 Operating expenses
+57,359  68,008  76,416 Operating income (loss)
+$ (3,062 )  $(2,142 )  $(1,693 ) AWS
+     Net sales
+$ 17,459  $25,655  $35,026 Operating expenses
+13,128  18,359  25,825 Operating income
+$ 4,331  $7,296  $9,201 Consolidated
+     Net sales
+$ 177,866  $232,887  $280,522 Operating expenses
+173,760  220,466  265,981 Operating income
+4,106  12,421  14,541 Total non-operating incom
+e (expense)(300 ) (1,160 )  (565 )Provision for income taxes
+(769 ) (1,197 )  (2,374 ) Equity-method investment 
+activity, net of tax(4 ) 9  (14 )Net income
+$ 3,033  $10,073  $11,588 67
+
+Table of ContentsNet sales by groups of similar p
+roducts and services, which also have similar economic characteristics, is as follows (in millions): 
+ Year Ended December 31,  
+2017  2018  2019 Net Sales:
+     Online stores (1)
+$ 108,354  $122,987  $141,247 Physical stores (2)
+5,798  17,224  17,192 Third-party seller se
+rvices (3)31,881  42,745  53,762 Subscription services (4)
+9,721  14,168  19,210 AWS
+17,459  25,655  35,026 Other (5)
+4,653  10,108  14,085 Consolidated
+$ 177,866  $232,887  $280,522 ___________________
+(1)
+Includes product sales and digital media content where we record revenue gross. We leverage our retail infrastructure to offer a wide selection of consumableand durable goods that includes 
+media products available in both a physical and digital format, such as books, music, videos, games, and software. Theseproduct sales include digi
+tal products sold on a transactional basis. Digital product subscriptions that provide unlimited viewing or usage rights are included in“Subscription services.”
+(2)
+Includes product sales where our customers physically select items in a store. Sales from customers who order goods online for delivery or pickup at ourphysical stores are inc
+luded in “Online stores.”(3)
+Includes commissions and any related fulfillment and shipping fees, and other third-party seller services.(4)
+Includes annual and monthly fees associated with Amazon Prime memberships, as well as audiobook, digital video, digital music, e-book, and other non-AWSsubscription services.
+(5)
+Primarily includes sales of advertising services, as well as sales related to our other service offerings.Net sales generated from 
+our internationally-focused online stores are denominated in local functional currencies. Revenues are translated at average ratesprevailing throughout the pe
+riod. Net sales attributed to countries that represent a significant portion of consolidated net sales are as follows (in millions): 
+Year Ended December 31,  
+2017  2018  2019 United States
+$ 120,486  $160,146  $193,636 Germany
+16,951  19,881  22,232 United Kingdom
+11,372  14,524  17,527 Japan
+11,907  13,829  16,002 Rest of world
+17,150  24,507  31,125 Consolidated
+$ 177,866  $232,887  $280,522 Total segment assets excl
+ude corporate assets, such as cash and cash equivalents, marketable securities, other long-term investments, corporate facilities,goodwill and other acquired in
+tangible assets, and tax assets. Technology infrastructure assets are allocated among the segments based on usage, with the majorityallocated to the AWS segmen
+t. Total segment assets reconciled to consolidated amounts are as follows (in millions): 
+December 31,  
+2017  2018  2019 North America (1)
+$ 35,844  $47,251  $72,277 International (1)
+18,014  19,923  30,709 AWS (2)
+18,660  26,340  36,500 Corporate
+58,792  69,134  85,762 Consolidated
+$ 131,310  $162,648  $225,248 ___________________
+(1)
+North America and International segment assets primarily consist of property and equipment, inventory, and accounts receivable.(2)
+AWS segment assets primarily consist of property and equipment and accounts receivable.68
+
+Table of ContentsProperty and equipment, net by seg
+ment is as follows (in millions): 
+December 31,  
+2017  2018  2019 North America
+$ 20,401  $27,052  $31,719 International
+7,425  8,552  9,566 AWS
+14,885  18,851  23,481 Corporate
+6,155  7,342  7,939 Consolidated
+$ 48,866  $61,797  $72,705 Total net additions to prope
+rty and equipment by segment are as follows (in millions): 
+Year Ended December 31,  
+2017  2018  2019 North America (1)
+$ 13,200  $10,749  $11,752 International (1)
+5,196  2,476  3,298 AWS (2)
+9,190  9,783  13,058 Corporate
+2,197  2,060  1,910 Consolidated
+$ 29,783  $25,068  $30,018 ___________________
+(1)
+Includes property and equipment added under finance leases of $2.9 billion , $2.0 billion, and $3.8 billion  in 2017, 2018, and 2019 , and under financing obligations of 
+$2.9 billion , $3.0 billion, and $1.3 billion  in 2017, 2018, and 2019 . (2)
+Includes property and equipment added under finance leases of $7.3 billion , $8.4 billion, and $10.6 billion  in 2017, 2018, and 2019 , and under financing obligations of 
+$134 million , $245 million, and $0 million  in 2017, 2018, and 2019 . U.S. property and equipment, net was 
+$35.5 billion , $45.1 billion, and $53.0 billion , in 2017, 2018, and 2019 , and non-U.S. property and equipment, net was $13.4 billion
+, $16.7 billion, and $19.7 billion  in 2017, 2018, and 2019 . Except for the U.S., property and equip ment, net, in any single country was less than 10% of consolidated property and 
+equipment, net.Depreciation and amort
+ization expense, including other corporate property and equipment depreciation and amortization expense, are allocated to allsegments based on usage. Total dep
+reciation and amortization expense, by segment, is as follows (in millions): 
+Year Ended December 31,  
+2017  2018  2019 North America
+$ 3,029  $4,415  $5,106 International
+1,278  1,628  1,886 AWS
+4,524  6,095  8,158 Consolidated
+$ 8,831  $12,138  $15,150 69
+
+Table of ContentsNote 11 — 
+QUARTERLY RESULTS (UNAUDITED)The following tables
+ contain selected unaudited statement of operations information for each quarter of 2018  and 2019 . The following information r eflectsall normal recurring adjustment
+s necessary for a fair presentation of the information for the periods presented. The operating results for any quarter are notnecessarily indicat
+ive of results for any future period. Our business is affected by seasonality, which historically has resulted in higher sales volume during ourfourth quarter. Unaudited qua
+rterly results are as follows (in millions, except per share data): 
+Year Ended December 31, 2018 (1)  
+First Quarter
+ Second Quarter
+ Third Quarter
+ Fourth Quarter
+Net sales
+$ 51,042  $52,886  $56,576  $72,383 Operating income
+1,927  2,983  3,724  3,786 Income before income taxes
+1,916  2,605  3,390  3,350 Provision for income taxes
+(287 ) (74 ) (508 ) (327 )Net income
+1,629  2,534  2,883  3,027 Basic earnings per share
+3.36  5.21  5.91  6.18 Diluted earnings per share
+3.27  5.07  5.75  6.04 Shares used in computation of e
+arnings per share:       Basic
+484  486  488  490 Diluted
+498  500  501  501  
+Year Ended December 31, 2019 (1)  
+First Quarter
+ Second Quarter
+ Third Quarter
+ Fourth Quarter
+Net sales
+$ 59,700  $63,404  $69,981  $87,437 Operating income
+4,420  3,084  3,157  3,879 Income before income taxes
+4,401  2,889  2,632  4,053 Provision for income taxes
+(836 ) (257 ) (494 ) (786 )Net income
+3,561  2,625  2,134  3,268 Basic earnings per share
+7.24  5.32  4.31  6.58 Diluted earnings per share
+7.09  5.22  4.23  6.47 Shares used in computation of e
+arnings per share:       Basic
+491  493  495  496 Diluted
+502  503  504  505  ___________________
+(1)
+The sum of quarterly amounts, including per share amounts, may not equal amounts reported for year-to-date periods. This is due to the effects of roundingand changes in the number of weigh
+ted-average shares outstanding for each period.70
+
+Table of ContentsItem 9.
+Changes in and Disagreements with Accountants On Accounting and Financial Disclosure None.
+Item 9A.
+Controls and Procedures Evaluation of Disclosure Controls and Procedures
+We carried out an eva
+luation required by the Securities Exchange Act of 1934 (the “1934 Act”), under the supervision and with the participation of ourprincipal executive o
+fficer and principal financial officer, of the effectiveness of the design and operation of our disclosure controls and procedures, as defined inRule 13a-15(e) of the 1934 Act, as of 
+December 31, 2019 . Based on this  evaluation, our principal executive officer and principal financial officer concluded that,as of 
+December 31, 2019 , our disclosure controls and pro cedures were effective to provide reasonable assurance that information required to be disclosed by us inthe reports that we fil
+e or submit under the 1934 Act is recorded, processed, summarized, and reported within the time periods specified in the SEC’s rules andforms and to provide
+ reasonable assurance that such information is accumulated and communicated to our management, including our principal executive officerand principal financial officer,
+ as appropriate to allow timely decisions regarding required disclosure.Management’s Report on Internal Control over Financial Reporting
+Management is responsible 
+for establishing and maintaining adequate internal control over financial reporting, as defined in Rule 13a-15(f) of the 1934 Act.Management has assessed the 
+effectiveness of our internal control over financial reporting as of December 31, 2019  based on criteria est ablished in InternalControl — Integrated Framework 
+(2013) issued by the Committee of Sponsoring Organizations of the Treadway Commission. As a result of this assessment,management concluded th
+at, as of December 31, 2019 , our internal control ove r financial reporting was effective in providing reasonable assurance regarding thereliability of financial reporting
+ and the preparation of financial statements for external purposes in accordance with generally accepted accounting principles.Ernst & Young has independently assessed 
+the effectiveness of our internal control over financial reporting and its report is included below.Changes in Internal Control Over Financial Reporting
+There were no changes in our int
+ernal control over financial reporting during the quarter ended December 31, 2019  that materially affected, or are reas onablylikely to materially affect, our i
+nternal control over financial reporting.Limitations on Controls
+Our disclosure controls and proc
+edures and internal control over financial reporting are designed to provide reasonable assurance of achieving theirobjectives as specifi
+ed above. Management does not expect, however, that our disclosure controls and procedures or our internal control over financial reportingwill prevent or detect 
+all error and fraud. Any control system, no matter how well designed and operated, is based upon certain assumptions and can provide onlyreasonable, not absolute, assu
+rance that its objectives will be met. Further, no evaluation of controls can provide absolute assurance that misstatements due to erroror fraud will not occur or th
+at all control issues and instances of fraud, if any, within the Company have been detected.71
+
+Table of ContentsReport of Independent Registered Public Accounting Firm
+The Board of Directors and Sharehold
+ersAmazon.com, Inc.
+Opinion on Internal Control Over Financial Reporting
+We have audited Amazon.com, 
+Inc.’s internal control over financial reporting as of December 31, 2019 , based on criteria est ablished in Internal Control —Integrated Framework issued by 
+the Committee of Sponsoring Organizations of the Treadway Commission (2013 framework) (the COSO criteria). In our opinion,Amazon.com, Inc. (the
+ Company) maintained, in all material respects, effective internal control over financial reporting as of December 31, 2019 , based on the COSO criteria.
+We also have audited, in a
+ccordance with the standards of the Public Company Accounting Oversight Board (United States) (PCAOB), the consolidatedbalance sheets of the Company 
+as of December 31, 2019  and 2018 , and the related consolid ated statements of operations, comprehensive income, stockholders’equity, and cash flows for each o
+f the three years in the period ended December 31, 2019  and the related notes and ou r report dated January 30, 2020  expressed an unqualified opinion thereon.
+Basis for Opinion
+The Company’s mana
+gement is responsible for maintaining effective internal control over financial reporting, and for its assessment of the effectiveness ofinternal control over 
+financial reporting included in the accompanying Management’s Report on Internal Control over Financial Reporting. Our responsibility is toexpress an opinion on the Company’s int
+ernal control over financial reporting based on our audit. We are a public accounting firm registered with the PCAOB andare required to be indep
+endent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of theSecurities and Exchange Commiss
+ion and the PCAOB.We conducted our audit in a
+ccordance with the standards of the PCAOB. Those standards require that we plan and perform the audit to obtain reasonableassurance about whet
+her effective internal control over financial reporting was maintained in all material respects.Our audit included obtaining an und
+erstanding of internal control over financial reporting, assessing the risk that a material weakness exists, testing andevaluating the design and ope
+rating effectiveness of internal control based on the assessed risk, and performing such other procedures as we considered necessaryin the circumstances. 
+We believe that our audit provides a reasonable basis for our opinion.Definition and Limitations of Internal Control Over F
+inancial ReportingA company’s internal c
+ontrol over financial reporting is a process designed to provide reasonable assurance regarding the reliability of financial reportingand the preparation of f
+inancial statements for external purposes in accordance with generally accepted accounting principles. A company’s internal control overfinancial reporting includes
+ those policies and procedures that (1) pertain to the maintenance of records that, in reasonable detail, accurately and fairly reflect thetransactions and dispositions o
+f the assets of the company; (2) provide reasonable assurance that transactions are recorded as necessary to permit preparation offinancial statements in accordance
+ with generally accepted accounting principles, and that receipts and expenditures of the company are being made only inaccordance with authori
+zations of management and directors of the company; and (3) provide reasonable assurance regarding prevention or timely detection ofunauthorized acquisition, us
+e, or disposition of the company’s assets that could have a material effect on the financial statements.Because of its inherent l
+imitations, internal control over financial reporting may not prevent or detect misstatements. Also, projections of any evaluation ofeffectiveness to futu
+re periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance withthe policies or procedur
+es may deteriorate./s/ Ernst & Young LLP
+Seattle, Washington
+January 30, 2020
+72
+
+Table of ContentsItem 9B.
+Other Information Disclosure Pursuant to Section 13(r) of 
+the Exchange ActWe determined that, b
+etween January 2012 and December  2019, we processed and delivered ord ers of consumer products for certain individuals and entitieslocated outside Iran cov
+ered by the Iran Threat Reduction and Syria Human Rights Act (“ITRA”), in addition to those we have previously disclosed, as follows:consumer products valued at 
+approximately $13,700 for individuals who may have been acting for 14 Iranian embassies and diplomatic organizations located incountries other than Ir
+an; consumer products valued at approximately $90 for an individual designated under Executive Order 13224; consumer products valued atapproximately $8,600 for indiv
+iduals who may have been acting for seven entities owned or controlled by the Iranian government; and consumer products valuedat approximately $1,800 for 
+individuals who may have been acting for five entities designated under Executive Order 13224 or Executive Order 13382, three ofwhich are owned or controlled by th
+e Iranian Government. The consumer products included books, other media, apparel, home and kitchen, jewelry, health andbeauty, office, toys, consume
+r electronics, lawn and patio, automotive, software, grocery, and pet products. In addition, the information provided pursuant toSection 13(r) of the Exchange Ac
+t in Item 5 of Part II of the Company’s Quarterly Reports on 10-Q for the quarters ended March 31, 2019 , June 30, 2019, and September 30, 2019
+ is hereby incorporated  by reference to such reports. We are unable to accurately calculate the net profit attributable to these transactions. Wedo not plan to continue selling 
+to these accounts in the future. Our review is ongoing and we are enhancing our processes designed to identify transactionsassociated with individuals 
+and entities covered by the ITRA.PART III
+Item 10.
+Directors, Executive Officers, and Corporate Governance Information regarding ou
+r Executive Officers required by Item 10 of Part III is set forth in Item 1 of Part I “Business — Information About Our ExecutiveOfficers.” Informat
+ion required by Item 10 of Part III regarding our Directors and any material changes to the process by which security holders may recommendnominees to the Board of Direc
+tors is included in our Proxy Statement relating to our 2020  Annual Meeting of Shareholders, and is incorporated herein byreference. Inform
+ation relating to our Code of Business Conduct and Ethics and, to the extent applicable, compliance with Section 16(a) of the 1934 Act is set forthin our Proxy Statement rela
+ting to our 2020  Annual Meeting of Shareholders and is incorporated herein by reference. To the extent permissible under Nasdaq rules,we intend to disclose amendm
+ents to our Code of Business Conduct and Ethics, as well as waivers of the provisions thereof, on our investor relations website underthe heading “Corporate
+ Governance” at amazon.com/ir.Item 11.
+Executive Compensation Information required by 
+Item 11 of Part III is included in our Proxy Statement relating to our 2020  Annual Meeting of Shareholders and is incorporatedherein by reference.
+Item 12.
+Security Ownership of Certain Beneficial Owners and Management and Related Shareholder Matters Information required by 
+Item 12 of Part III is included in our Proxy Statement relating to our 2020  Annual Meeting of Shareholders and is incorporatedherein by reference.
+Item 13.
+Certain Relationships and Related Transactions, and Director Independence Information required by 
+Item 13 of Part III is included in our Proxy Statement relating to our 2020  Annual Meeting of Shareholders and is incorporatedherein by reference.
+Item 14.
+Principal Accountant Fees and Services Information required by 
+Item 14 of Part III is included in our Proxy Statement relating to our 2020  Annual Meeting of Shareholders and is incorporatedherein by reference.
+73
+
+Table of ContentsPART IV
+ 
+Item 15.
+Exhibits, Financial Statement Schedules (a) 
+List of Documents Filed as a Part of This Report:(1) 
+Index to Consolidated Financial Statements:Report of Ernst & Young LLP, Independent Registe
+red Public Accounting FirmConsolidated Statements of Cash Flows for 
+each of the three years ended December 31, 2019 Consolidated Statements of Oper
+ations for each of the three years ended December 31, 2019 Consolidated Statements of Compr
+ehensive Income for each of the three years ended December 31, 2019 Consolidated Balance Sheets as of 
+December 31, 2018  and 2019 Consolidated Statements of Stockho
+lders’ Equity for each of the three years ended December 31, 2019 Notes to Consolidated Financial Sta
+tementsReport of Ernst & Young LLP, Independent Registe
+red Public Accounting Firm(2) 
+Index to Financial Statement Schedules:All schedules have been omit
+ted because the required information is included in the consolidated financial statements or the notes thereto, orbecause it is not requir
+ed.(3) 
+Index to ExhibitsSee exhibits listed under Par
+t (b) below.(b) 
+Exhibits:Exhibit Number
+ Description  
+  3.1
+ 
+Restated Certificate of Incorporation of the Company (incorporated by reference to Exhibit 3.1 to the Company’s Quarterly Report on Form 10-Qfor the Quarter ended Mar
+ch 31, 2000). 
+  3.2
+ 
+Amended and Restated Bylaws of the Company (incorporated by reference to the Company’s Current Report on Form 8-K, filed February 25,2016).
+ 
+  4.1
+ 
+Indenture, dated as of November 29, 2012, between Amazon.com, Inc. and Wells Fargo Bank, National Association, as trustee, and Form of0.650% Note due 2015, Form of 1.200% Note due 2017, and Form of 2.500% Not
+e due 2022 (incorporated by reference to the Company’s CurrentReport on Form 8-K, filed November 29, 2012).
+ 
+  4.2
+ 
+Officers’ Certificate of Amazon.com, Inc., dated as of December 5, 2014, containing Form of 2.600% Note due 2019, Form of 3.300% Note due2021, Form of 3.800% Note due 2024, Form of 4.800% Note due 2034, and Form o
+f 4.950% Note due 2044 (incorporated by reference to theCompany’s Current Report on Form 8-K, filed De
+cember 5, 2014). 
+  4.3
+ 
+Officers’ Certificate of Amazon.com, Inc., dated as of August 22, 2017, containing Form of 1.900% Note due 2020, Form of 2.400% Note due2023, Form of 2.800% Note due 2024, Form of 3.150% Note due 2027, Form of 3.875
+% Note due 2037, Form of 4.050% Note due 2047, and Formof 4.250% Note due 2057 (incorporated by 
+reference to the Company’s Current Report on Form 8-K, filed August 22, 2017). 
+  4.4
+ 
+Registration Rights Agreement, dated as of August 22, 2017, among Amazon.com, Inc. and the representatives of the initial purchasers ofAmazon.com, Inc.’s 1.900% Notes due 2020, 2.400% Notes du
+e 2023, 2.800% Notes due 2024, 3.150% Notes due 2027, 3.875% Notes due 2037,4.050% Notes due 2047, and 4.250% Notes due 2057 (incorpor
+ated by reference to the Company’s Current Report on Form 8-K, filed August 22,2017).
+ 
+  4.5
+ 
+Officers’ Certificate of Amazon.com, Inc., dated as of December 20, 2017, containing Form of 5.200% Note due 2025 (incorporated by reference tothe Company’s Current Report on Form 8-K, fi
+led December 20, 2017). 
+  4.6
+ Description of Securities. 
+  10.1†
+ 
+1997 Stock Incentive Plan (amended and restated) (incorporated by reference to the Company’s Quarterly Report on Form 10-Q for the Quarterended March 31, 2013).
+ 
+  74
+
+Table of Contents10.2†
+ 
+1999 Nonofficer Employee Stock Option Plan (amended and restated) (incorporated by reference to the Company’s Quarterly Report on Form 10-Q for the Quarter ended March 31, 2013
+). 
+  10.3†
+ 
+Form of Indemnification Agreement between the Company and each of its Directors (incorporated by reference to Exhibit 10.1 to the Company’sRegistration Statement on For
+m S-1 (Registration No. 333-23795) filed March 24, 1997, as amended on April 21, 1997). 
+  10.4†
+ 
+Form of Restricted Stock Unit Agreement for Officers and Employees (incorporated by reference to the Company’s Annual Report on Form 10-Kfor the Year ended Decembe
+r 31, 2002). 
+  10.5†
+ 
+Form of Restricted Stock Unit Agreement for Directors (incorporated by reference to the Company’s Annual Report on Form 10-K for the Yearended December 31, 2002).
+ 
+  10.6†
+ 
+Form of Restricted Stock Agreement (incorporated by reference to the Company’s Annual Report on Form 10-K for the Year ended December 31,2001).
+ 
+  10.7†
+ 
+Form of Global Restricted Stock Unit Award Agreement for Executive Officers (incorporated by reference to the Company’s Annual Report onForm 10-K for the Year ended Decemb
+er 31, 2018). 
+  10.8
+ 
+Credit Agreement, dated as of May 20, 2016, among Amazon.com, Inc., Bank of America, N.A., as administrative agent, and the other lendersparty thereto (incorpo
+rated by reference to the Company’s Quarterly Report on Form 10-Q for the Quarter ended June 30, 2016). 
+  21.1
+ List of Significant Subsidiaries. 
+  23.1
+ Consent of Independent Registered Public Accounting Firm. 
+  31.1
+ 
+Certification of Jeffrey P. Bezos, Chairman and Chief Executive Officer of Amazon.com, Inc., pursuant to Rule 13a-14(a) under the SecuritiesExchange Act of 1934.
+ 
+  31.2
+ 
+Certification of Brian T. Olsavsky, Senior Vice President and Chief Financial Officer of Amazon.com, Inc., pursuant to Rule 13a-14(a) under theSecurities Exchange Act of 1934.
+ 
+  32.1
+ Certification of Jeffrey P. Bezos, Chairman and Chief Executive Officer of Amazon.com, Inc., pursuant to 18 U.S.C. Section 1350. 
+  32.2
+ Certification of Brian T. Olsavsky, Senior Vice President and Chief Financial Officer of Amazon.com, Inc., pursuant to 18 U.S.C. Section 1350. 
+  101
+ 
+The following financial statements from the Company’s Annual Report on Form 10-K for the year ended December 31, 2019, formatted in XBRL:(i) Consolidated Statemen
+ts of Cash Flows, (ii) Consolidated Statements of Operations, (iii) Consolidated Statements of Comprehensive Income,(iv) Consolidated Balance Shee
+ts, (v) Consolidated Statements of Stockholders’ Equity, and (vi) Notes to Consolidated Financial Statements,tagged as blocks of text and in
+cluding detailed tags. 
+   
+ As permitted by Item 601(b)(4)(iii)(A) of Regulation S-K, the Company has not filed with this Annual Report on Form 10-K certain instrumentsdefining the rights of holde
+rs of long-term debt of the Company and its subsidiaries because the total amount of securities authorized thereunderdoes not exceed 10 percent of 
+the total assets of the Company and its subsidiaries on a consolidated basis. The Company agrees to furnish a copy ofsuch agreements to the Comm
+ission upon request. 
+  104 
+The cover page from the Company’s Annual Report on Form 10-K for the year ended December 31, 2019, formatted in iXBRL (included asExhibit 101).
+__________________
+†    Executive Compensation Plan or Agre
+ement.Item 16.
+Form 10-K Summary None.
+75
+
+Table of ContentsSIGNATURES
+Pursuant to the requiremen
+ts of Section 13 or 15(d) of the Securities Exchange Act of 1934, the registrant has duly caused this Report to be signed on itsbehalf by the undersigned, the
+reunto duly authorized, as of January 30, 2020 .  
+ 
+AMAZON.COM, INC.  
+   
+By: /s/ Jeffrey P. Bezos  
+ Jeffrey P. Bezos  
+ President, Chief Executive Officer,and Chairman of the Board
+Pursuant to the requiremen
+ts of the Securities Exchange Act of 1934, this Report has been signed below by the following persons on behalf of the registrantand in the capacities 
+indicated as of January 30, 2020 .  Signature
+ Title  
+  /s/ Jeffrey P. Bezos
+  Jeffrey P. Bezos
+ 
+

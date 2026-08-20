@@ -1,0 +1,45 @@
+{
+  "name": "dsh-plugin-minions",
+  "version": "1.1.0",
+  "description": "DeepSeek Harness tool plugin: cloud LLM orchestrates, local small models (LM Studio / Ollama / vLLM, OpenAI-compatible APIs) execute — cutting cloud API costs via the Minions hierarchical multi-model collaboration protocol.",
+  "type": "commonjs",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "python"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev": "tsc --watch",
+    "smoke": "npm run build && node lib/smoke.js",
+    "clean": "rimraf lib"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "minions",
+    "cordis",
+    "llm",
+    "lm-studio",
+    "ollama",
+    "vllm",
+    "tool-plugin",
+    "cost-saving"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-llm": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "0.0.1-rc.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-llm": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "0.0.1-rc.1",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  },
+  "license": "MIT"
+}

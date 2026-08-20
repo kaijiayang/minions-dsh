@@ -1,0 +1,27 @@
+# minions-dsh example config — LM Studio (local) + DeepSeek (cloud)
+# Copy to minions.yaml (or set $MINIONS_CONFIG to this file) and edit.
+
+version: 1
+
+remote:
+  provider: deepseek
+  model: deepseek-chat
+  base_url: https://api.deepseek.com/v1
+  api_key_env: DEEPSEEK_API_KEY     # export DEEPSEEK_API_KEY=sk-... in your shell
+
+local:
+  platform: lmstudio                # http://127.0.0.1:1234/v1
+  model: qwen3-8b                   # id exactly as shown in LM Studio "My Models"
+  base_url: http://127.0.0.1:1234/v1
+  api_key: lm-studio                # placeholder
+  temperature: 0.0
+  max_tokens: 2048
+
+protocol:
+  type: minions
+  max_rounds: 3
+  log_dir: minion_logs
+
+plugin:
+  bridge_python: python
+  timeout_ms: 300000

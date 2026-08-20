@@ -1,0 +1,31 @@
+# =============================================================================
+# minions-dsh — minimal Python dependencies
+# =============================================================================
+# Install with:
+#   pip install -e .        # core (editable, includes minions protocol library)
+#   pip install -e ".[dev]" # + test tooling (pytest, pyyaml)
+#
+# The authoritative dependency list lives in pyproject.toml; this file mirrors
+# it for tools that read requirements.txt directly.
+
+# --- OpenAI-compatible endpoints (DeepSeek / LM Studio / Ollama / vLLM) ---
+openai>=1.0
+requests
+
+# --- Minions protocol library ---
+pydantic>=2.0
+mcp
+rank_bm25
+tiktoken
+
+# --- Standardized config (minions.yaml) ---
+pyyaml
+
+# --- Optional remote providers (only needed if you use them) ---
+anthropic
+google-genai
+sambanova
+together
+
+# --- Testing ---
+pytest

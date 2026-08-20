@@ -1,0 +1,52 @@
+# GitHub Actions CI for minions-dsh
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Run unit tests
+        run: python -m pytest tests/unit -v
+      - name: Bridge self-test
+        run: python dsh-plugin/python/minions_bridge.py --self-test
+      - name: Validate example configs
+        run: |
+          for f in examples/configs/*.yaml; do
+            DEEPSEEK_API_KEY=sk-ci python dsh-plugin/python/minions_bridge.py --validate-config "$f"
+          done
+
+  node:
+    name: Plugin (Node)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install
+        working-directory: dsh-plugin
+        run: npm ci
+      - name: Build
+        working-directory: dsh-plugin
+        run: npm run build
+      - name: Smoke test
+        working-directory: dsh-plugin
+        run: npm run smoke

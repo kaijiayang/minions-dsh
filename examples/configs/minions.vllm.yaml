@@ -1,0 +1,27 @@
+# minions-dsh example config — vLLM (local) + DeepSeek (cloud)
+# Start vLLM with:  vllm serve Qwen/Qwen3-8B --api-key EMPTY --port 8000
+
+version: 1
+
+remote:
+  provider: deepseek
+  model: deepseek-chat
+  base_url: https://api.deepseek.com/v1
+  api_key_env: DEEPSEEK_API_KEY
+
+local:
+  platform: vllm                    # http://127.0.0.1:8000/v1
+  model: Qwen/Qwen3-8B              # vLLM uses HuggingFace-style ids
+  base_url: http://127.0.0.1:8000/v1
+  api_key: EMPTY                    # matches vllm serve --api-key EMPTY
+  temperature: 0.0
+  max_tokens: 2048
+
+protocol:
+  type: minions
+  max_rounds: 3
+  log_dir: minion_logs
+
+plugin:
+  bridge_python: python
+  timeout_ms: 300000

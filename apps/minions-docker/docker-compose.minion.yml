@@ -1,0 +1,70 @@
+models:
+  # declare LLM models to pull and use
+  worker:
+    model: ai/smollm2
+services:
+  minion-server:
+    build:
+      context: ../../
+      dockerfile: apps/minions-docker/Dockerfile.minion
+    ports:
+      - "127.0.0.1:5000:5000"
+    environment:
+      # OpenAI Configuration
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - REMOTE_MODEL_NAME=${REMOTE_MODEL_NAME:-gpt-4o-mini}
+      - REMOTE_BASE_URL=${REMOTE_BASE_URL:-https://api.openai.com/v1}
+      
+      # Server Configuration
+      - MAX_ROUNDS=${MAX_ROUNDS:-3}
+      - TIMEOUT=${TIMEOUT:-60}
+      - HOST=0.0.0.0
+      - PORT=5000
+      - LOG_DIR=minion_logs
+      - DEBUG=${DEBUG:-false}
+      - PRODUCTION=${PRODUCTION:-false}
+    volumes:
+      - ./minion_logs:/app/apps/minions-docker/minion_logs
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - minion-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    models:
+      worker:
+        endpoint_var: LOCAL_BASE_URL
+        model_var: LOCAL_MODEL_NAME
+
+  minion-frontend:
+    build:
+      context: ../../
+      dockerfile: apps/minions-docker/web/Dockerfile
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      - BACKEND_URL=http://minion-server:5000
+      - NODE_ENV=development
+    networks:
+      - minion-network
+    depends_on:
+      minion-server:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+
+volumes:
+  minion-logs:
+
+networks:
+  minion-network:
+    driver: bridge

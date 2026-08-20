@@ -1,0 +1,69 @@
+# =============================================================================
+# minions.yaml — standardized configuration for minions-dsh
+# =============================================================================
+# This file is the single source of truth for the DeepSeek Harness plugin
+# (dsh-plugin) and the Python bridge (dsh-plugin/python/minions_bridge.py).
+#
+#   * Secrets are never stored here: reference environment variables via
+#     `api_key_env` or `${ENV_VAR}` interpolation (see .env.example).
+#   * Copy this file to `minions.yaml` (or keep it) and edit to match your
+#     local deployment. The loader looks for minions.yaml in the repo root,
+#     the current working directory, or the path in $MINIONS_CONFIG.
+#
+# Full reference: docs/CONFIGURATION.md
+# JSON Schema:    config.schema.json
+# Examples:       examples/configs/
+# =============================================================================
+
+version: 1
+
+# -----------------------------------------------------------------------------
+# Remote — the cloud supervisor.
+# Responsibilities: decompose the task into sub-tasks, schedule the local
+# worker, and synthesize the final answer. This is the expensive model.
+# -----------------------------------------------------------------------------
+remote:
+  provider: deepseek            # deepseek | openai | anthropic | openai_compat
+  model: deepseek-chat
+  base_url: https://api.deepseek.com/v1   # optional; provider-specific default
+  api_key_env: DEEPSEEK_API_KEY           # name of the env var holding the key
+  temperature: 0.0
+  max_tokens: 4096
+
+# -----------------------------------------------------------------------------
+# Local — the local worker.
+# Responsibilities: read the long context and execute sub-tasks. Runs on your
+# own hardware via an OpenAI-compatible API (LM Studio / Ollama / vLLM /
+# llama.cpp / any compatible server), so it costs you nothing per token.
+# -----------------------------------------------------------------------------
+local:
+  # lmstudio | ollama | vllm | llamacpp | generic | auto
+  #   lmstudio -> http://127.0.0.1:1234/v1
+  #   ollama   -> http://127.0.0.1:11434/v1   (Ollama's OpenAI-compatible API)
+  #   vllm     -> http://127.0.0.1:8000/v1
+  #   llamacpp -> http://127.0.0.1:8080/v1
+  #   generic  -> you must set base_url
+  #   auto     -> base_url wins if given, else LM Studio defaults
+  platform: lmstudio
+  model: qwen3-8b                # model id exactly as exposed by your server
+  base_url: http://127.0.0.1:1234/v1    # optional; overrides platform default
+  api_key: lm-studio             # most local servers accept any placeholder
+  # api_key_env: OPENAI_COMPAT_API_KEY   # alternative: read key from env
+  temperature: 0.0
+  max_tokens: 2048
+
+# -----------------------------------------------------------------------------
+# Protocol — the collaboration protocol between supervisor and worker.
+# -----------------------------------------------------------------------------
+protocol:
+  type: minions                  # minions (parallel decomposition) | minion
+  max_rounds: 3
+  log_dir: minion_logs
+
+# -----------------------------------------------------------------------------
+# Plugin — DeepSeek Harness plugin options (used by dsh-plugin only).
+# -----------------------------------------------------------------------------
+plugin:
+  bridge_python: python          # python interpreter for the bridge
+  bridge_script: python/minions_bridge.py
+  timeout_ms: 300000             # subprocess timeout (ms)

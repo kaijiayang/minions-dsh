@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minions Docker - Advanced Protocol Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .status-card {
+            margin: 20px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .status-healthy {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .log-section {
+            margin-top: 30px;
+        }
+
+        .log-container {
+            background: #1e1e1e;
+            color: #f8f8f2;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+
+        .metrics-container {
+            margin-top: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .metrics-container.hidden {
+            display: none;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .metric-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: scroll;
+        }
+
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #4facfe;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-text {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .backend-info {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .backend-info strong {
+            color: #1976d2;
+        }
+
+        /* PDF Upload Section Styles */
+        .pdf-upload-section {
+            margin-bottom: 15px;
+        }
+
+        .pdf-select-container {
+            text-align: center;
+            padding: 20px;
+            background: #fafbfc;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .pdf-select-btn {
+            margin-bottom: 10px;
+        }
+
+        .upload-info {
+            font-size: 0.9em;
+            color: #666;
+            margin: 0;
+        }
+
+        .upload-progress {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 6px;
+            background: #e1e8ed;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .progress-text {
+            font-size: 0.9em;
+            color: #666;
+            margin: 0;
+        }
+
+        .pdf-info {
+            background: #e8f5e8;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .pdf-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pdf-icon {
+            font-size: 2em;
+        }
+
+        .pdf-meta {
+            flex: 1;
+            text-align: left;
+        }
+
+        .pdf-filename {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .pdf-stats {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .remove-pdf {
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .remove-pdf:hover {
+            background: #c82333;
+        }
+
+        .context-divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            color: #888;
+            font-weight: 600;
+        }
+
+        .context-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e1e8ed;
+            z-index: 1;
+        }
+
+        .context-divider span {
+            background: white;
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Radio Group Styles */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            position: relative;
+        }
+
+        .radio-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .radio-label {
+            display: block;
+            padding: 20px;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+            position: relative;
+        }
+
+        .radio-label:hover {
+            border-color: #4facfe;
+            background: #f0f8ff;
+        }
+
+        .radio-option input[type="radio"]:checked + .radio-label {
+            border-color: #4facfe;
+            background: #e3f2fd;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .radio-option input[type="radio"]:checked + .radio-label::before {
+            content: '✓';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 24px;
+            height: 24px;
+            background: #4facfe;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .radio-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .radio-description {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .radio-benefits {
+            font-size: 0.85em;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .radio-option input[type="radio"]:checked + .radio-label .radio-title {
+            color: #1976d2;
+        }
+
+        .radio-option input[type="radio"]:checked + .radio-label .radio-benefits {
+            color: #1976d2;
+        }
+
+        @media (max-width: 768px) {
+            .form-row,
+            .form-row-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .pdf-upload-zone {
+                padding: 30px 15px;
+            }
+
+            .upload-icon {
+                font-size: 2.5em;
+            }
+
+            .pdf-details {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Minions Protocol</h1>
+            <p>Advanced Multi-Agent Document Processing System</p>
+        </div>
+
+        <div id="status-card" class="status-card status-warning">
+            <span>🔄</span>
+            <span>Checking backend status...</span>
+        </div>
+
+        <div class="main-content">
+            <div class="backend-info">
+                <strong>Backend URL:</strong> <span id="backend-url-display">Detecting...</span>
+            </div>
+
+            <form id="minions-form">
+                <!-- Task Section -->
+                <div class="form-section">
+                    <h3>📝 Task Configuration</h3>
+                    
+                    <div class="form-group">
+                        <label for="task">Task Description *</label>
+                        <textarea id="task" placeholder="Describe what you want the minions to accomplish with the provided context..." required></textarea>
+                        <div class="info-text">Provide a clear, specific task for the minions to work on</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="doc_metadata">Document Metadata</label>
+                        <input type="text" id="doc_metadata" placeholder="e.g., Research paper, Legal document, Technical manual..." value="Document">
+                        <div class="info-text">Brief description of the type of document being processed</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="context">Context/Documents</label>
+                        
+                        <!-- PDF Upload Section -->
+                        <div class="pdf-upload-section" id="pdf-upload-section">
+                            <div class="pdf-select-container">
+                                <button type="button" class="btn btn-primary pdf-select-btn" id="pdf-select-btn">
+                                    📄 Choose PDF File
+                                </button>
+                                <input type="file" id="pdf-file-input" accept=".pdf" hidden>
+                                <div class="upload-info">Maximum file size: 10MB</div>
+                            </div>
+                            
+                            <div class="upload-progress" id="upload-progress" style="display: none;">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill"></div>
+                                </div>
+                                <p class="progress-text" id="progress-text">Processing PDF...</p>
+                            </div>
+                            
+                            <div class="pdf-info" id="pdf-info" style="display: none;">
+                                <div class="pdf-details">
+                                    <span class="pdf-icon">📄</span>
+                                    <div class="pdf-meta">
+                                        <div class="pdf-filename" id="pdf-filename"></div>
+                                        <div class="pdf-stats" id="pdf-stats"></div>
+                                    </div>
+                                    <button type="button" class="remove-pdf" id="remove-pdf" title="Remove PDF">✕</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="context-divider">
+                            <span>OR</span>
+                        </div>
+                        
+                        <textarea id="context" placeholder="Paste your document content, data, or context here..."></textarea>
+                        <div class="info-text">Provide the documents or context that the minions should analyze</div>
+                    </div>
+                </div>
+
+                <!-- Processing Mode Selection -->
+                <div class="form-section">
+                    <h3>🔄 Processing Mode</h3>
+                    
+                    <div class="form-group">
+                        <label>Choose Processing Method</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="mode_minions" name="processing_mode" value="minions" checked>
+                                <label for="mode_minions" class="radio-label">
+                                    <div class="radio-title">🤖 Minions Protocol (Recommended)</div>
+                                    <div class="radio-description">Uses local processing + selective remote calls for cost-effective analysis</div>
+                                    <div class="radio-benefits">✅ Lower cost</div>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="mode_remote" name="processing_mode" value="remote">
+                                <label for="mode_remote" class="radio-label">
+                                    <div class="radio-title">☁️ Remote Model Only</div>
+                                    <div class="radio-description">Sends entire document directly to remote model (higher cost)</div>
+                                    <div class="radio-benefits">⚠️ Higher cost</div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="info-text">Compare the efficiency and cost-effectiveness of both approaches</div>
+                    </div>
+                </div>
+
+                <!-- Optional Configuration -->
+                <div class="form-section">
+                    <h3>⚙️ Optional Configuration</h3>
+                    
+                    <div class="form-group">
+                        <label for="logging_id">Logging ID</label>
+                        <input type="text" id="logging_id" placeholder="Optional custom identifier">
+                        <div class="info-text">Custom identifier for this task</div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="check_status" class="btn btn-secondary">
+                        🔍 Check Status
+                    </button>
+                    <button type="submit" id="start" class="btn btn-primary" disabled>
+                        🚀 Start Minions Protocol
+                    </button>
+                    <button type="button" id="clear_log" class="btn btn-secondary">
+                        🗑️ Clear Log
+                    </button>
+                </div>
+            </form>
+
+            <!-- Log Section -->
+            <div class="log-section">
+                <h3>� Execution Log</h3>
+                <div class="log-container" id="log">Welcome to Minions Protocol Interface
+Click "Check Status" to verify backend connection.
+</div>
+            </div>
+
+            <!-- Metrics Section -->
+            <div class="metrics-container hidden" id="metrics-container">
+                <h3>📊 Execution Metrics</h3>
+                <div class="metrics-grid" id="metrics"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

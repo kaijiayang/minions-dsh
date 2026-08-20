@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minions-dsh"
+version = "1.1.0"
+description = "DeepSeek Harness plugin: cloud LLMs orchestrate, locally-deployed small models (LM Studio / Ollama / vLLM, OpenAI-compatible APIs) execute — cutting cloud API costs via the Minions hierarchical multi-model collaboration protocol."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "minions-dsh contributors" },
+    { name = "HazyResearch (original Minions protocol)" },
+]
+keywords = [
+    "deepseek-harness", "dsh", "dsh-plugin", "minions", "llm",
+    "lm-studio", "ollama", "vllm", "multi-model", "cost-saving",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    # Core protocol & bridge
+    "openai>=1.0",            # OpenAI-compatible endpoints (DeepSeek / LM Studio / Ollama / vLLM)
+    "pydantic>=2.0",          # structured protocol outputs
+    "tiktoken",               # token counting
+    "requests",               # health checks
+    "pyyaml",                 # standardized minions.yaml config
+    # Minions protocol library requirements (kept minimal)
+    "mcp",                    # minion.py top-level import
+    "rank_bm25",              # retrieval-based decomposition
+    "anthropic",              # optional remote provider
+    "google-genai",           # optional remote provider
+    "sambanova",              # optional remote provider
+    "together",               # optional remote provider
+]
+
+[project.optional-dependencies]
+mlx = ["mlx-lm"]
+secure = [
+    "flask",
+    "cryptography",
+    "orjson",
+    "twilio",
+    "pyjwt",
+]
+embeddings = [
+    "faiss-cpu",
+    "sentence-transformers",
+    "chromadb",
+]
+dev = ["pytest", "pyyaml"]
+
+[project.urls]
+Homepage = "https://github.com/kaijiayang/minions-dsh"
+Documentation = "https://github.com/kaijiayang/minions-dsh#readme"
+Source = "https://github.com/kaijiayang/minions-dsh"
+
+[project.scripts]
+minions = "minions_cli:main"
+
+[tool.setuptools]
+py-modules = ["minions_cli"]
+
+[tool.setuptools.packages.find]
+include = ["minions*"]
+
+[tool.setuptools.package-data]
+"minions" = ["prompts/*.py", "examples/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/unit"]
+addopts = "-q"

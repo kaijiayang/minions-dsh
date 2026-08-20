@@ -1,0 +1,1309 @@
+import asyncio
+import logging
+from pydantic import BaseModel
+from typing import Any, Dict, List, Optional, Union, Tuple
+import os
+import re
+import time
+
+from minions.usage import Usage
+from minions.clients.base import MinionsClient
+
+
+class GeminiClient(MinionsClient):
+    def __init__(
+        self,
+        model_name: str = "gemini-3-flash-preview",
+        temperature: float = 1.0,
+        max_tokens: int = 2048,
+        api_key: Optional[str] = None,
+        structured_output_schema: Optional[BaseModel] = None,
+        use_async: bool = False,
+        tool_calling: bool = False,
+        system_instruction: Optional[str] = None,
+        use_openai_api: bool = False,
+        thinking_budget: Optional[int] = None,
+        thinking_level: Optional[str] = None,
+        url_context: bool = False,
+        use_search: bool = False,
+        file_search_store_names: Optional[List[str]] = None,
+        local: bool = False,
+        use_interactions_api: bool = False,
+        **kwargs
+    ):
+        """Initialize Gemini Client.
+
+        Args:
+            model_name: The Gemini model to use. Defaults to "gemini-3-flash-preview".
+            temperature: The temperature to use for generation. Defaults to 1.0 (recommended for Gemini 3).
+                        Note: For Gemini 3 models, Google recommends keeping temperature at 1.0 to avoid
+                        potential looping issues or performance degradation on complex tasks.
+            max_tokens: The maximum number of tokens to generate.
+            api_key: The API key to use. If not provided, it will be read from the GOOGLE_API_KEY environment variable.
+            structured_output_schema: Optional Pydantic model for structured output.
+            use_async: Whether to use async API calls.
+            tool_calling: Whether to support tool calling.
+            system_instruction: Optional system instruction to use for all calls.
+            use_openai_api: Whether to use OpenAI-compatible API endpoint for Gemini models.
+            thinking_budget: Optional thinking budget for reasoning models (integer value).
+                           DEPRECATED for Gemini 3: Use thinking_level instead.
+                           Cannot be used together with thinking_level (will raise ValueError).
+            thinking_level: Optional thinking level for reasoning models. 
+                          For Gemini 3 Pro/Flash: "low", "high" (default: "high")
+                          For Gemini 3 Flash only: also supports "minimal", "medium"
+                          Cannot be used together with thinking_budget (will raise ValueError).
+            url_context: Whether to enable URL context retrieval tool. When enabled, the model can
+                       access content from URLs mentioned in messages (supports up to 20 URLs per request).
+                       URLs are automatically detected and the tool is enabled dynamically if needed.
+            use_search: Whether to enable Google Search tool. Can be combined with URL context for 
+                       powerful search-then-analyze workflows.
+            file_search_store_names: Optional list of file search store names to use for RAG.
+                       File search stores must be created beforehand using create_file_search_store()
+                       and populated with files using upload_to_file_search_store().
+            local: If True, return 3-tuple (responses, usage, done_reasons) for compatibility with
+                   minion.py local client interface. If False (default), return 2-tuple (responses, usage).
+            use_interactions_api: If True, use the Interactions API instead of generate_content API.
+                       The Interactions API provides simpler chat interface with detailed usage metrics.
+            **kwargs: Additional parameters passed to base class
+        """
+        super().__init__(
+            model_name=model_name,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            api_key=api_key,
+            local=local,
+            **kwargs
+        )
+        
+        # Client-specific configuration
+        self.logger.setLevel(logging.INFO)
+
+        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
+        self.use_async = use_async
+        self.return_tools = tool_calling
+        self.system_instruction = system_instruction
+        self.use_openai_api = use_openai_api
+        self.thinking_budget = thinking_budget
+        self.thinking_level = thinking_level
+        self.url_context = url_context
+        self.google_search = use_search
+        self.file_search_store_names = file_search_store_names or []
+        self.last_url_context_metadata = None
+        self.last_grounding_metadata = None
+        self.last_interaction_response = None
+        self.use_interactions_api = use_interactions_api  # Flag to use Interactions API instead of generate_content
+        
+        # Validate use_interactions_api with use_openai_api
+        if use_interactions_api and use_openai_api:
+            raise ValueError("Interactions API is not available with OpenAI-compatible API. Use native Gemini API instead.")
+        
+        if thinking_budget is not None and thinking_level is not None:
+            raise ValueError(
+                "Cannot use both 'thinking_budget' and 'thinking_level' together. "
+                "For Gemini 3 models, use 'thinking_level' (recommended). "
+                "Valid thinking_level values: 'low', 'medium' (Flash only), 'high', 'minimal' (Flash only)."
+            )
+
+        # If we want structured schema output:
+        self.format_structured_output = None
+        if structured_output_schema:
+            self.format_structured_output = structured_output_schema.model_json_schema()
+
+        # Initialize the client based on the chosen API
+        if self.use_openai_api:
+            if self.url_context or self.google_search or self.file_search_store_names:
+                raise ValueError("URL context, Google Search, and File Search are not supported with OpenAI-compatible API. Use native Gemini API instead.")
+            try:
+                from openai import OpenAI
+
+                self.openai_client = OpenAI(
+                    api_key=self.api_key,
+                    base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+                )
+                self.logger.info("Initialized OpenAI-compatible client for Gemini API")
+            except ImportError:
+                self.logger.error(
+                    "Failed to import openai. Please install it with 'pip install openai'"
+                )
+                raise
+        else:
+            # Initialize the Google Generative AI client
+            try:
+                from google import genai
+                from google.genai import types
+
+                self.client = genai.Client(api_key=self.api_key)
+                self.genai = genai
+                self.types = types
+                self.logger.info("Initialized native Gemini API client")
+            except ImportError:
+                self.logger.error(
+                    "Failed to import google.genai. Please install it with 'pip install -q -U google-genai'"
+                )
+                raise
+
+    @staticmethod
+    def get_available_models():
+        """
+        Get a list of available Gemini models
+
+        Returns:
+            List[str]: List of model names
+        """
+        try:
+            from google import genai
+
+            # Try to use API key from environment if available
+            api_key = os.getenv("GOOGLE_API_KEY")
+            if not api_key:
+                logging.warning("No GOOGLE_API_KEY found in environment variables")
+                # Return default models if no API key
+                return [
+                    "gemini-3.1-flash-lite-preview",
+                    "gemini-3-flash-preview",
+                ]
+
+            client = genai.Client(api_key=api_key)
+            models = client.list_models()
+            
+            # Extract model names and filter for Gemini models
+            model_names = []
+            for model in models:
+                model_name = model.name
+                # Remove the 'models/' prefix if present
+                if model_name.startswith('models/'):
+                    model_name = model_name[7:]
+                
+                # Only include Gemini models that support text generation
+                if "gemini" in model_name.lower():
+                    # Check if the model supports generateContent
+                    supported_methods = getattr(model, 'supported_generation_methods', [])
+                    if 'generateContent' in supported_methods or not supported_methods:
+                        model_names.append(model_name)
+            
+            # Sort models with newest versions first
+            model_names.sort(reverse=True)
+            
+            # If we got models from API, return them
+            if model_names:
+                return model_names
+            
+            # Fallback to default models if API returned empty
+            return [
+                "gemini-3.1-flash-lite-preview",
+                "gemini-3-flash-preview",
+            ]
+
+        except Exception as e:
+            logging.error(f"Failed to get Gemini model list: {e}")
+            # Return default models including Gemini 3 family
+            return [
+                "gemini-3.1-flash-lite-preview",
+                "gemini-3-flash-preview",
+            ]
+
+    def _prepare_generation_config(self):
+        """Common generation config for both sync and async calls."""
+        config = {
+            "temperature": self.temperature,
+            "max_output_tokens": self.max_tokens,
+        }
+
+        return config
+
+    def _create_url_context_tool(self):
+        """Create URL context tool for retrieving content from URLs."""
+        return self.types.Tool(
+            url_context=self.types.UrlContext()
+        )
+
+    def _create_google_search_tool(self):
+        """Create Google Search tool for web search capabilities."""
+        if not self.google_search:
+            return None
+        
+        return self.types.Tool(
+            google_search=self.types.GoogleSearch()
+        )
+    
+    def _create_file_search_tool(self):
+        """Create File Search tool for RAG capabilities."""
+        if not self.file_search_store_names:
+            return None
+        
+        return self.types.Tool(
+            file_search=self.types.FileSearch(
+                file_search_store_names=self.file_search_store_names
+            )
+        )
+
+    def _detect_urls_in_messages(self, messages: List[Dict[str, Any]]) -> bool:
+        """
+        Detect if there are URLs in the message content.
+        
+        Args:
+            messages: List of message dictionaries
+            
+        Returns:
+            bool: True if URLs are found, False otherwise
+        """
+        # More comprehensive URL pattern to match http/https URLs
+        # This pattern matches URLs more accurately and handles edge cases better
+        url_pattern = r'https?://(?:[-\w.])+(?:[:\d]+)?(?:/(?:[\w/_.])*(?:[?](?:[;&\w\-.,@?^=%&:/~+#])*)?(?:[#](?:[\w\-.,@?^=%&:/~+#])*)?)?'
+        
+        for msg in messages:
+            if isinstance(msg, dict) and 'content' in msg:
+                content = msg['content']
+                if isinstance(content, str) and re.search(url_pattern, content):
+                    return True
+        return False
+
+    def extract_urls_from_messages(self, messages: List[Dict[str, Any]]) -> List[str]:
+        """
+        Extract all URLs from message content.
+        
+        Args:
+            messages: List of message dictionaries
+            
+        Returns:
+            List[str]: List of URLs found in the messages
+        """
+        url_pattern = r'https?://(?:[-\w.])+(?:[:\d]+)?(?:/(?:[\w/_.])*(?:[?](?:[;&\w\-.,@?^=%&:/~+#])*)?(?:[#](?:[\w\-.,@?^=%&:/~+#])*)?)?'
+        urls = []
+        
+        for msg in messages:
+            if isinstance(msg, dict) and 'content' in msg:
+                content = msg['content']
+                if isinstance(content, str):
+                    found_urls = re.findall(url_pattern, content)
+                    urls.extend(found_urls)
+        
+        return list(set(urls))  # Remove duplicates
+
+    def _validate_url_context_support(self) -> bool:
+        """
+        Validate if the current model supports URL context feature.
+        
+        Returns:
+            bool: True if model supports URL context, False otherwise
+        """
+        # Models that support URL context according to the documentation
+        supported_models = {
+            "gemini-3.1-flash-lite-preview",
+            "gemini-3-flash-preview",
+        }
+        
+        if self.model_name not in supported_models:
+            self.logger.warning(f"Model '{self.model_name}' may not support URL context feature. Supported models: {supported_models}")
+            return False
+        return True
+
+    def _prepare_tools(self, messages: Optional[List[Dict[str, Any]]] = None):
+        """Prepare tools list for generation."""
+        tools = []
+        
+        # Check if we should enable URL context automatically
+        should_enable_url_context = self.url_context
+        if not should_enable_url_context and messages:
+            # Auto-detect URLs and enable URL context if found
+            should_enable_url_context = self._detect_urls_in_messages(messages)
+            if should_enable_url_context:
+                # Validate URL count limit (max 20 URLs per request)
+                urls = self.extract_urls_from_messages(messages)
+                if len(urls) > 20:
+                    self.logger.warning(f"Found {len(urls)} URLs in messages, but Gemini API supports max 20 URLs per request. Some URLs may not be processed.")
+                else:
+                    self.logger.info(f"URLs detected in messages ({len(urls)} URLs), automatically enabling URL context tool")
+        
+        if should_enable_url_context:
+            # Validate model support for URL context
+            if self._validate_url_context_support():
+                url_tool = self._create_url_context_tool()
+                if url_tool:
+                    tools.append(url_tool)
+            else:
+                self.logger.warning("URL context requested but model may not support it, skipping URL context tool")
+        
+        if self.google_search:
+            search_tool = self._create_google_search_tool()
+            if search_tool:
+                tools.append(search_tool)
+        
+        # Add file search tool if store names are provided
+        if self.file_search_store_names:
+            file_search_tool = self._create_file_search_tool()
+            if file_search_tool:
+                tools.append(file_search_tool)
+                self.logger.info(f"Enabled File Search with {len(self.file_search_store_names)} store(s)")
+        
+        return tools if tools else None
+
+    def _format_content(self, messages: List[Dict[str, Any]]):
+        """Format messages for Gemini API using the types module."""
+        contents = []
+        system_instruction = None
+
+        for msg in messages:
+            role = msg["role"]
+            content = msg["content"]
+
+            # Extract system instruction
+            if role == "system":
+                system_instruction = content
+                continue
+
+            # Map roles to Gemini format
+            if role == "user":
+                contents.append(
+                    self.types.Content(
+                        role="user", parts=[self.types.Part.from_text(text=content)]
+                    )
+                )
+            elif role == "assistant" or role == "model":
+                contents.append(
+                    self.types.Content(
+                        role="model", parts=[self.types.Part.from_text(text=content)]
+                    )
+                )
+
+        return contents, system_instruction
+
+    def _format_openai_messages(self, messages: List[Dict[str, Any]]):
+        """Format messages for OpenAI API format."""
+        formatted_messages = []
+
+        for msg in messages:
+            role = msg["role"]
+            content = msg["content"]
+
+            # Map roles to OpenAI format (which is already similar)
+            if role == "assistant":
+                role = "assistant"
+            elif role == "model":
+                role = "assistant"
+
+            formatted_messages.append({"role": role, "content": content})
+
+        return formatted_messages
+
+    def _format_interactions_input(self, messages: List[Dict[str, Any]]) -> List[Dict[str, str]]:
+        """
+        Format messages for the Interactions API.
+        
+        Args:
+            messages: List of message dictionaries with 'role' and 'content' keys
+            
+        Returns:
+            List[Dict[str, str]]: Formatted input for Interactions API
+        """
+        formatted_input = []
+        
+        for msg in messages:
+            role = msg.get("role", "user")
+            content = msg.get("content", "")
+            
+            # Map roles to Interactions API format
+            if role == "assistant":
+                role = "model"
+            elif role == "system":
+                # For system messages, we'll prepend to the first user message
+                # or create a user message if none exists
+                self.logger.warning("System messages are handled differently in Interactions API. Consider using system_instruction parameter instead.")
+                role = "user"
+            
+            formatted_input.append({
+                "role": role,
+                "content": content
+            })
+        
+        return formatted_input
+
+    #
+    #  ASYNC
+    #
+    def achat(
+        self,
+        messages: Union[List[Dict[str, Any]], Dict[str, Any]],
+        **kwargs,
+    ) -> Tuple[List[str], Usage, List[str]]:
+        """
+        Wrapper for async chat. Runs `asyncio.run()` internally to simplify usage.
+        """
+        if not self.use_async:
+            raise RuntimeError(
+                "This client is not in async mode. Set `use_async=True`."
+            )
+
+        # Check if we're already in an event loop
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                # We're in a running event loop (e.g., in Streamlit)
+                # Create a new loop in a separate thread to avoid conflicts
+                import threading
+                import concurrent.futures
+
+                # Use a thread to run our async code
+                with concurrent.futures.ThreadPoolExecutor() as executor:
+                    future = executor.submit(self._run_in_new_loop, messages, **kwargs)
+                    return future.result()
+            else:
+                # We have a loop but it's not running
+                return loop.run_until_complete(self._achat_internal(messages, **kwargs))
+        except RuntimeError:
+            # No event loop exists, create one (the normal case)
+            try:
+                return asyncio.run(self._achat_internal(messages, **kwargs))
+            except RuntimeError as e:
+                if "Event loop is closed" in str(e):
+                    # Create a new event loop and set it as the current one
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                    try:
+                        return loop.run_until_complete(
+                            self._achat_internal(messages, **kwargs)
+                        )
+                    finally:
+                        loop.close()
+                raise
+
+    def _run_in_new_loop(self, messages, **kwargs):
+        """Run the async chat in a new event loop in a separate thread"""
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+            return loop.run_until_complete(self._achat_internal(messages, **kwargs))
+        finally:
+            loop.close()
+
+    async def _achat_internal(
+        self,
+        messages: Union[List[Dict[str, Any]], Dict[str, Any]],
+        **kwargs,
+    ) -> Tuple[List[str], Usage, List[str]]:
+        """
+        Handle async chat with multiple messages in parallel.
+        """
+        # If the user provided a single dictionary, wrap it in a list.
+        if isinstance(messages, dict):
+            messages = [messages]
+
+        # Now we have a list of dictionaries. We'll call them in parallel.
+        generation_config = self._prepare_generation_config()
+
+        async def process_one(msg):
+            # Convert to Gemini format
+            if isinstance(msg, dict):
+                msg = [msg]
+
+            if self.use_openai_api:
+                # Format messages for OpenAI API
+                formatted_messages = self._format_openai_messages(msg)
+
+                # Create a new event loop for this async task
+                loop = asyncio.get_event_loop()
+
+                # Run the OpenAI API call in a thread pool
+                response = await loop.run_in_executor(
+                    None,
+                    lambda: self.openai_client.chat.completions.create(
+                        model=self.model_name,
+                        messages=formatted_messages,
+                        temperature=self.temperature,
+                        max_tokens=self.max_tokens,
+                        system_content=self.system_instruction,
+                    ),
+                )
+
+                # Extract usage information
+                usage = Usage(
+                    prompt_tokens=getattr(response, "usage", {}).get(
+                        "prompt_tokens", 0
+                    ),
+                    completion_tokens=getattr(response, "usage", {}).get(
+                        "completion_tokens", 0
+                    ),
+                )
+
+                return {
+                    "text": response.choices[0].message.content,
+                    "usage": usage,
+                    "finish_reason": response.choices[0].finish_reason or "stop",
+                }
+            else:
+                # Use native Gemini API
+                contents, system_instruction = self._format_content(msg)
+
+                # Use instance system_instruction as fallback
+                if not system_instruction:
+                    system_instruction = self.system_instruction
+
+                # Create a new event loop for this async task
+                loop = asyncio.get_event_loop()
+
+                # Prepare kwargs with generation config
+                call_kwargs = {**kwargs}
+                if generation_config:
+                    call_kwargs["config"] = self.types.GenerationConfig(
+                        **generation_config
+                    )
+
+                # Add system instruction if present
+                if system_instruction:
+                    call_kwargs["system_instruction"] = system_instruction
+
+                # Prepare tools
+                tools = self._prepare_tools(messages=msg)
+                
+                # Create GenerateContentConfig with tools and other settings
+                config_kwargs = {
+                    "temperature": self.temperature,
+                    "max_output_tokens": self.max_tokens,
+                }
+                
+                # Add thinking config if specified
+                if self.thinking_budget is not None or self.thinking_level is not None:
+                    thinking_config_kwargs = {}
+                    if self.thinking_budget is not None:
+                        thinking_config_kwargs["thinking_budget"] = self.thinking_budget
+                    if self.thinking_level is not None:
+                        thinking_config_kwargs["thinking_level"] = self.thinking_level
+                    config_kwargs["thinking_config"] = self.types.ThinkingConfig(
+                        **thinking_config_kwargs
+                    )
+                
+                # Add tools if available
+                if tools:
+                    config_kwargs["tools"] = tools
+                
+                config = self.types.GenerateContentConfig(**config_kwargs)
+
+                # Run the synchronous API call in a thread pool
+                response = await loop.run_in_executor(
+                    None,
+                    lambda: self.client.models.generate_content(
+                        model=self.model_name,
+                        contents=contents,
+                        config=config,
+                        system_instruction=system_instruction,
+                    ),
+                )
+
+                # Extract usage information
+                usage = Usage(
+                    prompt_tokens=getattr(response, "usage_metadata", {}).get(
+                        "prompt_token_count", 0
+                    ),
+                    completion_tokens=getattr(response, "usage_metadata", {}).get(
+                        "candidates_token_count", 0
+                    ),
+                )
+
+                # Extract URL context metadata if available
+                url_context_metadata = None
+                grounding_metadata = None
+                if hasattr(response, 'candidates') and response.candidates:
+                    candidate = response.candidates[0]
+                    if hasattr(candidate, 'url_context_metadata'):
+                        url_context_metadata = candidate.url_context_metadata
+                    if hasattr(candidate, 'grounding_metadata'):
+                        grounding_metadata = candidate.grounding_metadata
+
+                return {
+                    "text": response.text,
+                    "usage": usage,
+                    "finish_reason": "stop",  # Gemini doesn't provide this directly
+                    "url_context_metadata": url_context_metadata,
+                    "grounding_metadata": grounding_metadata,
+                }
+
+        # Run them all in parallel
+        results = await asyncio.gather(*(process_one(m) for m in messages))
+
+        # Gather them back
+        texts = []
+        usage_total = Usage()
+        done_reasons = []
+        url_context_metadata = None
+        grounding_metadata = None
+        for r in results:
+            texts.append(r["text"])
+            usage_total += r["usage"]
+            done_reasons.append(r["finish_reason"])
+            # Collect URL context metadata if available
+            if r.get("url_context_metadata"):
+                url_context_metadata = r["url_context_metadata"]
+            # Collect grounding metadata if available
+            if r.get("grounding_metadata"):
+                grounding_metadata = r["grounding_metadata"]
+
+        # Store metadata for later retrieval
+        self.last_url_context_metadata = url_context_metadata
+        self.last_grounding_metadata = grounding_metadata
+        
+        if self.local:
+            return texts, usage_total, done_reasons
+        else:
+            return texts, usage_total
+
+    def schat(
+        self,
+        messages: Union[List[Dict[str, Any]], Dict[str, Any]],
+        **kwargs,
+    ) -> Tuple[List[str], Usage, List[str]]:
+        """
+        Handle synchronous chat completions.
+        """
+        # If the user provided a single dictionary, wrap it
+        if isinstance(messages, dict):
+            messages = [messages]
+
+        # Prepare generation config
+        generation_config = self._prepare_generation_config()
+
+        responses = []
+        usage_total = Usage()
+        done_reasons = []
+        url_context_metadata = None
+        grounding_metadata = None
+
+        try:
+            if self.use_openai_api:
+                # Use OpenAI-compatible API endpoint
+                formatted_messages = self._format_openai_messages(messages)
+
+                # Add system instruction if present
+                system_content = self.system_instruction
+                if system_content:
+                    # Check if there's already a system message
+                    has_system = any(
+                        msg["role"] == "system" for msg in formatted_messages
+                    )
+                    if not has_system:
+                        # Add system message at the beginning
+                        formatted_messages.insert(
+                            0, {"role": "system", "content": system_content}
+                        )
+
+                # Make the API call
+                response = self.openai_client.chat.completions.create(
+                    model=self.model_name,
+                    messages=formatted_messages,
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                )
+
+                # Extract text
+                responses.append(response.choices[0].message.content)
+
+                # Add finish reason
+                done_reasons.append(response.choices[0].finish_reason or "stop")
+
+                # Extract usage information
+                usage_total += Usage(
+                    prompt_tokens=getattr(response.usage, "prompt_tokens", 0),
+                    completion_tokens=getattr(response.usage, "completion_tokens", 0),
+                )
+            else:
+                # Use native Gemini API
+                # Format messages for Gemini API
+                contents, system_instruction = self._format_content(messages)
+
+                # Use instance system_instruction as fallback
+                if not system_instruction:
+                    system_instruction = self.system_instruction
+
+                # Prepare tools
+                tools = self._prepare_tools(messages=messages)
+                
+                # Create GenerateContentConfig with tools and other settings
+                config_kwargs = {
+                    "temperature": self.temperature,
+                    "max_output_tokens": self.max_tokens,
+                }
+                
+                # Add thinking config if specified
+                if self.thinking_budget is not None or self.thinking_level is not None:
+                    thinking_config_kwargs = {}
+                    if self.thinking_budget is not None:
+                        thinking_config_kwargs["thinking_budget"] = self.thinking_budget
+                    if self.thinking_level is not None:
+                        thinking_config_kwargs["thinking_level"] = self.thinking_level
+                    config_kwargs["thinking_config"] = self.types.ThinkingConfig(
+                        **thinking_config_kwargs
+                    )
+                
+                # Add tools if available
+                if tools:
+                    config_kwargs["tools"] = tools
+
+                config_kwargs["system_instruction"] = system_instruction
+                
+                config = self.types.GenerateContentConfig(**config_kwargs)
+
+                # Make the API call
+                response = self.client.models.generate_content(
+                    model=self.model_name,
+                    contents=contents,
+                    config=config,
+                )
+
+                responses.append(response.text)
+
+                # Extract URL context metadata and grounding metadata if available
+                if hasattr(response, 'candidates') and response.candidates:
+                    candidate = response.candidates[0]
+                    if hasattr(candidate, 'url_context_metadata'):
+                        url_context_metadata = candidate.url_context_metadata
+                        self.logger.info(f"URL context metadata: {url_context_metadata}")
+                    if hasattr(candidate, 'grounding_metadata'):
+                        grounding_metadata = candidate.grounding_metadata
+                        self.logger.info(f"Grounding metadata found with {len(getattr(grounding_metadata, 'grounding_chunks', []))} chunks")
+
+                # Extract usage information
+                usage_total += Usage(
+                    prompt_tokens=response.usage_metadata.total_token_count
+                    - response.usage_metadata.candidates_token_count,
+                    completion_tokens=response.usage_metadata.candidates_token_count,
+                )
+
+        except Exception as e:
+            self.logger.error(f"Error during API call: {e}")
+            raise
+
+        # Store metadata for later retrieval
+        self.last_url_context_metadata = url_context_metadata
+        self.last_grounding_metadata = grounding_metadata
+        
+        if self.local:
+            return responses, usage_total, done_reasons
+        else:
+            return responses, usage_total
+
+    def get_url_context_metadata(self) -> Optional[Dict[str, Any]]:
+        """
+        Get URL context metadata from the last response.
+        
+        Returns:
+            Optional[Dict[str, Any]]: URL context metadata if available, None otherwise
+        """
+        return self.last_url_context_metadata
+    
+    def get_grounding_metadata(self) -> Optional[Dict[str, Any]]:
+        """
+        Get grounding metadata from the last response.
+        This includes citations from File Search and other grounding sources.
+        
+        Returns:
+            Optional[Dict[str, Any]]: Grounding metadata if available, None otherwise
+        """
+        return self.last_grounding_metadata
+    
+    def create_file_search_store(self, display_name: str) -> str:
+        """
+        Create a new File Search store for RAG.
+        
+        Args:
+            display_name: Display name for the file search store
+            
+        Returns:
+            str: The name/ID of the created store (format: fileSearchStores/xxxxx)
+            
+        Example:
+            store_name = client.create_file_search_store("My Knowledge Base")
+        """
+        if self.use_openai_api:
+            raise ValueError("File Search is not supported with OpenAI-compatible API. Use native Gemini API instead.")
+        
+        try:
+            response = self.client.file_search_stores.create(
+                config={'display_name': display_name}
+            )
+            self.logger.info(f"Created File Search store: {response.name}")
+            return response.name
+        except Exception as e:
+            self.logger.error(f"Failed to create File Search store: {e}")
+            raise
+    
+    def list_file_search_stores(self) -> List[Dict[str, Any]]:
+        """
+        List all File Search stores.
+        
+        Returns:
+            List[Dict[str, Any]]: List of file search store information
+            
+        Example:
+            stores = client.list_file_search_stores()
+            for store in stores:
+                print(f"Store: {store['name']} - {store['display_name']}")
+        """
+        if self.use_openai_api:
+            raise ValueError("File Search is not supported with OpenAI-compatible API. Use native Gemini API instead.")
+        
+        try:
+            stores = self.client.file_search_stores.list()
+            result = []
+            for store in stores:
+                result.append({
+                    'name': store.name,
+                    'display_name': getattr(store, 'display_name', ''),
+                    'create_time': getattr(store, 'create_time', None),
+                })
+            return result
+        except Exception as e:
+            self.logger.error(f"Failed to list File Search stores: {e}")
+            raise
+    
+    def delete_file_search_store(self, store_name: str):
+        """
+        Delete a File Search store.
+        
+        Args:
+            store_name: Name of the store to delete (format: fileSearchStores/xxxxx)
+            
+        Example:
+            client.delete_file_search_store("fileSearchStores/abc123")
+        """
+        if self.use_openai_api:
+            raise ValueError("File Search is not supported with OpenAI-compatible API. Use native Gemini API instead.")
+        
+        try:
+            self.client.file_search_stores.delete(name=store_name)
+            self.logger.info(f"Deleted File Search store: {store_name}")
+        except Exception as e:
+            self.logger.error(f"Failed to delete File Search store: {e}")
+            raise
+    
+    def upload_to_file_search_store(
+        self,
+        file_path: str,
+        store_name: str,
+        display_name: Optional[str] = None,
+        wait_for_completion: bool = True,
+        timeout: int = 300
+    ) -> Dict[str, Any]:
+        """
+        Upload a file to a File Search store.
+        
+        Args:
+            file_path: Path to the file to upload
+            store_name: Name of the store to upload to (format: fileSearchStores/xxxxx)
+            display_name: Optional display name for the file (will be visible in citations)
+            wait_for_completion: Whether to wait for the import operation to complete
+            timeout: Maximum time to wait for completion (in seconds)
+            
+        Returns:
+            Dict[str, Any]: Operation result information
+            
+        Example:
+            result = client.upload_to_file_search_store(
+                file_path="document.pdf",
+                store_name="fileSearchStores/abc123",
+                display_name="Important Document"
+            )
+        """
+        if self.use_openai_api:
+            raise ValueError("File Search is not supported with OpenAI-compatible API. Use native Gemini API instead.")
+        
+        try:
+            config = {}
+            if display_name:
+                config['display_name'] = display_name
+            
+            # Start the upload operation
+            operation = self.client.file_search_stores.upload_to_file_search_store(
+                file=file_path,
+                file_search_store_name=store_name,
+                config=config if config else None
+            )
+            
+            self.logger.info(f"Started upload operation for {file_path} to {store_name}")
+            
+            # Wait for completion if requested
+            if wait_for_completion:
+                start_time = time.time()
+                while not operation.done:
+                    if time.time() - start_time > timeout:
+                        raise TimeoutError(f"Upload operation timed out after {timeout} seconds")
+                    
+                    time.sleep(2)  # Poll every 2 seconds
+                    operation = self.client.operations.get(operation)
+                    self.logger.debug(f"Upload operation status: {operation.done}")
+                
+                self.logger.info(f"Upload completed for {file_path}")
+                
+            return {
+                'operation_name': operation.name,
+                'done': operation.done,
+                'error': getattr(operation, 'error', None),
+            }
+        except Exception as e:
+            self.logger.error(f"Failed to upload file to File Search store: {e}")
+            raise
+    
+    def add_file_search_store(self, store_name: str):
+        """
+        Add a File Search store to be used in subsequent generations.
+        
+        Args:
+            store_name: Name of the store to add (format: fileSearchStores/xxxxx)
+            
+        Example:
+            client.add_file_search_store("fileSearchStores/abc123")
+        """
+        if store_name not in self.file_search_store_names:
+            self.file_search_store_names.append(store_name)
+            self.logger.info(f"Added File Search store: {store_name}")
+    
+    def remove_file_search_store(self, store_name: str):
+        """
+        Remove a File Search store from being used in generations.
+        
+        Args:
+            store_name: Name of the store to remove (format: fileSearchStores/xxxxx)
+            
+        Example:
+            client.remove_file_search_store("fileSearchStores/abc123")
+        """
+        if store_name in self.file_search_store_names:
+            self.file_search_store_names.remove(store_name)
+            self.logger.info(f"Removed File Search store: {store_name}")
+    
+    def clear_file_search_stores(self):
+        """
+        Clear all File Search stores from being used in generations.
+        
+        Example:
+            client.clear_file_search_stores()
+        """
+        self.file_search_store_names = []
+        self.logger.info("Cleared all File Search stores")
+
+    def chat(
+        self,
+        messages: Union[List[Dict[str, Any]], Dict[str, Any]],
+        **kwargs,
+    ) -> Union[Tuple[List[str], Usage], Tuple[List[str], Usage, List[str]]]:
+        """
+        Handle chat completions, routing to async or sync implementation.
+        
+        The client will automatically detect URLs in the message content and enable
+        URL context retrieval if URLs are found (unless explicitly disabled).
+        
+        If self.use_interactions_api is True, this will route to the Interactions API
+        instead of the generate_content API.
+        
+        After completion, you can retrieve URL context metadata using:
+        get_url_context_metadata()
+        
+        Args:
+            messages: List of message dictionaries or single message dictionary
+            **kwargs: Additional keyword arguments
+            
+        Returns:
+            If self.local is False:
+                Tuple[List[str], Usage]: Response texts and usage information
+            If self.local is True:
+                Tuple[List[str], Usage, List[str]]: Response texts, usage info, and finish reasons
+        """
+        # Route to Interactions API if enabled
+        if self.use_interactions_api:
+            # Extract config from kwargs if present (for minion.py compatibility)
+            config = kwargs.pop('config', None)
+            return self.interactions_chat(messages, config=config, **kwargs)
+        
+        if self.use_async:
+            return self.achat(messages, **kwargs)
+        else:
+            return self.schat(messages, **kwargs)
+
+    def set_use_interactions_api(self, use_interactions: bool):
+        """
+        Set whether to use the Interactions API for chat calls.
+        
+        When enabled, calls to chat() will be routed to interactions_chat().
+        This provides a simple way to switch between APIs without changing
+        calling code.
+        
+        Args:
+            use_interactions: If True, use Interactions API; if False, use generate_content API
+            
+        Example:
+            client = GeminiClient(model_name="gemini-3-flash-preview")
+            
+            # Use generate_content API (default)
+            responses, usage = client.chat(messages)
+            
+            # Switch to Interactions API
+            client.set_use_interactions_api(True)
+            responses, usage = client.chat(messages)  # Now uses Interactions API
+        """
+        if use_interactions and self.use_openai_api:
+            raise ValueError("Interactions API is not available with OpenAI-compatible API. Use native Gemini API instead.")
+        self.use_interactions_api = use_interactions
+        self.logger.info(f"Interactions API {'enabled' if use_interactions else 'disabled'}")
+
+    # ==========================================================================
+    # Interactions API Support
+    # ==========================================================================
+
+    def interactions_chat(
+        self,
+        messages: Union[List[Dict[str, Any]], Dict[str, Any]],
+        config: Optional[Dict[str, Any]] = None,
+        **kwargs,
+    ) -> Union[Tuple[List[str], Usage], Tuple[List[str], Usage, List[str]]]:
+        """
+        Handle chat using the Interactions API.
+        
+        The Interactions API provides a simpler interface for chat-like interactions
+        with Gemini models. It's designed for conversational use cases and provides
+        detailed usage information including token counts by modality.
+        
+        Args:
+            messages: List of message dictionaries or single message dictionary.
+                     Each message should have 'role' ('user' or 'model'/'assistant')
+                     and 'content' keys.
+            config: Optional configuration dictionary. Supports:
+                   - response_mime_type: MIME type for response (e.g., "application/json")
+                   - response_schema: Pydantic model for structured output
+            **kwargs: Additional keyword arguments passed to the API
+            
+        Returns:
+            If self.local is False:
+                Tuple[List[str], Usage]: Response texts and usage information
+            If self.local is True:
+                Tuple[List[str], Usage, List[str]]: Response texts, usage info, and finish reasons
+            
+        Example:
+            messages = [
+                {"role": "user", "content": "Hello!"},
+                {"role": "model", "content": "Hi there! How can I help?"},
+                {"role": "user", "content": "What is the capital of France?"}
+            ]
+            responses, usage = client.interactions_chat(messages)
+            print(responses[0])  # "The capital of France is Paris."
+            
+            # With structured output (compatible with minion.py)
+            from pydantic import BaseModel
+            class Output(BaseModel):
+                decision: str
+                message: str
+                answer: str
+            
+            responses, usage = client.interactions_chat(
+                messages=messages,
+                config={
+                    "response_mime_type": "application/json",
+                    "response_schema": Output,
+                }
+            )
+        """
+        if self.use_openai_api:
+            raise ValueError("Interactions API is not available with OpenAI-compatible API. Use native Gemini API instead.")
+        
+        # If the user provided a single dictionary, wrap it
+        if isinstance(messages, dict):
+            messages = [messages]
+        
+        # Format messages for Interactions API
+        formatted_input = self._format_interactions_input(messages)
+        
+        try:
+            # Build the create kwargs
+            create_kwargs = {
+                "model": self.model_name,
+                "input": formatted_input,
+            }
+            
+            # Add optional parameters if specified
+            if self.system_instruction:
+                create_kwargs["system_instruction"] = self.system_instruction
+            
+            # Handle config parameter (for compatibility with minion.py)
+            if config:
+                # Handle response_mime_type for JSON output
+                if "response_mime_type" in config:
+                    create_kwargs["response_mime_type"] = config["response_mime_type"]
+                
+                # Handle response_schema for structured output
+                if "response_schema" in config:
+                    create_kwargs["response_schema"] = config["response_schema"]
+            
+            # Add any additional kwargs (but filter out 'config' if passed)
+            filtered_kwargs = {k: v for k, v in kwargs.items() if k != 'config'}
+            create_kwargs.update(filtered_kwargs)
+            
+            # Make the API call
+            response = self.client.interactions.create(**create_kwargs)
+            
+            # Extract text from outputs
+            texts = self._extract_interaction_texts(response)
+            
+            # Extract usage information
+            usage = self._extract_interaction_usage(response)
+            
+            # Store the full response for additional metadata access
+            self.last_interaction_response = response
+            
+            # Return format depends on self.local flag (compatible with minion.py)
+            if self.local:
+                # Return 3-tuple with done_reasons for local client compatibility
+                done_reasons = ["stop"] * len(texts) if texts else ["stop"]
+                return texts, usage, done_reasons
+            else:
+                return texts, usage
+            
+        except Exception as e:
+            self.logger.error(f"Error during Interactions API call: {e}")
+            raise
+
+    def _extract_interaction_texts(self, response) -> List[str]:
+        """
+        Extract text content from an Interactions API response.
+        
+        Args:
+            response: The Interactions API response object
+            
+        Returns:
+            List[str]: List of text outputs from the response
+        """
+        texts = []
+        
+        if hasattr(response, 'outputs') and response.outputs:
+            for output in response.outputs:
+                # Try different ways to access text
+                if hasattr(output, 'text'):
+                    texts.append(output.text)
+                elif isinstance(output, dict) and 'text' in output:
+                    texts.append(output['text'])
+                elif hasattr(output, 'type') and output.type == 'text':
+                    text = getattr(output, 'text', '')
+                    if text:
+                        texts.append(text)
+        
+        return texts
+
+    def _extract_interaction_usage(self, response) -> Usage:
+        """
+        Extract usage information from an Interactions API response.
+        
+        Args:
+            response: The Interactions API response object
+            
+        Returns:
+            Usage: Usage object with token counts
+        """
+        usage_data = getattr(response, 'usage', None)
+        
+        if usage_data:
+            return Usage(
+                prompt_tokens=getattr(usage_data, 'total_input_tokens', 0),
+                completion_tokens=getattr(usage_data, 'total_output_tokens', 0),
+            )
+        
+        return Usage()
+
+
+
+    def get_last_interaction_response(self) -> Optional[Any]:
+        """
+        Get the full response object from the last Interactions API call.
+        
+        Returns:
+            Optional[Any]: The full interaction response object, or None if no call has been made
+        """
+        return self.last_interaction_response
+
+    def get_interaction_usage_details(self) -> Optional[Dict[str, Any]]:
+        """
+        Get detailed usage information from the last Interactions API call.
+        
+        This provides more detailed usage information than the standard Usage object,
+        including token counts by modality.
+        
+        Returns:
+            Optional[Dict[str, Any]]: Detailed usage information or None if no call has been made
+        """
+        if not self.last_interaction_response:
+            return None
+        
+        usage_data = getattr(self.last_interaction_response, 'usage', None)
+        if not usage_data:
+            return None
+        
+        return {
+            'input_tokens_by_modality': getattr(usage_data, 'input_tokens_by_modality', []),
+            'total_cached_tokens': getattr(usage_data, 'total_cached_tokens', 0),
+            'total_input_tokens': getattr(usage_data, 'total_input_tokens', 0),
+            'total_output_tokens': getattr(usage_data, 'total_output_tokens', 0),
+            'total_thought_tokens': getattr(usage_data, 'total_thought_tokens', 0),
+            'total_tokens': getattr(usage_data, 'total_tokens', 0),
+            'total_tool_use_tokens': getattr(usage_data, 'total_tool_use_tokens', 0),
+        }
+
+    # ==========================================================================
+    # Embeddings API Support
+    # ==========================================================================
+
+    def embed(
+        self,
+        content: Union[str, List[str]],
+        model: str = "gemini-embedding-001",
+        task_type: Optional[str] = None,
+        output_dimensionality: Optional[int] = None,
+        **kwargs
+    ) -> List[List[float]]:
+        """
+        Generate embeddings using Gemini's embedding API.
+       
+        See: https://ai.google.dev/gemini-api/docs/embeddings
+        """
+        if self.use_openai_api:
+            raise ValueError("Embeddings are not supported with OpenAI-compatible API. Use native Gemini API instead.")
+        
+        # Ensure content is a list for batch processing
+        if isinstance(content, str):
+            content = [content]
+        
+        try:
+            # Build the config for embed_content
+            config_kwargs = {}
+            
+            if task_type:
+                config_kwargs["task_type"] = task_type
+            
+            if output_dimensionality:
+                config_kwargs["output_dimensionality"] = output_dimensionality
+            
+            # Add any additional kwargs to config
+            config_kwargs.update(kwargs)
+            
+            # Create EmbedContentConfig if we have config options
+            config = None
+            if config_kwargs:
+                config = self.types.EmbedContentConfig(**config_kwargs)
+            
+            # Make the API call
+            result = self.client.models.embed_content(
+                model=model,
+                contents=content,
+                config=config,
+            )
+            
+            # Extract embedding values from response
+            embeddings = []
+            if hasattr(result, 'embeddings') and result.embeddings:
+                for embedding in result.embeddings:
+                    if hasattr(embedding, 'values'):
+                        embeddings.append(list(embedding.values))
+                    elif isinstance(embedding, (list, tuple)):
+                        embeddings.append(list(embedding))
+            
+            self.logger.info(f"Generated {len(embeddings)} embeddings with dimension {len(embeddings[0]) if embeddings else 0}")
+            
+            return embeddings
+            
+        except Exception as e:
+            self.logger.error(f"Error generating embeddings: {e}")
+            raise

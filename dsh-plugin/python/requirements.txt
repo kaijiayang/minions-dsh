@@ -1,0 +1,24 @@
+# minions Python bridge — minimal runtime dependencies
+#
+# Recommended: `pip install -e .` at the repository root (installs the
+# `minions` protocol library plus everything below). This file is for
+# minimal/manual installs.
+
+# --- Unified OpenAI-compatible local client + cloud OpenAI-compatible providers
+openai>=1.0
+requests
+
+# --- Minions protocol library ---
+pydantic>=2.0
+mcp                 # minion.py top-level import
+rank_bm25           # minions.py retrieval dependency
+tiktoken
+
+# --- Standardized config (minions.yaml) ---
+pyyaml
+
+# --- Optional remote providers ---
+anthropic
+google-genai
+sambanova
+together
