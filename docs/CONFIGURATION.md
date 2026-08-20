@@ -92,13 +92,32 @@ Any string value in the config may reference an environment variable with
 `${VAR}` or `$VAR` syntax; it is expanded before validation. See
 [`.env.example`](../.env.example).
 
+### Where environment variables come from (Harness plugin)
+
+When the plugin is used through `dsh web`, the bridge subprocess inherits the
+`dsh web` process environment, which is populated from (in order, later wins):
+
+1. The launching shell — `export DEEPSEEK_API_KEY=...` before `dsh web`.
+2. `./.env` in dsh's working directory and `~/.dsh/.env` — auto-loaded at
+   startup by `loadLayeredEnv` (a repo-root `.env` is gitignored).
+3. The plugin's `env:` block in the plugin config (e.g. the profile user layer
+   `cordis.patch.yml`) — merged into the subprocess environment by the plugin
+   itself.
+
+This means `remote.api_key_env: DEEPSEEK_API_KEY` resolves from any of the
+three, without the key ever being stored in `minions.yaml`.
+
 ## Secrets
 
 - **Never commit keys.** Prefer `api_key_env: VAR_NAME` over `api_key:`.
+- `api_key_env` wins over a literal `api_key` when both are present; the
+  resolved value is injected as the client's `api_key` kwarg.
 - The bridge subprocess inherits the parent environment, so `export
-  DEEPSEEK_API_KEY=...` before starting `dsh web` is enough.
+  DEEPSEEK_API_KEY=...` before starting `dsh web` is enough (alternatives: a
+  `.env` file auto-loaded at startup, or the plugin config's `env:` block).
 - If a key referenced by `api_key_env` is missing, validation fails with a
-  clear message rather than silently sending an empty key.
+  clear `Environment variable '...' is not set` message rather than silently
+  sending an empty key.
 
 ## Validation
 

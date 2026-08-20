@@ -5,6 +5,15 @@
 #   dsh web --patch ./dsh-plugin/cordis.yml        (npm-installed dsh)
 #   pnpm dsh web --patch ./dsh-plugin/cordis.yml   (source checkout)
 #
+# ALTERNATIVE (mutually exclusive — do NOT use both):
+#   Drop the same `insert` block into the profile user layer
+#   (~/.dsh/profiles/web/cordis.patch.yml) and start `dsh web` WITHOUT any
+#   --patch argument. The user layer is HMR-watched, so the plugin loads with
+#   NO restart. Use `insert`, not `update`: patch layers apply in the order
+#   bundle → user layer → home → overlays, so an `update` here cannot target
+#   entries inserted by an overlay (and vice versa).
+#   Verify with: dsh web --dump-config
+#
 # IMPORTANT:
 #   * Replace the placeholder paths below with ABSOLUTE paths on your machine.
 #   * Never hard-code API keys here. Put them in your environment or in the
@@ -17,15 +26,15 @@
     - id: minions
       # Compiled plugin entry point (run `npm run build` in dsh-plugin first).
       # NOTE: Cordis' ESM loader requires Windows absolute paths in file:/// form.
-      name: 'file:///ABSOLUTE/PATH/TO/minions-dsh/dsh-plugin/lib/index.js'
+      name: 'file:///ABSOLUTE/PATH/TO/dsh-plugin/lib/index.js'   # ← your absolute path
       config:
         # Python interpreter (absolute path recommended)
         bridgePython: 'python'
         # Bridge script (absolute path or relative to the plugin root)
-        bridgeScript: 'dsh-plugin/python/minions_bridge.py'
+        bridgeScript: 'python/minions_bridge.py'
         # Optional: point at the standardized config file (minions.yaml).
         # When set, client/protocol settings below are ignored.
-        # configFile: 'D:/path/to/minions-dsh/minions.yaml'
+        configFile: 'ABSOLUTE/PATH/TO/minions.yaml'   # ← your absolute path
 
         # ---- Local worker: any OpenAI-compatible server ----
         # lmstudio | ollama | vllm | llamacpp | generic | auto

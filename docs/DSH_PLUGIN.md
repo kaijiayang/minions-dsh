@@ -22,7 +22,30 @@ npm run build        # produces lib/ (entry: lib/index.js)
 
 ## Load into Harness
 
-The simplest path uses `dsh`'s `--patch` overlay:
+There are **two mutually exclusive** ways to load the plugin. Pick one —
+loading both produces a duplicate `minions` entry.
+
+| Way | Command / file | Reload | Notes |
+|-----|----------------|--------|-------|
+| **A. `--patch` overlay** | `dsh web --patch ./dsh-plugin/cordis.yml` | restart | the portable template in this repo |
+| **B. profile user layer** | edit `~/.dsh/profiles/web/cordis.patch.yml` | **HMR, no restart** | machine-local; survives any launch command |
+
+### Why two ways (patch layering order)
+
+`dsh` composes config patches in this order:
+
+```
+bundle layers  →  profile user layer (cordis.patch.yml)  →  home layer  →  --patch overlays
+```
+
+A `--patch` overlay is applied **last**, so an entry it `insert`s does not
+exist yet when the user layer runs. Consequently:
+
+- A user-layer **`update`** targeting an overlay-inserted entry is silently
+  skipped (`patch: entry "minions" not found`).
+- A user-layer **`insert`** creates the entry itself and works fine.
+
+### Way A — `--patch` overlay (portable template)
 
 ```bash
 # from the repository root
@@ -30,10 +53,8 @@ dsh web --patch ./dsh-plugin/cordis.yml
 # open http://127.0.0.1:3080
 ```
 
-### Edit `cordis.yml` first
-
-`dsh-plugin/cordis.yml` is a **template** — it must be adjusted to your
-machine:
+Edit `dsh-plugin/cordis.yml` first — it is a **template** that must be
+adjusted to your machine:
 
 ```yaml
 - insert:
@@ -56,7 +77,44 @@ machine:
         timeoutMs: 300000
 ```
 
-Notes:
+### Way B — profile user layer (no `--patch`, HMR hot-reload)
+
+The profile user layer is watched by dsh's HMR, so saving the file applies the
+change **immediately — no dsh web restart needed**. Put an `insert` (not
+`update`) in `~/.dsh/profiles/web/cordis.patch.yml`:
+
+```yaml
+- insert:
+    - id: minions
+      name: 'file:///ABSOLUTE/PATH/TO/dsh-plugin/lib/index.js'   # ← your absolute path
+      config:
+        bridgePython: 'python'
+        bridgeScript: 'python/minions_bridge.py'
+        configFile: 'ABSOLUTE/PATH/TO/minions.yaml'   # ← your absolute path
+        defaultLocalPlatform: 'lmstudio'
+        defaultLocalModel: 'qwen3.8-27b'
+        localBaseUrl: 'http://127.0.0.1:1234/v1'
+        defaultRemoteClientType: 'deepseek'
+        defaultRemoteModel: 'deepseek-v4-flash'
+        defaultMaxRounds: 3
+        defaultProtocol: 'minions'
+        timeoutMs: 300000
+        # env vars merged into the bridge subprocess (see below)
+        env:
+          DEEPSEEK_API_KEY: 'sk-...'   # or rely on the environment / .env
+```
+
+Then start dsh web **without** any `--patch` argument:
+
+```bash
+dsh web
+```
+
+The entry lives in your machine-local profile (outside the git repo), so no
+commit-time secrets either. `dsh --dump-config` is the ground truth — the
+`minions` entry must appear under `# == <DSH_HOME>/profiles/web/cordis.patch.yml`.
+
+### Notes (both ways)
 
 - On Windows the plugin `name` must be a `file:///` URL (bare `D:/...` paths
   fail with `ERR_UNSUPPORTED_ESM_URL_SCHEME`).
@@ -64,9 +122,26 @@ Notes:
   `minions.yaml`. The bridge then reads clients/protocol from that file, and
   the per-call tool arguments act as overrides. Without `configFile`, use the
   `defaultLocalPlatform` / `defaultLocalModel` / ... keys.
-- **Never commit API keys.** The bridge subprocess inherits the shell
-  environment, so `export DEEPSEEK_API_KEY=sk-...` before `dsh web` is enough.
-  Do not paste keys into `cordis.yml`.
+
+## Secrets
+
+Three layers, in order of preference:
+
+1. **Environment** — `export DEEPSEEK_API_KEY=sk-...` (or set it in the shell
+   that launches `dsh web`). The bridge subprocess inherits it, and
+   `minions.yaml`'s `remote.api_key_env: DEEPSEEK_API_KEY` resolves it.
+2. **`env:` block in the plugin config** — merged into the bridge subprocess
+   environment by the plugin itself (Way B example above). Machine-local files
+   like the profile user layer are fine; **never** commit keys into
+   `dsh-plugin/cordis.yml` or any tracked file.
+3. **`.env` file** — `dsh web` auto-loads `./.env` from its working directory
+   (and `~/.dsh/.env`) at startup via `loadLayeredEnv`; values land in the
+   process environment and are inherited by the bridge. A repo-root `.env` is
+   gitignored (see `.gitignore`).
+
+The key is resolved exactly once, by `minions/config.py`: `api_key_env`
+wins over a literal `api_key`, and a missing referenced variable fails with a
+clear `Environment variable '...' is not set` error rather than an empty key.
 
 ## Plugin configuration reference
 

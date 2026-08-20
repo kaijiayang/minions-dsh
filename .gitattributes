@@ -1,0 +1,39 @@
+# Line endings: store LF in the repository on every platform.
+# (Matches .editorconfig: end_of_line = lf)
+* text=auto
+
+# Force LF for common text formats
+*.py       text eol=lf
+*.ts       text eol=lf
+*.js       text eol=lf
+*.mjs      text eol=lf
+*.cjs      text eol=lf
+*.json     text eol=lf
+*.yml      text eol=lf
+*.yaml     text eol=lf
+*.md       text eol=lf
+*.toml     text eol=lf
+*.txt      text eol=lf
+*.sh       text eol=lf
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
+*.cfg      text eol=lf
+*.ini      text eol=lf
+*.html     text eol=lf
+*.css      text eol=lf
+Dockerfile text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Binary files must never be touched
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.webp     binary
+*.ico      binary
+*.pdf      binary
+*.gz       binary
+*.zip      binary
+*.woff     binary
+*.woff2    binary

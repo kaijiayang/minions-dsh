@@ -152,7 +152,11 @@ python dsh-plugin/python/minions_bridge.py --validate-config minions.yaml
 
 ## DeepSeek Harness plugin
 
-The `dsh-plugin/` directory is an installable Harness **tool plugin** that registers a `minions_run` tool. Any Harness agent can then delegate long-context reasoning to your local/cloud pair:
+The `dsh-plugin/` directory is an installable Harness **tool plugin** that registers a `minions_run` tool. Any Harness agent can then delegate long-context reasoning to your local/cloud pair.
+
+**Two mutually exclusive ways to load it** (pick one — both produce a duplicate `minions` entry):
+
+**Way A — `--patch` overlay** (portable template, requires restart):
 
 ```bash
 cd dsh-plugin
@@ -162,11 +166,23 @@ npm run build
 dsh web --patch ./dsh-plugin/cordis.yml     # then open http://127.0.0.1:3080
 ```
 
-Before starting, edit `dsh-plugin/cordis.yml`:
+**Way B — profile user layer** (no `--patch` argument, **HMR hot-reload, no restart**): put an `insert` (not `update`) entry in `~/.dsh/profiles/web/cordis.patch.yml` (see [docs/DSH_PLUGIN.md](docs/DSH_PLUGIN.md) for the full snippet), then simply:
 
-- replace the placeholder plugin `name` with the **absolute** path to `dsh-plugin/lib/index.js` (`file:///` form on Windows),
+```bash
+dsh web
+```
+
+> **Why `insert` and not `update`?** Patch layers apply in the order `bundle →
+> profile user layer → home → --patch overlays`. An overlay-inserted entry
+> does not exist yet when the user layer runs, so a user-layer `update` is
+> silently skipped (`patch: entry "minions" not found`); `insert` creates the
+> entry itself. Verify with `dsh web --dump-config`.
+
+Before starting (either way), adjust the plugin config:
+
+- set the plugin `name` to the **absolute** path to `dsh-plugin/lib/index.js` (`file:///` form on Windows),
 - optionally set `configFile` to the absolute path of your `minions.yaml` (recommended — the plugin then reads everything from it),
-- never commit API keys: export them in your shell (the bridge subprocess inherits the environment).
+- never commit API keys: export them in your shell (the bridge subprocess inherits the environment), or use the plugin config's `env:` block / a `.env` file (see [docs/CONFIGURATION.md](docs/CONFIGURATION.md) for the resolution order).
 
 Full details: [docs/DSH_PLUGIN.md](docs/DSH_PLUGIN.md).
 

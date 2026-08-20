@@ -24,9 +24,9 @@ version: 1
 # -----------------------------------------------------------------------------
 remote:
   provider: deepseek            # deepseek | openai | anthropic | openai_compat
-  model: deepseek-chat
-  base_url: https://api.deepseek.com/v1   # optional; provider-specific default
-  api_key_env: DEEPSEEK_API_KEY           # name of the env var holding the key
+  model: deepseek-chat          # cloud model id (e.g. deepseek-chat)
+  base_url: https://api.deepseek.com   # optional; provider-specific default
+  api_key_env: DEEPSEEK_API_KEY        # read the key from the environment
   temperature: 0.0
   max_tokens: 4096
 

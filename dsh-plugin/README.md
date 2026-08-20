@@ -37,6 +37,11 @@ npm run smoke       # build + offline smoke test (uses a mock Python script)
 
 ## Load into Harness
 
+Two **mutually exclusive** ways — pick one (both produce a duplicate `minions`
+entry):
+
+### Way A — `--patch` overlay (portable template)
+
 ```bash
 # from the repository root
 dsh web --patch ./dsh-plugin/cordis.yml
@@ -46,6 +51,51 @@ Edit `cordis.yml` first: set the plugin `name` to the absolute `file:///` path
 of `lib/index.js`, optionally set `configFile` to your `minions.yaml`, and
 **never commit API keys** (export them in your shell — the bridge subprocess
 inherits the environment).
+
+### Way B — profile user layer (no `--patch`, HMR hot-reload)
+
+The profile user layer is watched by dsh's HMR, so saving the file applies the
+change immediately — **no dsh web restart needed**. Put an **`insert`** (not
+`update`) in `~/.dsh/profiles/web/cordis.patch.yml`:
+
+```yaml
+- insert:
+    - id: minions
+      name: 'file:///ABSOLUTE/PATH/TO/dsh-plugin/lib/index.js'   # ← your absolute path
+      config:
+        bridgePython: 'python'
+        bridgeScript: 'python/minions_bridge.py'
+        configFile: 'ABSOLUTE/PATH/TO/minions.yaml'   # ← your absolute path
+        defaultLocalPlatform: 'lmstudio'
+        defaultLocalModel: 'qwen3.8-27b'
+        localBaseUrl: 'http://127.0.0.1:1234/v1'
+        defaultRemoteClientType: 'deepseek'
+        defaultRemoteModel: 'deepseek-v4-flash'
+        defaultMaxRounds: 3
+        defaultProtocol: 'minions'
+        timeoutMs: 300000
+        env:
+          DEEPSEEK_API_KEY: 'sk-...'   # or rely on the environment / .env
+```
+
+Then start `dsh web` **without** `--patch`:
+
+```bash
+dsh web
+```
+
+**Why `insert` and not `update`:** patch layers apply in the order `bundle →
+profile user layer → home → --patch overlays`. An overlay-inserted entry does
+not exist yet when the user layer runs, so a user-layer `update` is silently
+skipped (`patch: entry "minions" not found`); `insert` creates the entry
+itself. Verify with `dsh web --dump-config` — the `minions` entry should come
+from `cordis.patch.yml`.
+
+Secrets (any one works): export the key in the launching shell; add an `env:`
+block to the plugin config (merged into the bridge subprocess env); or drop a
+`.env` in dsh's working directory (auto-loaded at startup, gitignored at the
+repo root). See [docs/DSH_PLUGIN.md](../docs/DSH_PLUGIN.md) for the full
+reference.
 
 ## Bridge contract
 
